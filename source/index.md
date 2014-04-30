@@ -3,165 +3,200 @@ title: API Reference
 
 language_tabs:
   - shell
-  - ruby
-  - python
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a>
-
-includes:
-  - errors
+  - <a href='https://console.fieldwire.net'>Log In</a>
+  - <a href="mailto:support@fieldwire.net?subject=Api Token Request">Request an API token</a>
 
 ---
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+<aside class="warning">This is an alpha version of the fieldwire API and we don't yet make commitments to preserve backwards compatibility.</aside>
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+Welcome to the fieldwire API! You can use our API to access your fieldwire projects.
 
-This example API documentation page was created with [Slate](http://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+<aside class="notice">
+All calls must be made over HTTPS.
+</aside>
 
 # Authentication
 
 > To authorize, use this code:
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import 'kittn'
-
-api = Kittn.authorize('meowmeowmeow')
-```
-
 ```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+curl "https://console.fieldwire.net/api/v1/projects/..."
+  -H "Authorization: Token api=[api token]>,project=[project token]"
 ```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+> Make sure to replace [api token] and [project token] with your api token and project token, respectively.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+Fieldwire uses API tokens to allow access to the API. You can request a new fieldwire API token by emailing <a href="mailto:support@fieldwire.net?subject=Api Token Request">support</a>.
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+Fieldwire expects for the API and project token to be included in all API requests to the server in a header that looks like the following:
 
-`Authorization: meowmeowmeow`
+`Authorization: Token api=[api token],project=[project token]`
 
 <aside class="notice">
-You must replace `meowmeowmeow` with your personal API key.
+You must replace [api token] and [project token] with your api and project tokens, respectively.
 </aside>
 
-# Kittens
+# Common fields
 
-## Get All Kittens
+Field | Description
+--------- | -----------
+id | The id of the entity
+created_at | The time when the server created the entity
+updated_at | The time when the server last updated the entity
+device_created_at | The time when the device created the entity
+device_updated_at | The time when the device last updated the entity
+deleted_at | The time the entity was deleted
+resolved_conflict | Indicates if the PUT request was rejected - do not store this field!
 
-```ruby
-require 'kittn'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
+# Projects
 
-```python
-import 'kittn'
+## Fields
 
-api = Kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
+Field | Description
+--------- | -----------
+name | Name of the project
+address | Address of the project
+archived_at | The time when the project was archived
 
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Isis",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import 'kittn'
-
-api = Kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
+## Get Project
 
 ```shell
-curl "http://example.com/api/kittens/3"
-  -H "Authorization: meowmeowmeow"
+curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027"
+  -H "Authorization: Token api=[api token]>,project=[project token]"
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
 {
-  "id": 2,
-  "name": "Isis",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+    "created_at": "2014-04-30T19:02:10.000Z",
+    "updated_at": "2014-04-30T19:02:10.000Z",
+    "device_created_at": "2014-04-30T19:02:10.000Z",
+    "device_updated_at": "2014-04-30T19:02:10.000Z",
+    "resolved_conflict": false,
+    "id": "aceb1617-2dcf-4b01-a6b1-d8ae02bc3027",
+    "name": "Sample project",
+    "address": null,
+    "archived_at": null,
+    "deleted_at": null
 }
 ```
 
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">If you're not using an administrator API key, note that some kittens will return 403 Forbidden if they are hidden for admins only.</aside>
+This endpoint retrieves a specific project.
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`GET https://console.fieldwire.net/api/v1/projects/<Project ID>`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the cat to retrieve
+Project ID | The ID of the project to retrieve
+
+# Teams (Categories)
+
+## Fields
+
+Field | Description
+--------- | -----------
+name | Name of the team
+handle | Autogenerated two letter handle of the team
+
+## Get All Teams
+
+```shell
+curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/teams"
+  -H "Authorization: Token api=[api token]>,project=[project token]"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+    {
+        "created_at": "2014-04-30T19:02:10.000Z",
+        "updated_at": "2014-04-30T19:02:10.000Z",
+        "device_created_at": "2014-04-30T19:02:10.000Z",
+        "device_updated_at": "2014-04-30T19:02:10.000Z",
+        "resolved_conflict": false,
+        "id": "fa1fe4df-39ad-42e6-b11a-af7f2b97cf75",
+        "name": "Safety",
+        "handle": "SA",
+        "project_id": "aceb1617-2dcf-4b01-a6b1-d8ae02bc3027",
+        "deleted_at": null
+    },
+    {
+        "created_at": "2014-04-30T19:02:10.000Z",
+        "updated_at": "2014-04-30T19:02:10.000Z",
+        "device_created_at": "2014-04-30T19:02:10.000Z",
+        "device_updated_at": "2014-04-30T19:02:10.000Z",
+        "resolved_conflict": false,
+        "id": "85d48a03-c192-4963-89f3-571352e0a402",
+        "name": "Tutorial",
+        "handle": "TU",
+        "project_id": "aceb1617-2dcf-4b01-a6b1-d8ae02bc3027",
+        "deleted_at": null
+    }
+]
+```
+
+This endpoint retrieves all teams.
+
+### HTTP Request
+
+`GET https://console.fieldwire.net/api/v1/projects/<Project ID>/teams`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Project ID | The ID of the project to retrieve
+
+## Get Team
+
+```shell
+curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/teams/fa1fe4df-39ad-42e6-b11a-af7f2b97cf75"
+  -H "Authorization: Token api=[api token]>,project=[project token]"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "created_at": "2014-04-30T19:02:10.000Z",
+    "updated_at": "2014-04-30T19:02:10.000Z",
+    "device_created_at": "2014-04-30T19:02:10.000Z",
+    "device_updated_at": "2014-04-30T19:02:10.000Z",
+    "resolved_conflict": false,
+    "id": "fa1fe4df-39ad-42e6-b11a-af7f2b97cf75",
+    "name": "Safety",
+    "handle": "SA",
+    "project_id": "aceb1617-2dcf-4b01-a6b1-d8ae02bc3027",
+    "deleted_at": null
+}
+```
+
+This endpoint retrieves a specific team.
+
+### HTTP Request
+
+`GET https://console.fieldwire.net/api/v1/projects<Project ID>/<Team ID>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Project ID | The ID of the team's project
+Team ID | The ID of the team to retrieve
+
+# Errors
+
+The fieldwire API uses conventional <a href="http://en.wikipedia.org/wiki/List_of_HTTP_status_codes">HTTP status codes</a> to indicate success or failure of an API request.
 
