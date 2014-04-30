@@ -173,3 +173,27 @@ Parameter | Description
 --------- | -----------
 Project ID | The ID of the team's project
 Team ID | The ID of the team to retrieve
+
+## Delete Team
+
+```shell
+curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/teams/75d68ca1-0fc1-456a-bd9d-8b23875ac540" \
+  -X DELETE \
+  -H "Authorization: Token api=[api token]>,project=[project token]" \
+  -H "Content-type: application/json"
+```
+
+> The above command returns 204 No Content
+
+This endpoint updates a specific team.
+
+### HTTP Request
+
+`DELETE https://console.fieldwire.net/api/v1/projects/<Project ID>/teams/<Team ID>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Project ID | The ID of the team's project
+Team ID | The ID of the team to retrieve
