@@ -1,5 +1,5 @@
 ---
-title: Fieldwire API Reference
+title: Fieldwire API
 
 language_tabs:
   - shell
