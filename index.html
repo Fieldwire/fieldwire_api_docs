@@ -1539,8 +1539,16 @@ You must replace [api token] and [project token] with your api and project token
 </tbody></table>
 
             <h1 id="errors">Errors</h1>
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"param is missing or the value is empty: field"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
 
 <p>The fieldwire API uses conventional <a href="http://en.wikipedia.org/wiki/List_of_HTTP_status_codes">HTTP status codes</a> to indicate success or failure of an API request.</p>
+
+<p>Additionally, if the request fails validation checks errors are returned in the described format.</p>
 
       </div>
       <div class="dark-box">
