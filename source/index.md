@@ -7,6 +7,7 @@ language_tabs:
 toc_footers:
   - <a href='https://console.fieldwire.net'>Log In</a>
   - <a href="mailto:support@fieldwire.net?subject=Api Token Request">Request an API token</a>
+  - <a href="mailto:support@fieldwire.net">Email support</a>
 
 includes:
   - projects
