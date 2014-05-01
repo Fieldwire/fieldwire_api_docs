@@ -1,6 +1,6 @@
 # Users
 
-## Fields
+## User Fields
 
 Field | Description
 --------- | -----------

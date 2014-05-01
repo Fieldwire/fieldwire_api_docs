@@ -1,6 +1,6 @@
 # Bubbles
 
-## Fields
+## Bubble Fields
 
 Field | Description
 --------- | -----------

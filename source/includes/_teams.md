@@ -1,6 +1,6 @@
 # Teams (Categories)
 
-## Fields
+## Team Fields
 
 Field | Description
 --------- | -----------
