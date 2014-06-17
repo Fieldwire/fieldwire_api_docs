@@ -16,6 +16,8 @@ includes:
   - floorplans
   - tasks
   - bubbles
+  - attachments
+  - hyperlinks
   - errors
 
 ---
