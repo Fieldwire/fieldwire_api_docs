@@ -7,7 +7,7 @@ Field | Description
 name | Name of the markup
 creator_user_id | User ID of the markup's creator
 last_editor_user_id | User ID of the markup's last editor
-data | GeoJSON of markup (see below)
+data | [GeoJSON of markup](#markup-data)
 
 ## Get Markups
 

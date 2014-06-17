@@ -8,13 +8,13 @@ name | Name of the hyperlink
 creator_user_id | User ID of the hyperlink's creator
 last_editor_user_id | User ID of the hyperlink's last editor
 description | Hyperlink description that appears on floorplan
-pos_x | Horizontal pixels (from left) of task on floorplan
-pos_y | Vertical pixels (from top) of task on floorplan
+pos_x | Horizontal pixels (from left) of hyperlink on floorplan
+pos_y | Vertical pixels (from top) of hyperlink on floorplan
 floorplan_id | ID of linked floorplan
 attachment_id | ID of linked attachment
 
 <aside class="notice">
-    Hyperlinks can link to either floorplans or attachments but not both.
+    Hyperlinks can link to either floorplans or attachments but not both
 </aside>
 
 ## Get Hyperlinks
