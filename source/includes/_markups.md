@@ -36,7 +36,7 @@ curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae
             "properties": {
                 "style": "text",
                 "description": "line 1\nline 2\nline 3",
-                "font_size": 8
+                "fontSize": 8
             },
             "geometry": {
                 "type": "Polygon",
@@ -77,7 +77,7 @@ curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae
             "type": "Feature",
             "properties": {
                 "style": "cloud",
-                "arc_radius": 8
+                "arcRadius": 8
             },
             "geometry": {
                 "type": "Polygon",
@@ -141,7 +141,7 @@ geometry | Describes markup shape
         "type": "Feature",
         "properties": {
             "style": "cloud",
-            "arc_radius": 8
+            "arcRadius": 8
         },
         "geometry": {
             "type": "Polygon",
@@ -171,7 +171,7 @@ geometry | Describes markup shape
 Property | Description
 --------- | -----------
 style | Always 'cloud'
-arc_radius | Radius in pixels of each cloud arc
+arcRadius | Radius in pixels of each cloud arc
 
 <aside class="notice">
     Polygon coordinates refer to the exact point where the arcs of the cloud should intersect
@@ -189,7 +189,7 @@ arc_radius | Radius in pixels of each cloud arc
         "properties": {
             "style": "text",
             "description": "line 1\nline 2\nline 3",
-            "font_size": 8
+            "fontSize": 8
         },
         "geometry": {
             "type": "Polygon",
@@ -220,13 +220,13 @@ Property | Description
 --------- | -----------
 style | Always 'text'
 description | Text to be displayed (newlines marked with '\n')
-font_size | Size of text in pixels
+fontSize | Size of text in pixels
 
 <aside class="notice">
     Polygon coordinates refer to the bounding box that contains the text (with 5 pixel padding from edges)
 </aside>
 <aside class="notice">
-    Text should not display outside box
+    Text should not display outside box, but individual lines can wrap to fit
 </aside>
 
 ## Managing Markups
