@@ -14,7 +14,7 @@ floorplan_id | ID of linked floorplan
 attachment_id | ID of linked attachment
 
 <aside class="notice">
-    Hyperlinks can map to either floorplans or attachments but not both.
+    Hyperlinks can link to either floorplans or attachments but not both.
 </aside>
 
 ## Get Hyperlinks
@@ -39,10 +39,10 @@ curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae
         "sheet_id": "a93f75ad-a90c-4f7c-8b4a-1432bdddc8f1",
         "creator_user_id": 1,
         "last_editor_user_id": 1,
-        "description": "RFI #54321",
+        "description": "Hyperlink #1",
         "pos_x": 1246,
         "pos_y": 108,
-        "floorplan_id": null
+        "floorplan_id": null,
         "attachment_id": "2bd071a9-81a0-4ada-8ecf-ababb78f4ac3",
         "deleted_at": null
     },
@@ -57,7 +57,7 @@ curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae
         "sheet_id": "a5056209-4430-4407-a300-5dfcc4114993",
         "creator_user_id": 1,
         "last_editor_user_id": 1,
-        "description": "a",
+        "description": "Hyperlink #2",
         "pos_x": 215,
         "pos_y": 118,
         "floorplan_id": "20b57726-31ed-40f4-a608-ef29bc74b657",

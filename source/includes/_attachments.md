@@ -6,7 +6,7 @@ Field | Description
 --------- | -----------
 name | Name of the attachment
 creator_user_id | User Id of the attachment's creator
-thumb_url | Url of the attachment thumb
+thumb_url | Url of the attachment thumb (optional)
 file_url | Url of the attachment
 file_size | Size of the attachment
 

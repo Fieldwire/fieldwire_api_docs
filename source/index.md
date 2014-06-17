@@ -18,6 +18,7 @@ includes:
   - bubbles
   - attachments
   - hyperlinks
+  - markups
   - errors
 
 ---
