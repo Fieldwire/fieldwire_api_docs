@@ -1541,6 +1541,540 @@ You must replace [api token] and [project token] with your api and project token
 </tr>
 </tbody></table>
 
+            <h1 id="attachments">Attachments</h1>
+
+<h2 id="attachment-fields">Attachment Fields</h2>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>Name of the attachment</td>
+</tr>
+<tr>
+<td>creator_user_id</td>
+<td>User Id of the attachment&rsquo;s creator</td>
+</tr>
+<tr>
+<td>thumb_url</td>
+<td>Url of the attachment thumb (optional)</td>
+</tr>
+<tr>
+<td>file_url</td>
+<td>Url of the attachment</td>
+</tr>
+<tr>
+<td>file_size</td>
+<td>Size of the attachment</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-attachments">Get Attachments</h2>
+<pre class="highlight shell">curl <span class="s2">"https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/attachments"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Token api=[api token]&gt;,project=[project token]"</span>
+</pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d426dce3-1b5f-446c-9ba2-7fd8e5781db5"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aceb1617-2dcf-4b01-a6b1-d8ae02bc3027"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"creator_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"attachment 1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/attachment1.jpeg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"file_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">736623</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:44:18.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:44:18.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:44:18.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:44:18.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8c0c87d3-603a-4dd5-ac64-f11dd3ac2cf9"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aceb1617-2dcf-4b01-a6b1-d8ae02bc3027"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"creator_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"attachment 2"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/attachment2.jpeg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"file_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">736623</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></pre>
+
+<p>This endpoint retrieves all attachments.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://console.fieldwire.net/api/v1/projects/&lt;Project ID&gt;/attachments</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the project to retrieve</td>
+</tr>
+</tbody></table>
+
+<h2 id="managing-attachments">Managing Attachments</h2>
+
+<p><aside class="warning">
+    Fieldwire API does not currently support managing attachments.
+</aside></p>
+
+<p><aside class="notice">
+    <a href='https://console.fieldwire.net'>Log In</a> to manage attachments.
+</aside></p>
+
+            <h1 id="hyperlinks">Hyperlinks</h1>
+
+<h2 id="hyperlink-fields">Hyperlink Fields</h2>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>Name of the hyperlink</td>
+</tr>
+<tr>
+<td>creator_user_id</td>
+<td>User ID of the hyperlink&rsquo;s creator</td>
+</tr>
+<tr>
+<td>last_editor_user_id</td>
+<td>User ID of the hyperlink&rsquo;s last editor</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Hyperlink description that appears on floorplan</td>
+</tr>
+<tr>
+<td>pos_x</td>
+<td>Horizontal pixels (from left) of hyperlink on floorplan</td>
+</tr>
+<tr>
+<td>pos_y</td>
+<td>Vertical pixels (from top) of hyperlink on floorplan</td>
+</tr>
+<tr>
+<td>floorplan_id</td>
+<td>ID of linked floorplan</td>
+</tr>
+<tr>
+<td>attachment_id</td>
+<td>ID of linked attachment</td>
+</tr>
+</tbody></table>
+
+<p><aside class="notice">
+    Hyperlinks can link to either floorplans or attachments but not both
+</aside></p>
+
+<h2 id="get-hyperlinks">Get Hyperlinks</h2>
+<pre class="highlight shell">curl <span class="s2">"https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/hyperlinks"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Token api=[api token]&gt;,project=[project token]"</span>
+</pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-16T18:55:07.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-16T19:01:03.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-16T18:55:07.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-16T19:01:03.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6757d318-d81d-463e-a8e4-9ae001112e59"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aceb1617-2dcf-4b01-a6b1-d8ae02bc3027"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sheet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a93f75ad-a90c-4f7c-8b4a-1432bdddc8f1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"creator_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_editor_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hyperlink #1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pos_x"</span><span class="p">:</span><span class="w"> </span><span class="mi">1246</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pos_y"</span><span class="p">:</span><span class="w"> </span><span class="mi">108</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"floorplan_id"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"attachment_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2bd071a9-81a0-4ada-8ecf-ababb78f4ac3"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-16T23:41:49.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-16T23:41:49.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-16T23:41:49.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-16T23:41:49.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"84055918-9efb-4c2d-bd9c-33e10e896665"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aceb1617-2dcf-4b01-a6b1-d8ae02bc3027"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sheet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a5056209-4430-4407-a300-5dfcc4114993"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"creator_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_editor_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hyperlink #2"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pos_x"</span><span class="p">:</span><span class="w"> </span><span class="mi">215</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pos_y"</span><span class="p">:</span><span class="w"> </span><span class="mi">118</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"floorplan_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20b57726-31ed-40f4-a608-ef29bc74b657"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"attachment_id"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></pre>
+
+<p>This endpoint retrieves all hyperlinks.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://console.fieldwire.net/api/v1/projects/&lt;Project ID&gt;/hyperlinks</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the project to retrieve</td>
+</tr>
+</tbody></table>
+
+<h2 id="managing-hyperlinks">Managing Hyperlinks</h2>
+
+<p><aside class="warning">
+    Fieldwire API does not currently support managing hyperlinks.
+</aside></p>
+
+<p><aside class="notice">
+    <a href='https://console.fieldwire.net'>Log In</a> to manage hyperlinks.
+</aside></p>
+
+            <h1 id="markups">Markups</h1>
+
+<h2 id="markup-fields">Markup Fields</h2>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>Name of the markup</td>
+</tr>
+<tr>
+<td>creator_user_id</td>
+<td>User ID of the markup&rsquo;s creator</td>
+</tr>
+<tr>
+<td>last_editor_user_id</td>
+<td>User ID of the markup&rsquo;s last editor</td>
+</tr>
+<tr>
+<td>data</td>
+<td><a href="#markup-data">GeoJSON of markup</a></td>
+</tr>
+</tbody></table>
+
+<h2 id="get-markups">Get Markups</h2>
+<pre class="highlight shell">curl <span class="s2">"https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/markups"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Token api=[api token]&gt;,project=[project token]"</span>
+</pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-16T18:55:17.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-16T18:56:01.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-16T18:55:17.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-16T18:56:02.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"692fb74a-9c65-4a65-8e72-57f8dac0147c"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aceb1617-2dcf-4b01-a6b1-d8ae02bc3027"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sheet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a93f75ad-a90c-4f7c-8b4a-1432bdddc8f1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"creator_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_editor_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"line 1\nline 2\nline 3"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"font_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polygon"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">[</span><span class="w">
+                        </span><span class="mi">1661</span><span class="p">,</span><span class="w">
+                        </span><span class="mi">394</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="p">[</span><span class="w">
+                        </span><span class="mi">1991</span><span class="p">,</span><span class="w">
+                        </span><span class="mi">394</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="p">[</span><span class="w">
+                        </span><span class="mi">1991</span><span class="p">,</span><span class="w">
+                        </span><span class="mi">614</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="p">[</span><span class="w">
+                        </span><span class="mi">1661</span><span class="p">,</span><span class="w">
+                        </span><span class="mi">614</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-16T18:53:31.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-16T18:56:35.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-16T18:53:31.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-16T18:56:35.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"44a63a50-281b-4b7c-9889-cf9a48bc65f3"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aceb1617-2dcf-4b01-a6b1-d8ae02bc3027"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sheet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a93f75ad-a90c-4f7c-8b4a-1432bdddc8f1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"creator_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_editor_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cloud"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"arc_radius"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polygon"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">[</span><span class="w">
+                        </span><span class="mi">240</span><span class="p">,</span><span class="w">
+                        </span><span class="mi">139</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="p">[</span><span class="w">
+                        </span><span class="mi">1136</span><span class="p">,</span><span class="w">
+                        </span><span class="mi">139</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="p">[</span><span class="w">
+                        </span><span class="mi">1136</span><span class="p">,</span><span class="w">
+                        </span><span class="mi">323</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="p">[</span><span class="w">
+                        </span><span class="mi">240</span><span class="p">,</span><span class="w">
+                        </span><span class="mi">323</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></pre>
+
+<p>This endpoint retrieves all markups.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://console.fieldwire.net/api/v1/projects/&lt;Project ID&gt;/markups</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the project to retrieve</td>
+</tr>
+</tbody></table>
+
+<h2 id="markup-data">Markup data</h2>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>Always &ldquo;Feature&rdquo;</td>
+</tr>
+<tr>
+<td>properties</td>
+<td>Contains markup specific data (style, description, etc.)</td>
+</tr>
+<tr>
+<td>geometry</td>
+<td>Describes markup shape</td>
+</tr>
+</tbody></table>
+
+<p><aside class="notice">
+    Polygon coordinates are [x,y] in clockwise order starting with top left corner
+</aside></p>
+
+<p><aside class="notice">
+    <a href="http://geojson.org/geojson-spec.html">GeoJSON spec</a>
+</aside></p>
+
+<h2 id="cloud">Cloud</h2>
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cloud"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"arc_radius"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polygon"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">[</span><span class="w">
+                    </span><span class="mi">240</span><span class="p">,</span><span class="w">
+                    </span><span class="mi">139</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="p">[</span><span class="w">
+                    </span><span class="mi">1136</span><span class="p">,</span><span class="w">
+                    </span><span class="mi">139</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="p">[</span><span class="w">
+                    </span><span class="mi">1136</span><span class="p">,</span><span class="w">
+                    </span><span class="mi">323</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="p">[</span><span class="w">
+                    </span><span class="mi">240</span><span class="p">,</span><span class="w">
+                    </span><span class="mi">323</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>style</td>
+<td>Always &lsquo;cloud&rsquo;</td>
+</tr>
+<tr>
+<td>arc_radius</td>
+<td>Radius in pixels of each cloud arc</td>
+</tr>
+<tr>
+<td>geometry</td>
+<td>Describes markup shape</td>
+</tr>
+</tbody></table>
+
+<p><aside class="notice">
+    Polygon coordinates refer to the exact point where the arcs of the cloud should intersect
+</aside>
+<aside class="notice">
+    Height and width of polygon must be evenly divisible by the arc radius
+</aside></p>
+
+<h2 id="text-box">Text box</h2>
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"line 1\nline 2\nline 3"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"font_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polygon"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">[</span><span class="w">
+                    </span><span class="mi">1661</span><span class="p">,</span><span class="w">
+                    </span><span class="mi">394</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="p">[</span><span class="w">
+                    </span><span class="mi">1991</span><span class="p">,</span><span class="w">
+                    </span><span class="mi">394</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="p">[</span><span class="w">
+                    </span><span class="mi">1991</span><span class="p">,</span><span class="w">
+                    </span><span class="mi">614</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="p">[</span><span class="w">
+                    </span><span class="mi">1661</span><span class="p">,</span><span class="w">
+                    </span><span class="mi">614</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>style</td>
+<td>Always &lsquo;text&rsquo;</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Text to be displayed (newlines marked with &lsquo;\n&rsquo;)</td>
+</tr>
+<tr>
+<td>font_size</td>
+<td>Size of text in pixels</td>
+</tr>
+</tbody></table>
+
+<p><aside class="notice">
+    Polygon coordinates refer to the bounding box that contains the text (with 5 pixel padding in all directions)
+</aside>
+<aside class="notice">
+    Text should not display outside box
+</aside></p>
+
+<h2 id="managing-markups">Managing Markups</h2>
+
+<p><aside class="warning">
+    Fieldwire API does not currently support managing markups.
+</aside></p>
+
+<p><aside class="notice">
+    <a href='https://console.fieldwire.net'>Log In</a> to manage markups.
+</aside></p>
+
             <h1 id="errors">Errors</h1>
 <pre class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
