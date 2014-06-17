@@ -204,14 +204,13 @@ This endpoint creates a new task.
 
 ### HTTP Request
 
-`POST https://console.fieldwire.net/api/v1/projects/<Project ID>/tasks/<Task ID>`
+`POST https://console.fieldwire.net/api/v1/projects/<Project ID>/tasks`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
 Project ID | The ID of the task's project
-Task ID | The ID of the task to retrieve
 
 ## Update Task
 

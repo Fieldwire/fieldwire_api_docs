@@ -175,7 +175,7 @@ This endpoint creates a new bubble.
 
 ### HTTP Request
 
-`POST https://console.fieldwire.net/api/v1/projects/<Project ID>/tasks/<Task ID>/bubbles/<Bubble ID>`
+`POST https://console.fieldwire.net/api/v1/projects/<Project ID>/tasks/<Task ID>/bubbles`
 
 ### URL Parameters
 
@@ -183,7 +183,6 @@ Parameter | Description
 --------- | -----------
 Project ID | The ID of the bubble's project
 Task ID | The ID of the bubble's task
-Bubble ID | The ID of the bubble to retrieve
 
 ## Update Bubble
 

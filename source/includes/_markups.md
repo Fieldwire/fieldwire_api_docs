@@ -172,7 +172,6 @@ Property | Description
 --------- | -----------
 style | Always 'cloud'
 arc_radius | Radius in pixels of each cloud arc
-geometry | Describes markup shape
 
 <aside class="notice">
     Polygon coordinates refer to the exact point where the arcs of the cloud should intersect
@@ -224,7 +223,7 @@ description | Text to be displayed (newlines marked with '\n')
 font_size | Size of text in pixels
 
 <aside class="notice">
-    Polygon coordinates refer to the bounding box that contains the text (with 5 pixel padding in all directions)
+    Polygon coordinates refer to the bounding box that contains the text (with 5 pixel padding from edges)
 </aside>
 <aside class="notice">
     Text should not display outside box

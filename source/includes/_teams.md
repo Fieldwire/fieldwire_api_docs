@@ -125,14 +125,13 @@ This endpoint creates a new team.
 
 ### HTTP Request
 
-`POST https://console.fieldwire.net/api/v1/projects/<Project ID>/teams/<Team ID>`
+`POST https://console.fieldwire.net/api/v1/projects/<Project ID>/teams`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
 Project ID | The ID of the team's project
-Team ID | The ID of the team to retrieve
 
 ## Update Team
 
