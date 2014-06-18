@@ -208,6 +208,10 @@ You must replace [api token] and [project token] with your api and project token
 </tr>
 </thead><tbody>
 <tr>
+<td>project_id</td>
+<td>Project ID task belongs to</td>
+</tr>
+<tr>
 <td>name</td>
 <td>Name of the team</td>
 </tr>
@@ -639,6 +643,14 @@ You must replace [api token] and [project token] with your api and project token
 </tr>
 </thead><tbody>
 <tr>
+<td>project_id</td>
+<td>Project ID floorplan belongs to</td>
+</tr>
+<tr>
+<td>floorplan_id</td>
+<td>Floorplan ID sheet belongs to</td>
+</tr>
+<tr>
 <td>name</td>
 <td>Name of the sheet</td>
 </tr>
@@ -801,6 +813,18 @@ You must replace [api token] and [project token] with your api and project token
 </tr>
 </thead><tbody>
 <tr>
+<td>project_id</td>
+<td>Project ID task belongs to</td>
+</tr>
+<tr>
+<td>team_id</td>
+<td>Team ID task belongs to</td>
+</tr>
+<tr>
+<td>floorplan_id</td>
+<td>Floorplan ID task belongs to</td>
+</tr>
+<tr>
 <td>name</td>
 <td>Name of the task</td>
 </tr>
@@ -830,7 +854,7 @@ You must replace [api token] and [project token] with your api and project token
 </tr>
 <tr>
 <td>owner_user_id</td>
-<td>User Id of task&rsquo;s owner</td>
+<td>User ID of task&rsquo;s owner</td>
 </tr>
 <tr>
 <td>is_local</td>
@@ -854,7 +878,7 @@ You must replace [api token] and [project token] with your api and project token
 </tr>
 <tr>
 <td>user_ids</td>
-<td>Array of User Ids that are following this task</td>
+<td>Array of User IDs that are following this task</td>
 </tr>
 <tr>
 <td>tags</td>
@@ -1185,6 +1209,10 @@ You must replace [api token] and [project token] with your api and project token
 </tr>
 </thead><tbody>
 <tr>
+<td>task_id</td>
+<td>Task ID the bubble belongs to</td>
+</tr>
+<tr>
 <td>content</td>
 <td>Text content of bubble</td>
 </tr>
@@ -1210,7 +1238,7 @@ You must replace [api token] and [project token] with your api and project token
 </tr>
 <tr>
 <td>user_id</td>
-<td>User Id that created bubble</td>
+<td>User ID that created bubble</td>
 </tr>
 <tr>
 <td>tags</td>
@@ -1540,12 +1568,16 @@ You must replace [api token] and [project token] with your api and project token
 </tr>
 </thead><tbody>
 <tr>
+<td>project_id</td>
+<td>Project ID attachment belongs to</td>
+</tr>
+<tr>
 <td>name</td>
 <td>Name of the attachment</td>
 </tr>
 <tr>
 <td>creator_user_id</td>
-<td>User Id of the attachment&rsquo;s creator</td>
+<td>User ID of the attachment&rsquo;s creator</td>
 </tr>
 <tr>
 <td>thumb_url</td>
@@ -1644,6 +1676,14 @@ You must replace [api token] and [project token] with your api and project token
 </tr>
 </thead><tbody>
 <tr>
+<td>project_id</td>
+<td>Project ID hyperlink belongs to</td>
+</tr>
+<tr>
+<td>sheet_id</td>
+<td>Sheet ID hyperlink belongs to</td>
+</tr>
+<tr>
 <td>name</td>
 <td>Name of the hyperlink</td>
 </tr>
@@ -1679,6 +1719,10 @@ You must replace [api token] and [project token] with your api and project token
 
 <p><aside class="notice">
     Hyperlinks can link to either floorplans or attachments but not both
+</aside></p>
+
+<p><aside class="notice">
+    Hyperlink cannot link to the same floorplan as it&rsquo;s sheet&rsquo;s floorplan
 </aside></p>
 
 <h2 id="get-hyperlinks">Get Hyperlinks</h2>
@@ -1769,6 +1813,14 @@ You must replace [api token] and [project token] with your api and project token
 <th>Description</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>project_id</td>
+<td>Project ID markup belongs to</td>
+</tr>
+<tr>
+<td>sheet_id</td>
+<td>Sheet ID markup belongs to</td>
+</tr>
 <tr>
 <td>name</td>
 <td>Name of the markup</td>
