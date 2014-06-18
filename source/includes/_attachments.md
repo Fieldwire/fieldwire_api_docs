@@ -4,9 +4,9 @@
 
 Field | Description
 --------- | -----------
-project_id | Project Id attachment belongs to
+project_id | Project ID attachment belongs to
 name | Name of the attachment
-creator_user_id | User Id of the attachment's creator
+creator_user_id | User ID of the attachment's creator
 thumb_url | Url of the attachment thumb (optional)
 file_url | Url of the attachment
 file_size | Size of the attachment

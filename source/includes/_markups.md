@@ -4,8 +4,8 @@
 
 Field | Description
 --------- | -----------
-project_id | Project Id markup belongs to
-sheet_id | Sheet Id markup belongs to
+project_id | Project ID markup belongs to
+sheet_id | Sheet ID markup belongs to
 name | Name of the markup
 creator_user_id | User ID of the markup's creator
 last_editor_user_id | User ID of the markup's last editor

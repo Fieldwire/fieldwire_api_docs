@@ -12,8 +12,8 @@ sheets | Array of sheets as described below
 
 Field | Description
 --------- | -----------
-project_id | Project Id floorplan belongs to
-floorplan_id | Floorplan Id sheet belongs to
+project_id | Project ID floorplan belongs to
+floorplan_id | Floorplan ID sheet belongs to
 name | Name of the sheet
 version | Version of the sheet
 file_url | Url of the low resolution floorplan

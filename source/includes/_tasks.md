@@ -4,9 +4,9 @@
 
 Field | Description
 --------- | -----------
-project_id | Project Id task belongs to
-team_id | Team Id task belongs to
-floorplan_id | Floorplan Id task belongs to
+project_id | Project ID task belongs to
+team_id | Team ID task belongs to
+floorplan_id | Floorplan ID task belongs to
 name | Name of the task
 priority | Priority of the task
 pos_x | Horizontal pixels (from left) of task on floorplan
@@ -14,13 +14,13 @@ pos_y | Vertical pixels (from top) of task on floorplan
 pos_z | Indicates layer of task
 verified_at | Time when task was verified
 fixed_at | Time when task was fixed
-owner_user_id | User Id of task's owner
+owner_user_id | User ID of task's owner
 is_local | Indicates if task is positioned on floorplan
 start_at | Time when task is to be started
 due_at | Time when task is to be fixed
 sequence_number | Unique sequential identifier of task on project
 is_private | Indicates if task is private
-user_ids | Array of User Ids that are following this task
+user_ids | Array of User IDs that are following this task
 tags | Array of strings of all tags on this task's bubbles
 
 ## Get Tasks

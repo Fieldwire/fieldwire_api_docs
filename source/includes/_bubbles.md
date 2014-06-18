@@ -4,14 +4,14 @@
 
 Field | Description
 --------- | -----------
-task_id | Task Id the bubble belongs to
+task_id | Task ID the bubble belongs to
 content | Text content of bubble
 annotations | iOS bubble annotations
 kind | Enumeration of bubble (see below)
 file_url | Url of photo or attachment
 flattened_file_url | Url of photo with annotations
 thumb_url | Url of photo thumb
-user_id | User Id that created bubble
+user_id | User ID that created bubble
 tags | Array of strings of all tags on this bubble's bubbles
 
 ## Bubble Kinds
