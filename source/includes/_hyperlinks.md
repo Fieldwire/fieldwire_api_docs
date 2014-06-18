@@ -4,6 +4,8 @@
 
 Field | Description
 --------- | -----------
+project_id | Project Id hyperlink belongs to
+sheet_id | Sheet Id hyperlink belongs to
 name | Name of the hyperlink
 creator_user_id | User ID of the hyperlink's creator
 last_editor_user_id | User ID of the hyperlink's last editor
@@ -15,6 +17,10 @@ attachment_id | ID of linked attachment
 
 <aside class="notice">
     Hyperlinks can link to either floorplans or attachments but not both
+</aside>
+
+<aside class="notice">
+    Hyperlink cannot link to the same floorplan as it's sheet's floorplan
 </aside>
 
 ## Get Hyperlinks

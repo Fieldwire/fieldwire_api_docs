@@ -4,6 +4,7 @@
 
 Field | Description
 --------- | -----------
+task_id | Task Id the bubble belongs to
 content | Text content of bubble
 annotations | iOS bubble annotations
 kind | Enumeration of bubble (see below)

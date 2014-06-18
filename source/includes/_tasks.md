@@ -4,6 +4,9 @@
 
 Field | Description
 --------- | -----------
+project_id | Project Id task belongs to
+team_id | Team Id task belongs to
+floorplan_id | Floorplan Id task belongs to
 name | Name of the task
 priority | Priority of the task
 pos_x | Horizontal pixels (from left) of task on floorplan
