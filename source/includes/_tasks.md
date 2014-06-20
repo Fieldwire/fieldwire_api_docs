@@ -9,8 +9,8 @@ team_id | Team ID task belongs to
 floorplan_id | Floorplan ID task belongs to
 name | Name of the task
 priority | Priority of the task
-pos_x | Horizontal pixels (from left) of task on floorplan
-pos_y | Vertical pixels (from top) of task on floorplan
+pos_x | Horizontal pixels (from left of floorplan) of task pin's point
+pos_y | Vertical pixels (from top of floorplan) of task pin's point
 pos_z | Indicates layer of task
 verified_at | Time when task was verified
 fixed_at | Time when task was fixed
