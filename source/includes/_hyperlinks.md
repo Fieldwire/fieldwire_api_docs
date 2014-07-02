@@ -6,7 +6,6 @@ Field | Description
 --------- | -----------
 project_id | Project ID hyperlink belongs to
 sheet_id | Sheet ID hyperlink belongs to
-name | Name of the hyperlink
 creator_user_id | User ID of the hyperlink's creator
 last_editor_user_id | User ID of the hyperlink's last editor
 description | Hyperlink description that appears on floorplan
