@@ -10,7 +10,7 @@ name | Name of template_check_item
 ## Post TemplateCheckItem
 
 ```shell
-curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/be0f608-7e89-4301-bb13-ffd9db05d60c/template_checklists/template_check_items" \
+curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/template_checklists/be0f608-7e89-4301-bb13-ffd9db05d60c/template_check_items" \
   -X POST \
   -H "Authorization: Token api=[api token]>,project=[project token]" \
   -H "Content-type: application/json" \

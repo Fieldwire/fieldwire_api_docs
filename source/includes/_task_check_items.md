@@ -7,7 +7,7 @@ Field | Description
 project_id | Project ID the task_check_item belongs to
 task_id | Task ID the task_check_item belongs to
 name | Name of task_check_item
-checked | true = yes, false = no, null = not set
+checked | Status of task_check_item (true = yes, false = no, null = not set)
 creator_user_id | User ID of the task_check_item's creator
 last_editor_user_id | User ID of the task_check_item's last editor
 
