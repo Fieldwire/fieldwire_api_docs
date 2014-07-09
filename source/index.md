@@ -19,6 +19,8 @@ includes:
   - attachments
   - hyperlinks
   - markups
+  - template_checklists
+  - template_check_items
   - task_check_items
   - errors
 
