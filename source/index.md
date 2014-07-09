@@ -19,6 +19,7 @@ includes:
   - attachments
   - hyperlinks
   - markups
+  - task_check_items
   - errors
 
 ---
