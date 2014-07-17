@@ -22,6 +22,7 @@ includes:
   - template_checklists
   - template_check_items
   - task_check_items
+  - automatic_hyperlinks
   - errors
 
 ---
