@@ -2902,6 +2902,104 @@ You must replace [api token] and [project token] with your api and project token
 </tr>
 </tbody></table>
 
+            <h1 id="automatic-hyperlinks">Automatic Hyperlinks</h1>
+
+<h2 id="automatic-hyperlinks-fields">Automatic Hyperlinks Fields</h2>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project_id</td>
+<td>Project ID automatic hyperlink belongs to</td>
+</tr>
+<tr>
+<td>sheet_id</td>
+<td>Sheet ID automatic hyperlink belongs to</td>
+</tr>
+<tr>
+<td>pos_x</td>
+<td>Horizontal pixels (from left of floorplan) of automatic hyperlink&rsquo;s center</td>
+</tr>
+<tr>
+<td>pos_y</td>
+<td>Vertical pixels (from top of floorplan) of automatic hyperlink&rsquo;s center</td>
+</tr>
+<tr>
+<td>radius</td>
+<td>Radius in pixels of automatic hyperlink</td>
+</tr>
+<tr>
+<td>floorplan_id</td>
+<td>ID of linked floorplan</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-automatic-hyperlinks">Get Automatic Hyperlinks</h2>
+<pre class="highlight shell">curl <span class="s2">"https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/automatic_hyperlinks"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Token api=[api token]&gt;,project=[project token]"</span>
+</pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-07-17T00:50:53.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-07-17T00:50:53.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"07be953c-7d08-408a-8fc5-1e266fed8363"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aa0635ec-f95c-4458-8f56-e82af3d3634f"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sheet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c007e3c-9a1a-42ad-9cdc-4e71e035c0ea"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pos_x"</span><span class="p">:</span><span class="w"> </span><span class="mi">885</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pos_y"</span><span class="p">:</span><span class="w"> </span><span class="mi">922</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"floorplan_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"88273c0f-4341-442b-b2f2-539bfe01b872"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"radius"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-07-17T00:52:14.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-07-17T00:52:14.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f1376368-d677-45d9-a77a-67963618cdcd"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aa0635ec-f95c-4458-8f56-e82af3d3634f"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sheet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"05e5aec4-b6c8-4320-9258-b8743de41869"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pos_x"</span><span class="p">:</span><span class="w"> </span><span class="mi">1883</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pos_y"</span><span class="p">:</span><span class="w"> </span><span class="mi">119</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"floorplan_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a7aab36c-0a2f-479e-a903-a8cd8c964db8"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"radius"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></pre>
+
+<p>This endpoint retrieves all automatic hyperlinks.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://console.fieldwire.net/api/v1/projects/&lt;Project ID&gt;/automatic_hyperlinks</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the project to retrieve</td>
+</tr>
+</tbody></table>
+
+<h2 id="managing-automatic-hyperlinks">Managing Automatic Hyperlinks</h2>
+
+<p><aside class="warning">
+    Fieldwire API creates automatic hyperlinks based off plan PDF data and naming
+</aside></p>
+
             <h1 id="errors">Errors</h1>
 <pre class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
