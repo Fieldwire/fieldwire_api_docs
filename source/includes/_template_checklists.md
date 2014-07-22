@@ -27,6 +27,7 @@ curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae
         "resolved_conflict": false,
         "id": "aba2c9a1-da23-4e6d-a9b0-c20b8497a942",
         "name": "Template 1",
+        "project_id": "aceb1617-2dcf-4b01-a6b1-d8ae02bc3027",
         "deleted_at": null,
         "template_check_items": [
             {
@@ -59,6 +60,7 @@ curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae
         "resolved_conflict": false,
         "id": "ebe0f608-7e89-4301-bb13-ffd9db05d60c",
         "name": "Template 2",
+        "project_id": "aceb1617-2dcf-4b01-a6b1-d8ae02bc3027",
         "deleted_at": null,
         "template_check_items": []
     }
@@ -95,6 +97,7 @@ curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae
     "resolved_conflict": false,
     "id": "ebe0f608-7e89-4301-bb13-ffd9db05d60c",
     "name": "Template 2",
+    "project_id": "aceb1617-2dcf-4b01-a6b1-d8ae02bc3027",
     "deleted_at": null,
     "template_check_items": []
 }
@@ -134,6 +137,7 @@ curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae
     "resolved_conflict": false,
     "id": "ebe0f608-7e89-4301-bb13-ffd9db05d60c",
     "name": "Template 2",
+    "project_id": "aceb1617-2dcf-4b01-a6b1-d8ae02bc3027",
     "deleted_at": null,
     "template_check_items": []
 }
@@ -172,6 +176,7 @@ curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae
     "resolved_conflict": false,
     "id": "ebe0f608-7e89-4301-bb13-ffd9db05d60c",
     "name": "Updated Template",
+    "project_id": "aceb1617-2dcf-4b01-a6b1-d8ae02bc3027",
     "deleted_at": null,
     "template_check_items": []
 }
