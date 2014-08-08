@@ -109,7 +109,7 @@ width | Stroke width
     Outer rectangle (always white) is drawn at coordinates with specified stroke width
 </aside>
 <aside class="notice">
-    Inner rectangle (using color defined in properties) is drawn inside the outer rectangle by a margin of width / 2
+    Inner rectangle (using color defined in properties) is drawn inside the outer rectangle by a margin of stroke width
 </aside>
 <aside class="notice">
     Inner rectangle has fill opacity of 0.2
@@ -177,36 +177,36 @@ width | Stroke width
 </aside>
 
 ``` ruby
-# example arrow path in ruby
-start = coordinates[0]
-tip = coordinates[1]
-x_delta = tip[0] - start[0]
-y_delta = tip[1] - start[1]
+# example svg arrow path in ruby
+x1, y1 = coordinates[0]
+x2, y2 = coordinates[1]
+x_delta = x2 - x1
+y_delta = y2 - y1
 
-arrowWidth = stroke_width * 16
+arrow_width = stroke_width * 16
 
-stemWidth = arrowWidth / 4
-halfStemWidth = stemWidth / 2
-arrowSide = arrowWidth / 2
+stem_width = arrow_width / 4
+half_stem_width = stem_width / 2
+arrow_side = arrow_width / 2
 
 length = Math.sqrt(x_delta**2 + y_delta**2)
 angle = Math.atan2(y_delta, x_delta)
 
 points = [
-  [start[0], start[1] + halfStemWidth],
-  [(start[0] + length) - arrowSide, start[1] + halfStemWidth],
-  [(start[0] + length) - arrowSide, start[1] + arrowWidth / 2],
-  [(start[0] + length), start[1]],
-  [(start[0] + length) - arrowSide, start[1] - arrowWidth / 2],
-  [(start[0] + length) - arrowSide, start[1] - halfStemWidth],
-  [start[0], start[1] - halfStemWidth],
+  [x1, y1 + half_stem_width],
+  [(x1 + length) - arrow_side, y1 + half_stem_width],
+  [(x1 + length) - arrow_side, y1 + arrow_width / 2],
+  [(x1 + length), y1],
+  [(x1 + length) - arrow_side, y1 - arrow_width / 2],
+  [(x1 + length) - arrow_side, y1 - half_stem_width],
+  [x1, y1 - half_stem_width],
 ]
 
-path = "M #{start[0]} #{start[1]}"
+path = "M #{x1} #{y1}"
 
-points.each do |p|
-  x_prime = start[0] + Math.cos(angle) * (p[0] - start[0]) - Math.sin(angle) * (p[1] - start[1])
-  y_prime = start[1] + Math.sin(angle) * (p[0] - start[0]) + Math.cos(angle) * (p[1] - start[1])
+points.each do |(x,y)|
+  x_prime = x1 + Math.cos(angle) * (x - x1) - Math.sin(angle) * (y - y1)
+  y_prime = y1 + Math.sin(angle) * (x - x1) + Math.cos(angle) * (y - y1)
 
   path += " L #{x_prime} #{y_prime}"
 end
