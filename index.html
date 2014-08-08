@@ -1557,6 +1557,387 @@ You must replace [api token] and [project token] with your api and project token
 </tr>
 </tbody></table>
 
+            <h1 id="bubble-markups">Bubble Markups</h1>
+
+<h2 id="bubblemarkup-fields">BubbleMarkup Fields</h2>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>bubble_id</td>
+<td>The ID of the bubble the markup belongs to</td>
+</tr>
+<tr>
+<td>data</td>
+<td><a href="#markup-data">GeoJSON of markup</a></td>
+</tr>
+</tbody></table>
+
+<h2 id="get-bubblemarkups">Get BubbleMarkups</h2>
+<pre class="highlight shell">curl <span class="s2">"https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubble_markups"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Token api=[api token]&gt;,project=[project token]"</span>
+</pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-08T00:37:22.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-08T00:37:22.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-08T00:37:22.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-08T00:37:22.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bd6054a2-a6b3-47ce-a6f4-47310086cd01"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"bubble_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"641c82f4-7129-45d3-af14-53656231eb4f"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#FF0000"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"fontSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">96</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polygon"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mi">152</span><span class="p">,</span><span class="mi">98</span><span class="p">],[</span><span class="mi">342</span><span class="p">,</span><span class="mi">98</span><span class="p">],[</span><span class="mi">342</span><span class="p">,</span><span class="mi">229</span><span class="p">],[</span><span class="mi">152</span><span class="p">,</span><span class="mi">229</span><span class="p">]]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-08T00:37:30.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-08T00:37:30.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-08T00:37:30.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-08T00:37:30.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acc544c6-c7f8-443e-8a1b-e8f9776717f4"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"bubble_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"641c82f4-7129-45d3-af14-53656231eb4f"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"drawing"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#FF0000"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LineString"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mi">563</span><span class="p">,</span><span class="mi">374</span><span class="p">],[</span><span class="mi">563</span><span class="p">,</span><span class="mi">373</span><span class="p">]</span><span class="w"> </span><span class="err">......</span><span class="w"> </span><span class="p">[</span><span class="mi">565</span><span class="p">,</span><span class="mi">380</span><span class="p">],[</span><span class="mi">563</span><span class="p">,</span><span class="mi">380</span><span class="p">]]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-08T00:37:33.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-08T00:37:33.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-08T00:37:33.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-08T00:37:33.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7682aff0-b968-4cdd-9fb8-3911edc9e928"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"bubble_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"641c82f4-7129-45d3-af14-53656231eb4f"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rectangle"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#FF0000"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polygon"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mi">362</span><span class="p">,</span><span class="mi">62</span><span class="p">],[</span><span class="mi">590</span><span class="p">,</span><span class="mi">62</span><span class="p">],[</span><span class="mi">590</span><span class="p">,</span><span class="mi">244</span><span class="p">],[</span><span class="mi">362</span><span class="p">,</span><span class="mi">244</span><span class="p">]]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-08T00:37:39.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-08T00:37:39.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-08T00:37:39.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-08T00:37:39.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4aa59365-9a8e-4d0d-a3de-fdea137deff9"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"bubble_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"641c82f4-7129-45d3-af14-53656231eb4f"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arrow"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#FF0000"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LineString"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mi">56</span><span class="p">,</span><span class="mi">399</span><span class="p">],[</span><span class="mi">326</span><span class="p">,</span><span class="mi">272</span><span class="p">]]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></pre>
+
+<p>This endpoint retrieves all bubble_markups.</p>
+
+<h3 id="http-requests">HTTP Requests</h3>
+
+<p><code class="prettyprint">GET https://console.fieldwire.net/api/v1/projects/&lt;Project ID&gt;/bubble_markups</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the project to retrieve</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-bubblemarkup">Get BubbleMarkup</h2>
+<pre class="highlight shell">curl <span class="s2">"https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubble_markups/29ca4ad0-a413-48aa-b8b8-28242d3cc205"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Token api=[api token]&gt;,project=[project token]"</span>
+</pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-08T00:37:22.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-08T00:37:22.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-08T00:37:22.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-08T00:37:22.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bd6054a2-a6b3-47ce-a6f4-47310086cd01"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"bubble_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"641c82f4-7129-45d3-af14-53656231eb4f"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#FF0000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"fontSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">96</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polygon"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mi">152</span><span class="p">,</span><span class="mi">98</span><span class="p">],[</span><span class="mi">342</span><span class="p">,</span><span class="mi">98</span><span class="p">],[</span><span class="mi">342</span><span class="p">,</span><span class="mi">229</span><span class="p">],[</span><span class="mi">152</span><span class="p">,</span><span class="mi">229</span><span class="p">]]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<p>This endpoint retrieves a specific bubble_markup.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://console.fieldwire.net/api/v1/projects/&lt;Project ID&gt;/bubble_markups/&lt;BubbleMarkup ID&gt;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the bubble_markup&rsquo;s project</td>
+</tr>
+<tr>
+<td>BubbleMarkup ID</td>
+<td>The ID of the bubble_markup to retrieve</td>
+</tr>
+</tbody></table>
+
+<h2 id="post-bubblemarkup">Post BubbleMarkup</h2>
+<pre class="highlight shell">curl <span class="s2">"https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubble/75b86f78-0a94-42ea-9d58-a0f8fb5ed4bb/bubble_markups"</span> <span class="se">\</span>
+  -X POST <span class="se">\</span>
+  -H <span class="s2">"Authorization: Token api=[api token]&gt;,project=[project token]"</span> <span class="se">\</span>
+  -H <span class="s2">"Content-type: application/json"</span> <span class="se">\</span>
+  -d <span class="s1">'{ "bubble_markup": { \
+            data": { \
+                "type": "Feature", \
+                "properties": { \
+                    "style": "text", \
+                    "color": "#FF0000", \
+                    "description": "text", \
+                    "fontSize": 96 \
+                }, \
+                "geometry": { \
+                    "type": "Polygon", \
+                    "coordinates": [[152,98],[342,98],[342,229],[152,229]] \
+                } \
+            } \
+    }}'</span>
+</pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-08T00:37:22.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-08T00:37:22.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-08T00:37:22.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-08T00:37:22.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bd6054a2-a6b3-47ce-a6f4-47310086cd01"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"bubble_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"641c82f4-7129-45d3-af14-53656231eb4f"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#FF0000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"fontSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">96</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polygon"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mi">152</span><span class="p">,</span><span class="mi">98</span><span class="p">],[</span><span class="mi">342</span><span class="p">,</span><span class="mi">98</span><span class="p">],[</span><span class="mi">342</span><span class="p">,</span><span class="mi">229</span><span class="p">],[</span><span class="mi">152</span><span class="p">,</span><span class="mi">229</span><span class="p">]]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<p>This endpoint creates a new bubble_markup.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST https://console.fieldwire.net/api/v1/projects/&lt;Project ID&gt;/bubbles/&lt;Bubble ID&gt;/bubble_markups</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the bubble_markup&rsquo;s project</td>
+</tr>
+<tr>
+<td>Bubble ID</td>
+<td>The ID of the bubble_markup&rsquo;s bubble</td>
+</tr>
+</tbody></table>
+
+<h2 id="update-bubblemarkup">Update BubbleMarkup</h2>
+<pre class="highlight shell">curl <span class="s2">"https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubble_markups/75d68ca1-0fc1-456a-bd9d-8b23875ac540"</span> <span class="se">\</span>
+  -X PATCH <span class="se">\</span>
+  -H <span class="s2">"Authorization: Token api=[api token]&gt;,project=[project token]"</span> <span class="se">\</span>
+  -H <span class="s2">"Content-type: application/json"</span> <span class="se">\</span>
+  -d <span class="s1">'{ "bubble_markup": { \
+            data": { \
+                "type": "Feature", \
+                "properties": { \
+                    "style": "text", \
+                    "color": "#FF0000", \
+                    "description": "text", \
+                    "fontSize": 96 \
+                }, \
+                "geometry": { \
+                    "type": "Polygon", \
+                    "coordinates": [[152,98],[342,98],[342,229],[152,229]] \
+                } \
+            } \
+    }}'</span>
+</pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-08T00:37:22.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-08T00:37:22.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-08T00:37:22.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-08T00:37:22.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bd6054a2-a6b3-47ce-a6f4-47310086cd01"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"bubble_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"641c82f4-7129-45d3-af14-53656231eb4f"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#FF0000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"fontSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">96</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polygon"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mi">152</span><span class="p">,</span><span class="mi">98</span><span class="p">],[</span><span class="mi">342</span><span class="p">,</span><span class="mi">98</span><span class="p">],[</span><span class="mi">342</span><span class="p">,</span><span class="mi">229</span><span class="p">],[</span><span class="mi">152</span><span class="p">,</span><span class="mi">229</span><span class="p">]]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<p>This endpoint updates a specific bubble_markup.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PATCH https://console.fieldwire.net/api/v1/projects/&lt;Project ID&gt;/bubble_markups/&lt;BubbleMarkup ID&gt;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the bubble_markup&rsquo;s project</td>
+</tr>
+<tr>
+<td>BubbleMarkup ID</td>
+<td>The ID of the bubble_markup to retrieve</td>
+</tr>
+</tbody></table>
+
+<h2 id="delete-bubblemarkup">Delete BubbleMarkup</h2>
+<pre class="highlight shell">curl <span class="s2">"https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubble_markups/75d68ca1-0fc1-456a-bd9d-8b23875ac540"</span> <span class="se">\</span>
+  -X DELETE <span class="se">\</span>
+  -H <span class="s2">"Authorization: Token api=[api token]&gt;,project=[project token]"</span> <span class="se">\</span>
+  -H <span class="s2">"Content-type: application/json"</span>
+</pre>
+
+<blockquote>
+<p>The above command returns 204 No Content</p>
+</blockquote>
+
+<p>This endpoint updates a specific bubble_markup.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">DELETE https://console.fieldwire.net/api/v1/projects/&lt;Project ID&gt;/bubble_markups/&lt;BubbleMarkup ID&gt;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the bubble_markup&rsquo;s project</td>
+</tr>
+<tr>
+<td>BubbleMarkup ID</td>
+<td>The ID of the bubble_markup to retrieve</td>
+</tr>
+</tbody></table>
+
             <h1 id="attachments">Attachments</h1>
 
 <h2 id="attachment-fields">Attachment Fields</h2>
@@ -1950,7 +2331,17 @@ You must replace [api token] and [project token] with your api and project token
 </tr>
 </tbody></table>
 
-<h2 id="markup-data">Markup data</h2>
+<h2 id="managing-markups">Managing Markups</h2>
+
+<p><aside class="warning">
+    Fieldwire API does not currently support managing markups.
+</aside></p>
+
+<p><aside class="notice">
+    <a href='https://console.fieldwire.net'>Log In</a> to manage markups.
+</aside></p>
+
+            <h1 id="markup-data">Markup data</h1>
 
 <table><thead>
 <tr>
@@ -1990,23 +2381,7 @@ You must replace [api token] and [project token] with your api and project token
         </span><span class="p">},</span><span class="w">
         </span><span class="s2">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polygon"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="p">[</span><span class="w">
-                    </span><span class="mi">240</span><span class="p">,</span><span class="w">
-                    </span><span class="mi">139</span><span class="w">
-                </span><span class="p">],</span><span class="w">
-                </span><span class="p">[</span><span class="w">
-                    </span><span class="mi">1136</span><span class="p">,</span><span class="w">
-                    </span><span class="mi">139</span><span class="w">
-                </span><span class="p">],</span><span class="w">
-                </span><span class="p">[</span><span class="w">
-                    </span><span class="mi">1136</span><span class="p">,</span><span class="w">
-                    </span><span class="mi">323</span><span class="w">
-                </span><span class="p">],</span><span class="w">
-                </span><span class="p">[</span><span class="w">
-                    </span><span class="mi">240</span><span class="p">,</span><span class="w">
-                    </span><span class="mi">323</span><span class="w">
-                </span><span class="p">]</span><span class="w">
+            </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mi">240</span><span class="p">,</span><span class="mi">139</span><span class="p">],[</span><span class="mi">1136</span><span class="p">,</span><span class="mi">139</span><span class="p">],[</span><span class="mi">1136</span><span class="p">,</span><span class="mi">323</span><span class="p">],[</span><span class="mi">240</span><span class="p">,</span><span class="mi">323</span><span class="p">]</span><span class="w">
             </span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -2022,6 +2397,10 @@ You must replace [api token] and [project token] with your api and project token
 <tr>
 <td>style</td>
 <td>Always &lsquo;cloud&rsquo;</td>
+</tr>
+<tr>
+<td>color</td>
+<td>Color of markup</td>
 </tr>
 <tr>
 <td>arcRadius</td>
@@ -2047,23 +2426,7 @@ You must replace [api token] and [project token] with your api and project token
         </span><span class="p">},</span><span class="w">
         </span><span class="s2">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polygon"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="p">[</span><span class="w">
-                    </span><span class="mi">1661</span><span class="p">,</span><span class="w">
-                    </span><span class="mi">394</span><span class="w">
-                </span><span class="p">],</span><span class="w">
-                </span><span class="p">[</span><span class="w">
-                    </span><span class="mi">1991</span><span class="p">,</span><span class="w">
-                    </span><span class="mi">394</span><span class="w">
-                </span><span class="p">],</span><span class="w">
-                </span><span class="p">[</span><span class="w">
-                    </span><span class="mi">1991</span><span class="p">,</span><span class="w">
-                    </span><span class="mi">614</span><span class="w">
-                </span><span class="p">],</span><span class="w">
-                </span><span class="p">[</span><span class="w">
-                    </span><span class="mi">1661</span><span class="p">,</span><span class="w">
-                    </span><span class="mi">614</span><span class="w">
-                </span><span class="p">]</span><span class="w">
+            </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mi">1661</span><span class="p">,</span><span class="mi">394</span><span class="p">],[</span><span class="mi">1991</span><span class="p">,</span><span class="mi">394</span><span class="p">],[</span><span class="mi">1991</span><span class="p">,</span><span class="mi">614</span><span class="p">],[</span><span class="mi">1661</span><span class="p">,</span><span class="mi">614</span><span class="p">]</span><span class="w">
             </span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -2079,6 +2442,10 @@ You must replace [api token] and [project token] with your api and project token
 <tr>
 <td>style</td>
 <td>Always &lsquo;text&rsquo;</td>
+</tr>
+<tr>
+<td>color</td>
+<td>Color of markup</td>
 </tr>
 <tr>
 <td>description</td>
@@ -2097,15 +2464,173 @@ You must replace [api token] and [project token] with your api and project token
     Text should not display outside box, but individual lines can wrap to fit
 </aside></p>
 
-<h2 id="managing-markups">Managing Markups</h2>
+<h2 id="rectangle">Rectangle</h2>
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rectangle"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#FF0000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polygon"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mi">362</span><span class="p">,</span><span class="mi">62</span><span class="p">],[</span><span class="mi">590</span><span class="p">,</span><span class="mi">62</span><span class="p">],[</span><span class="mi">590</span><span class="p">,</span><span class="mi">244</span><span class="p">],[</span><span class="mi">362</span><span class="p">,</span><span class="mi">244</span><span class="p">]]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
 
-<p><aside class="warning">
-    Fieldwire API does not currently support managing markups.
-</aside></p>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>style</td>
+<td>Always &lsquo;rectangle&rsquo;</td>
+</tr>
+<tr>
+<td>color</td>
+<td>Color of markup</td>
+</tr>
+<tr>
+<td>width</td>
+<td>Stroke width</td>
+</tr>
+</tbody></table>
 
 <p><aside class="notice">
-    <a href='https://console.fieldwire.net'>Log In</a> to manage markups.
+    Outer rectangle (always white) is drawn at coordinates with specified stroke width
+</aside>
+<aside class="notice">
+    Inner rectangle (using color defined in properties) is drawn inside the outer rectangle by a margin of width / 2
+</aside>
+<aside class="notice">
+    Inner rectangle has fill opacity of 0.2
 </aside></p>
+
+<h2 id="drawing-(pen)">Drawing (Pen)</h2>
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"drawing"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#FF0000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LineString"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mi">563</span><span class="p">,</span><span class="mi">374</span><span class="p">],[</span><span class="mi">563</span><span class="p">,</span><span class="mi">373</span><span class="p">]</span><span class="w"> </span><span class="err">......</span><span class="w"> </span><span class="p">[</span><span class="mi">565</span><span class="p">,</span><span class="mi">380</span><span class="p">],[</span><span class="mi">563</span><span class="p">,</span><span class="mi">380</span><span class="p">]]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>style</td>
+<td>Always &lsquo;drawing&rsquo;</td>
+</tr>
+<tr>
+<td>color</td>
+<td>Color of markup</td>
+</tr>
+<tr>
+<td>width</td>
+<td>Stroke width</td>
+</tr>
+</tbody></table>
+
+<p><aside class="notice">
+    Outer line (always white) has specified stroke width
+</aside>
+<aside class="notice">
+    Inner line (using color defined in properties) has stroke width / 2
+</aside></p>
+
+<h2 id="arrow">Arrow</h2>
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arrow"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#FF0000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LineString"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mi">56</span><span class="p">,</span><span class="mi">399</span><span class="p">],[</span><span class="mi">326</span><span class="p">,</span><span class="mi">272</span><span class="p">]]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>style</td>
+<td>Always &lsquo;arrow&rsquo;</td>
+</tr>
+<tr>
+<td>color</td>
+<td>Color of markup</td>
+</tr>
+<tr>
+<td>width</td>
+<td>Stroke width</td>
+</tr>
+</tbody></table>
+
+<p><aside class="notice">
+    Arrow has outline (always white) with specified stroke width and fill with specified color
+</aside></p>
+<pre class="highlight ruby"><span class="c1"># example arrow path in ruby</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">coordinates</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span>
+<span class="n">tip</span> <span class="o">=</span> <span class="n">coordinates</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span>
+<span class="n">x_delta</span> <span class="o">=</span> <span class="n">tip</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">-</span> <span class="n">start</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span>
+<span class="n">y_delta</span> <span class="o">=</span> <span class="n">tip</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">-</span> <span class="n">start</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span>
+
+<span class="n">arrowWidth</span> <span class="o">=</span> <span class="n">stroke_width</span> <span class="o">*</span> <span class="mi">16</span>
+
+<span class="n">stemWidth</span> <span class="o">=</span> <span class="n">arrowWidth</span> <span class="o">/</span> <span class="mi">4</span>
+<span class="n">halfStemWidth</span> <span class="o">=</span> <span class="n">stemWidth</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">arrowSide</span> <span class="o">=</span> <span class="n">arrowWidth</span> <span class="o">/</span> <span class="mi">2</span>
+
+<span class="n">length</span> <span class="o">=</span> <span class="no">Math</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">x_delta</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y_delta</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">angle</span> <span class="o">=</span> <span class="no">Math</span><span class="p">.</span><span class="nf">atan2</span><span class="p">(</span><span class="n">y_delta</span><span class="p">,</span> <span class="n">x_delta</span><span class="p">)</span>
+
+<span class="n">points</span> <span class="o">=</span> <span class="o">[</span>
+  <span class="o">[</span><span class="n">start</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">,</span> <span class="n">start</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">+</span> <span class="n">halfStemWidth</span><span class="o">]</span><span class="p">,</span>
+  <span class="o">[</span><span class="p">(</span><span class="n">start</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">+</span> <span class="n">length</span><span class="p">)</span> <span class="o">-</span> <span class="n">arrowSide</span><span class="p">,</span> <span class="n">start</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">+</span> <span class="n">halfStemWidth</span><span class="o">]</span><span class="p">,</span>
+  <span class="o">[</span><span class="p">(</span><span class="n">start</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">+</span> <span class="n">length</span><span class="p">)</span> <span class="o">-</span> <span class="n">arrowSide</span><span class="p">,</span> <span class="n">start</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">+</span> <span class="n">arrowWidth</span> <span class="o">/</span> <span class="mi">2</span><span class="o">]</span><span class="p">,</span>
+  <span class="o">[</span><span class="p">(</span><span class="n">start</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">+</span> <span class="n">length</span><span class="p">),</span> <span class="n">start</span><span class="o">[</span><span class="mi">1</span><span class="o">]]</span><span class="p">,</span>
+  <span class="o">[</span><span class="p">(</span><span class="n">start</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">+</span> <span class="n">length</span><span class="p">)</span> <span class="o">-</span> <span class="n">arrowSide</span><span class="p">,</span> <span class="n">start</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">-</span> <span class="n">arrowWidth</span> <span class="o">/</span> <span class="mi">2</span><span class="o">]</span><span class="p">,</span>
+  <span class="o">[</span><span class="p">(</span><span class="n">start</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">+</span> <span class="n">length</span><span class="p">)</span> <span class="o">-</span> <span class="n">arrowSide</span><span class="p">,</span> <span class="n">start</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">-</span> <span class="n">halfStemWidth</span><span class="o">]</span><span class="p">,</span>
+  <span class="o">[</span><span class="n">start</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">,</span> <span class="n">start</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">-</span> <span class="n">halfStemWidth</span><span class="o">]</span><span class="p">,</span>
+<span class="o">]</span>
+
+<span class="n">path</span> <span class="o">=</span> <span class="s2">"M </span><span class="si">#{</span><span class="n">start</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">start</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="si">}</span><span class="s2">"</span>
+
+<span class="n">points</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="nb">p</span><span class="o">|</span>
+  <span class="n">x_prime</span> <span class="o">=</span> <span class="n">start</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">+</span> <span class="no">Math</span><span class="p">.</span><span class="nf">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="nb">p</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">-</span> <span class="n">start</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">)</span> <span class="o">-</span> <span class="no">Math</span><span class="p">.</span><span class="nf">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="nb">p</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">-</span> <span class="n">start</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">)</span>
+  <span class="n">y_prime</span> <span class="o">=</span> <span class="n">start</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">+</span> <span class="no">Math</span><span class="p">.</span><span class="nf">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="nb">p</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">-</span> <span class="n">start</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">)</span> <span class="o">+</span> <span class="no">Math</span><span class="p">.</span><span class="nf">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="nb">p</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">-</span> <span class="n">start</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">)</span>
+
+  <span class="n">path</span> <span class="o">+=</span> <span class="s2">" L </span><span class="si">#{</span><span class="n">x_prime</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">y_prime</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+
+<span class="n">path</span> <span class="o">+=</span> <span class="s2">" z"</span>
+</pre>
 
             <h1 id="templatechecklists">TemplateChecklists</h1>
 
