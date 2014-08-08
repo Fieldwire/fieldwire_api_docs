@@ -16,9 +16,11 @@ includes:
   - floorplans
   - tasks
   - bubbles
+  - bubble_markups
   - attachments
   - hyperlinks
   - markups
+  - markup_data
   - template_checklists
   - template_check_items
   - task_check_items
