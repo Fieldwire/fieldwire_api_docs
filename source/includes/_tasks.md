@@ -26,7 +26,7 @@ tags | Array of strings of all tags on this task's bubbles
 ## Get Tasks
 
 ```shell
-curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/tasks" \
+curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/tasks" \
   -H "Authorization: Token api=[api token]>,project=[project token]"
 ```
 
@@ -95,7 +95,7 @@ This endpoint retrieves all tasks.
 
 ### HTTP Request
 
-`GET https://console.fieldwire.net/api/v1/projects/<Project ID>/tasks`
+`GET https://console.fieldwire.net/api/v2/projects/<Project ID>/tasks`
 
 ### URL Parameters
 
@@ -106,7 +106,7 @@ Project ID | The ID of the project to retrieve
 ## Get Task
 
 ```shell
-curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/tasks/29ca4ad0-a413-48aa-b8b8-28242d3cc205" \
+curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/tasks/29ca4ad0-a413-48aa-b8b8-28242d3cc205" \
   -H "Authorization: Token api=[api token]>,project=[project token]"
 ```
 
@@ -146,7 +146,7 @@ This endpoint retrieves a specific task.
 
 ### HTTP Request
 
-`GET https://console.fieldwire.net/api/v1/projects/<Project ID>/tasks/<Task ID>`
+`GET https://console.fieldwire.net/api/v2/projects/<Project ID>/tasks/<Task ID>`
 
 ### URL Parameters
 
@@ -158,7 +158,7 @@ Task ID | The ID of the task to retrieve
 ## Post Task
 
 ```shell
-curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/tasks" \
+curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/tasks" \
   -X POST \
   -H "Authorization: Token api=[api token]>,project=[project token]" \
   -H "Content-type: application/json" \
@@ -207,7 +207,7 @@ This endpoint creates a new task.
 
 ### HTTP Request
 
-`POST https://console.fieldwire.net/api/v1/projects/<Project ID>/tasks`
+`POST https://console.fieldwire.net/api/v2/projects/<Project ID>/tasks`
 
 ### URL Parameters
 
@@ -218,7 +218,7 @@ Project ID | The ID of the task's project
 ## Update Task
 
 ```shell
-curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/tasks/75d68ca1-0fc1-456a-bd9d-8b23875ac540" \
+curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/tasks/75d68ca1-0fc1-456a-bd9d-8b23875ac540" \
   -X PATCH \
   -H "Authorization: Token api=[api token]>,project=[project token]" \
   -H "Content-type: application/json" \
@@ -261,7 +261,7 @@ This endpoint updates a specific task.
 
 ### HTTP Request
 
-`PATCH https://console.fieldwire.net/api/v1/projects/<Project ID>/tasks/<Task ID>`
+`PATCH https://console.fieldwire.net/api/v2/projects/<Project ID>/tasks/<Task ID>`
 
 ### URL Parameters
 
@@ -273,7 +273,7 @@ Task ID | The ID of the task to retrieve
 ## Delete Task
 
 ```shell
-curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/tasks/75d68ca1-0fc1-456a-bd9d-8b23875ac540" \
+curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/tasks/75d68ca1-0fc1-456a-bd9d-8b23875ac540" \
   -X DELETE \
   -H "Authorization: Token api=[api token]>,project=[project token]" \
   -H "Content-type: application/json"
@@ -285,7 +285,7 @@ This endpoint updates a specific task.
 
 ### HTTP Request
 
-`DELETE https://console.fieldwire.net/api/v1/projects/<Project ID>/tasks/<Task ID>`
+`DELETE https://console.fieldwire.net/api/v2/projects/<Project ID>/tasks/<Task ID>`
 
 ### URL Parameters
 

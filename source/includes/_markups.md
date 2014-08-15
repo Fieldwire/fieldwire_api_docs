@@ -14,7 +14,7 @@ data | [GeoJSON of markup](#markup-data)
 ## Get Markups
 
 ```shell
-curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/markups" \
+curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/markups" \
   -H "Authorization: Token api=[api token]>,project=[project token]"
 ```
 
@@ -112,7 +112,7 @@ This endpoint retrieves all markups.
 
 ### HTTP Request
 
-`GET https://console.fieldwire.net/api/v1/projects/<Project ID>/markups`
+`GET https://console.fieldwire.net/api/v2/projects/<Project ID>/markups`
 
 ### URL Parameters
 

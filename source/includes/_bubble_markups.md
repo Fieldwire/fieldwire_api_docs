@@ -10,7 +10,7 @@ data | [GeoJSON of markup](#markup-data)
 ## Get BubbleMarkups
 
 ```shell
-curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubble_markups" \
+curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubble_markups" \
   -H "Authorization: Token api=[api token]>,project=[project token]"
 ```
 
@@ -114,7 +114,7 @@ This endpoint retrieves all bubble_markups.
 
 ### HTTP Requests
 
-`GET https://console.fieldwire.net/api/v1/projects/<Project ID>/bubble_markups`
+`GET https://console.fieldwire.net/api/v2/projects/<Project ID>/bubble_markups`
 
 ### URL Parameters
 
@@ -125,7 +125,7 @@ Project ID | The ID of the project to retrieve
 ## Get BubbleMarkup
 
 ```shell
-curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubble_markups/29ca4ad0-a413-48aa-b8b8-28242d3cc205" \
+curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubble_markups/29ca4ad0-a413-48aa-b8b8-28242d3cc205" \
   -H "Authorization: Token api=[api token]>,project=[project token]"
 ```
 
@@ -161,7 +161,7 @@ This endpoint retrieves a specific bubble_markup.
 
 ### HTTP Request
 
-`GET https://console.fieldwire.net/api/v1/projects/<Project ID>/bubble_markups/<BubbleMarkup ID>`
+`GET https://console.fieldwire.net/api/v2/projects/<Project ID>/bubble_markups/<BubbleMarkup ID>`
 
 ### URL Parameters
 
@@ -173,7 +173,7 @@ BubbleMarkup ID | The ID of the bubble_markup to retrieve
 ## Post BubbleMarkup
 
 ```shell
-curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubble/75b86f78-0a94-42ea-9d58-a0f8fb5ed4bb/bubble_markups" \
+curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubble/75b86f78-0a94-42ea-9d58-a0f8fb5ed4bb/bubble_markups" \
   -X POST \
   -H "Authorization: Token api=[api token]>,project=[project token]" \
   -H "Content-type: application/json" \
@@ -226,7 +226,7 @@ This endpoint creates a new bubble_markup.
 
 ### HTTP Request
 
-`POST https://console.fieldwire.net/api/v1/projects/<Project ID>/bubbles/<Bubble ID>/bubble_markups`
+`POST https://console.fieldwire.net/api/v2/projects/<Project ID>/bubbles/<Bubble ID>/bubble_markups`
 
 ### URL Parameters
 
@@ -238,7 +238,7 @@ Bubble ID | The ID of the bubble_markup's bubble
 ## Update BubbleMarkup
 
 ```shell
-curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubble_markups/75d68ca1-0fc1-456a-bd9d-8b23875ac540" \
+curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubble_markups/75d68ca1-0fc1-456a-bd9d-8b23875ac540" \
   -X PATCH \
   -H "Authorization: Token api=[api token]>,project=[project token]" \
   -H "Content-type: application/json" \
@@ -291,7 +291,7 @@ This endpoint updates a specific bubble_markup.
 
 ### HTTP Request
 
-`PATCH https://console.fieldwire.net/api/v1/projects/<Project ID>/bubble_markups/<BubbleMarkup ID>`
+`PATCH https://console.fieldwire.net/api/v2/projects/<Project ID>/bubble_markups/<BubbleMarkup ID>`
 
 ### URL Parameters
 
@@ -303,7 +303,7 @@ BubbleMarkup ID | The ID of the bubble_markup to retrieve
 ## Delete BubbleMarkup
 
 ```shell
-curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubble_markups/75d68ca1-0fc1-456a-bd9d-8b23875ac540" \
+curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubble_markups/75d68ca1-0fc1-456a-bd9d-8b23875ac540" \
   -X DELETE \
   -H "Authorization: Token api=[api token]>,project=[project token]" \
   -H "Content-type: application/json"
@@ -315,7 +315,7 @@ This endpoint updates a specific bubble_markup.
 
 ### HTTP Request
 
-`DELETE https://console.fieldwire.net/api/v1/projects/<Project ID>/bubble_markups/<BubbleMarkup ID>`
+`DELETE https://console.fieldwire.net/api/v2/projects/<Project ID>/bubble_markups/<BubbleMarkup ID>`
 
 ### URL Parameters
 

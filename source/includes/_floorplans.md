@@ -30,7 +30,7 @@ tile_size | Tile size of the floorplan if tiled
 ## Get Floorplans
 
 ```shell
-curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/floorplans" \
+curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/floorplans" \
   -H "Authorization: Token api=[api token]>,project=[project token]"
 ```
 
@@ -105,7 +105,7 @@ This endpoint retrieves all floorplans.
 
 ### HTTP Request
 
-`GET https://console.fieldwire.net/api/v1/projects/<Project ID>/floorplans`
+`GET https://console.fieldwire.net/api/v2/projects/<Project ID>/floorplans`
 
 ### URL Parameters
 

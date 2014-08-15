@@ -30,21 +30,26 @@ includes:
 ---
 
 # Introduction
-
 <aside class="warning">This is an alpha version of the fieldwire API and we don't yet make commitments to preserve backwards compatibility.</aside>
+<aside class="notice">Current API version: V2</aside>
+<aside class="notice">All calls must be made over HTTPS.</aside>
 
 Welcome to the fieldwire API! You can use our API to access your fieldwire projects.
 
-<aside class="notice">
-All calls must be made over HTTPS.
-</aside>
 
 # Authentication
 
-> To authorize, use this code:
+> To authorize for viewing and creating projects, use this code:
 
 ```shell
-curl "https://console.fieldwire.net/api/v1/projects/..."
+curl "https://console.fieldwire.net/api/v2/projects"
+  -H "Authorization: Token api=[api token]>"
+```
+
+> To authorize for modifying project and all of its entities, use this code:
+
+```shell
+curl "https://console.fieldwire.net/api/v2/projects/..."
   -H "Authorization: Token api=[api token]>,project=[project token]"
 ```
 
@@ -52,8 +57,11 @@ curl "https://console.fieldwire.net/api/v1/projects/..."
 
 Fieldwire uses API tokens to allow access to the API. You can request a new fieldwire API token by emailing <a href="mailto:support@fieldwire.net?subject=Api Token Request">support</a>.
 
-Fieldwire expects for the API and project token to be included in all API requests to the server in a header that looks like the following:
+Fieldwire expects for the API and project token to be included in all API requests to the server in a header that looks like one of the following:
 
+`Authorization: Token api=[api token]`
+<br>
+<br>
 `Authorization: Token api=[api token],project=[project token]`
 
 <aside class="notice">

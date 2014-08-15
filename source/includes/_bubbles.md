@@ -28,7 +28,7 @@ Kind | Description
 ## Get Bubbles
 
 ```shell
-curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubbles" \
+curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubbles" \
   -H "Authorization: Token api=[api token]>,project=[project token]"
 ```
 
@@ -81,9 +81,9 @@ This endpoint retrieves all bubbles.
 
 ### HTTP Requests
 
-`GET https://console.fieldwire.net/api/v1/projects/<Project ID>/bubbles`
+`GET https://console.fieldwire.net/api/v2/projects/<Project ID>/bubbles`
 
-`GET https://console.fieldwire.net/api/v1/projects/<Project ID>/tasks/<Task ID>/bubbles`
+`GET https://console.fieldwire.net/api/v2/projects/<Project ID>/tasks/<Task ID>/bubbles`
 
 ### URL Parameters
 
@@ -95,7 +95,7 @@ Task ID | The ID of the task to retrieve
 ## Get Bubble
 
 ```shell
-curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubbles/29ca4ad0-a413-48aa-b8b8-28242d3cc205" \
+curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubbles/29ca4ad0-a413-48aa-b8b8-28242d3cc205" \
   -H "Authorization: Token api=[api token]>,project=[project token]"
 ```
 
@@ -128,7 +128,7 @@ This endpoint retrieves a specific bubble.
 
 ### HTTP Request
 
-`GET https://console.fieldwire.net/api/v1/projects/<Project ID>/bubbles/<Bubble ID>`
+`GET https://console.fieldwire.net/api/v2/projects/<Project ID>/bubbles/<Bubble ID>`
 
 ### URL Parameters
 
@@ -140,7 +140,7 @@ Bubble ID | The ID of the bubble to retrieve
 ## Post Bubble
 
 ```shell
-curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/tasks/75b86f78-0a94-42ea-9d58-a0f8fb5ed4bb/bubbles" \
+curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/tasks/75b86f78-0a94-42ea-9d58-a0f8fb5ed4bb/bubbles" \
   -X POST \
   -H "Authorization: Token api=[api token]>,project=[project token]" \
   -H "Content-type: application/json" \
@@ -176,7 +176,7 @@ This endpoint creates a new bubble.
 
 ### HTTP Request
 
-`POST https://console.fieldwire.net/api/v1/projects/<Project ID>/tasks/<Task ID>/bubbles`
+`POST https://console.fieldwire.net/api/v2/projects/<Project ID>/tasks/<Task ID>/bubbles`
 
 ### URL Parameters
 
@@ -188,7 +188,7 @@ Task ID | The ID of the bubble's task
 ## Update Bubble
 
 ```shell
-curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubbles/75d68ca1-0fc1-456a-bd9d-8b23875ac540" \
+curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubbles/75d68ca1-0fc1-456a-bd9d-8b23875ac540" \
   -X PATCH \
   -H "Authorization: Token api=[api token]>,project=[project token]" \
   -H "Content-type: application/json" \
@@ -222,7 +222,7 @@ This endpoint updates a specific bubble.
 
 ### HTTP Request
 
-`PATCH https://console.fieldwire.net/api/v1/projects/<Project ID>/bubbles/<Bubble ID>`
+`PATCH https://console.fieldwire.net/api/v2/projects/<Project ID>/bubbles/<Bubble ID>`
 
 ### URL Parameters
 
@@ -234,7 +234,7 @@ Bubble ID | The ID of the bubble to retrieve
 ## Delete Bubble
 
 ```shell
-curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubbles/75d68ca1-0fc1-456a-bd9d-8b23875ac540" \
+curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubbles/75d68ca1-0fc1-456a-bd9d-8b23875ac540" \
   -X DELETE \
   -H "Authorization: Token api=[api token]>,project=[project token]" \
   -H "Content-type: application/json"
@@ -246,7 +246,7 @@ This endpoint updates a specific bubble.
 
 ### HTTP Request
 
-`DELETE https://console.fieldwire.net/api/v1/projects/<Project ID>/bubbles/<Bubble ID>`
+`DELETE https://console.fieldwire.net/api/v2/projects/<Project ID>/bubbles/<Bubble ID>`
 
 ### URL Parameters
 

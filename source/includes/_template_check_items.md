@@ -10,7 +10,7 @@ name | Name of template_check_item
 ## Post TemplateCheckItem
 
 ```shell
-curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/template_checklists/be0f608-7e89-4301-bb13-ffd9db05d60c/template_check_items" \
+curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/template_checklists/be0f608-7e89-4301-bb13-ffd9db05d60c/template_check_items" \
   -X POST \
   -H "Authorization: Token api=[api token]>,project=[project token]" \
   -H "Content-type: application/json" \
@@ -36,7 +36,7 @@ This endpoint creates a new template_check_item.
 
 ### HTTP Request
 
-`POST https://console.fieldwire.net/api/v1/projects/<Project ID>/template_checklists/<TemplateChecklist ID>/template_check_items`
+`POST https://console.fieldwire.net/api/v2/projects/<Project ID>/template_checklists/<TemplateChecklist ID>/template_check_items`
 
 ### URL Parameters
 
@@ -48,7 +48,7 @@ TemplateCheckListId | The ID of the template_check_item's template_checklist
 ## Update TemplateCheckItem
 
 ```shell
-curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/template_check_items/75d68ca1-0fc1-456a-bd9d-8b23875ac540" \
+curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/template_check_items/75d68ca1-0fc1-456a-bd9d-8b23875ac540" \
   -X PATCH \
   -H "Authorization: Token api=[api token]>,project=[project token]" \
   -H "Content-type: application/json" \
@@ -74,7 +74,7 @@ This endpoint updates a specific template_check_item.
 
 ### HTTP Request
 
-`PATCH https://console.fieldwire.net/api/v1/projects/<Project ID>/template_check_items/<TemplateCheckItem ID>`
+`PATCH https://console.fieldwire.net/api/v2/projects/<Project ID>/template_check_items/<TemplateCheckItem ID>`
 
 ### URL Parameters
 
@@ -86,7 +86,7 @@ TemplateCheckItem ID | The ID of the template_check_item to retrieve
 ## Delete TemplateCheckItem
 
 ```shell
-curl "https://console.fieldwire.net/api/v1/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/template_check_items/75d68ca1-0fc1-456a-bd9d-8b23875ac540" \
+curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/template_check_items/75d68ca1-0fc1-456a-bd9d-8b23875ac540" \
   -X DELETE \
   -H "Authorization: Token api=[api token]>,project=[project token]" \
   -H "Content-type: application/json"
@@ -98,7 +98,7 @@ This endpoint updates a specific template_check_item.
 
 ### HTTP Request
 
-`DELETE https://console.fieldwire.net/api/v1/projects/<Project ID>/template_check_items/<TemplateCheckItem ID>`
+`DELETE https://console.fieldwire.net/api/v2/projects/<Project ID>/template_check_items/<TemplateCheckItem ID>`
 
 ### URL Parameters
 
