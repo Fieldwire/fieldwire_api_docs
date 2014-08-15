@@ -2,7 +2,7 @@
 title: Fieldwire API
 
 language_tabs:
-  - shell
+  - http
 
 toc_footers:
   - <a href='https://console.fieldwire.net'>Log In</a>
@@ -41,16 +41,16 @@ Welcome to the fieldwire API! You can use our API to access your fieldwire proje
 
 > To authorize for viewing and creating projects, use this code:
 
-```shell
-curl "https://console.fieldwire.net/api/v2/projects"
-  -H "Authorization: Token api=[api token]>"
+```http
+GET /projects HTTP/1.1
+Authorization: Token api=[api token]>
 ```
 
 > To authorize for modifying project and all of its entities, use this code:
 
-```shell
-curl "https://console.fieldwire.net/api/v2/projects/..."
-  -H "Authorization: Token api=[api token]>,project=[project token]"
+```http
+GET /projects/<ProjectID> HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
 ```
 
 > Make sure to replace [api token] and [project token] with your api token and project token, respectively.

@@ -13,14 +13,18 @@ last_editor_user_id | User ID of the task_check_item's last editor
 
 ## Get TaskCheckItems
 
-```shell
-curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/task_check_items" \
-  -H "Authorization: Token api=[api token]>,project=[project token]"
+```http
+GET /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/task_check_items HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns:
 
-```json
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
 [
     {
         "created_at": "2014-07-02T02:22:44.000Z",
@@ -59,9 +63,9 @@ This endpoint retrieves all task_check_items.
 
 ### HTTP Requests
 
-`GET https://console.fieldwire.net/api/v2/projects/<Project ID>/task_check_items`
+`GET /projects/<Project ID>/task_check_items`
 
-`GET https://console.fieldwire.net/api/v2/projects/<Project ID>/tasks/<Task ID>/task_check_items`
+`GET /projects/<Project ID>/tasks/<Task ID>/task_check_items`
 
 ### URL Parameters
 
@@ -72,14 +76,18 @@ Task ID | The ID of the task to retrieve
 
 ## Get TaskCheckItem
 
-```shell
-curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/task_check_items/29ca4ad0-a413-48aa-b8b8-28242d3cc205" \
-  -H "Authorization: Token api=[api token]>,project=[project token]"
+```http
+GET /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/task_check_items/29ca4ad0-a413-48aa-b8b8-28242d3cc205 HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns:
 
-```json
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
 {
     "created_at": "2014-07-02T02:22:44.000Z",
     "updated_at": "2014-07-02T02:22:44.000Z",
@@ -101,7 +109,7 @@ This endpoint retrieves a specific task_check_item.
 
 ### HTTP Request
 
-`GET https://console.fieldwire.net/api/v2/projects/<Project ID>/task_check_items/<TaskCheckItem ID>`
+`GET /projects/<Project ID>/task_check_items/<TaskCheckItem ID>`
 
 ### URL Parameters
 
@@ -112,17 +120,24 @@ TaskCheckItem ID | The ID of the task_check_item to retrieve
 
 ## Post TaskCheckItem
 
-```shell
-curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/tasks/75b86f78-0a94-42ea-9d58-a0f8fb5ed4bb/task_check_items" \
-  -X POST \
-  -H "Authorization: Token api=[api token]>,project=[project token]" \
-  -H "Content-type: application/json" \
-  -d '{ "task_check_item": { "name": "Step 1: Fix" }}'
+```http
+POST /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/tasks/75b86f78-0a94-42ea-9d58-a0f8fb5ed4bb/task_check_items HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
+
+{
+    "task_check_item": {
+        "name": "Step 1: Fix"
+    }
+}
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns:
 
-```json
+```http
+HTTP/1.1 201 Created
+Content-Type: application/json
+
 {
     "created_at": "2014-07-02T02:22:44.000Z",
     "updated_at": "2014-07-02T02:22:44.000Z",
@@ -144,7 +159,7 @@ This endpoint creates a new task_check_item.
 
 ### HTTP Request
 
-`POST https://console.fieldwire.net/api/v2/projects/<Project ID>/tasks/<Task ID>/task_check_items`
+`POST /projects/<Project ID>/tasks/<Task ID>/task_check_items`
 
 ### URL Parameters
 
@@ -155,17 +170,20 @@ Task ID | The ID of the task_check_item's task
 
 ## Batch TaskCheckItem
 
-```shell
-curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/tasks/75b86f78-0a94-42ea-9d58-a0f8fb5ed4bb/task_check_items/batch" \
-  -X POST \
-  -H "Authorization: Token api=[api token]>,project=[project token]" \
-  -H "Content-type: application/json" \
-  -d '{ "template_checklist_id" : "aba2c9a1-da23-4e6d-a9b0-c20b8497a942" }'
+```http
+POST /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/tasks/75b86f78-0a94-42ea-9d58-a0f8fb5ed4bb/task_check_items/batch HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
+
+{ "template_checklist_id" : "aba2c9a1-da23-4e6d-a9b0-c20b8497a942" }
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns:
 
-```json
+```http
+HTTP/1.1 201 Created
+Content-Type: application/json
+
 [
     {
         "created_at": "2014-07-02T02:22:44.000Z",
@@ -204,7 +222,7 @@ This endpoint creates new task_check_items from a template_checklist.
 
 ### HTTP Request
 
-`POST https://console.fieldwire.net/api/v2/projects/<Project ID>/tasks/<Task ID>/task_check_items/batch`
+`POST /projects/<Project ID>/tasks/<Task ID>/task_check_items/batch`
 
 ### URL Parameters
 
@@ -221,17 +239,20 @@ TemplateChecklist ID | The ID of the template checklist to create items from
 
 ## Update TaskCheckItem
 
-```shell
-curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/task_check_items/75d68ca1-0fc1-456a-bd9d-8b23875ac540" \
-  -X PATCH \
-  -H "Authorization: Token api=[api token]>,project=[project token]" \
-  -H "Content-type: application/json" \
-  -d '{ "task_check_item": { "checked": true }'
+```http
+PATCH /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/task_check_items/75d68ca1-0fc1-456a-bd9d-8b23875ac540 HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
+
+{ "task_check_item": { "checked": true } }
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns:
 
-```json
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
 {
     "created_at": "2014-07-02T02:22:44.000Z",
     "updated_at": "2014-07-02T02:22:44.000Z",
@@ -253,7 +274,7 @@ This endpoint updates a specific task_check_item.
 
 ### HTTP Request
 
-`PATCH https://console.fieldwire.net/api/v2/projects/<Project ID>/task_check_items/<TaskCheckItem ID>`
+`PATCH /projects/<Project ID>/task_check_items/<TaskCheckItem ID>`
 
 ### URL Parameters
 
@@ -264,20 +285,24 @@ TaskCheckItem ID | The ID of the task_check_item to retrieve
 
 ## Delete TaskCheckItem
 
-```shell
-curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/task_check_items/75d68ca1-0fc1-456a-bd9d-8b23875ac540" \
-  -X DELETE \
-  -H "Authorization: Token api=[api token]>,project=[project token]" \
-  -H "Content-type: application/json"
+```http
+DELETE /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/task_check_items/75d68ca1-0fc1-456a-bd9d-8b23875ac540 HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
 ```
 
-> The above command returns 204 No Content
+> The above command returns:
+
+```http
+HTTP/1.1 204 OK
+Content-Type: application/json
+```
 
 This endpoint updates a specific task_check_item.
 
 ### HTTP Request
 
-`DELETE https://console.fieldwire.net/api/v2/projects/<Project ID>/task_check_items/<TaskCheckItem ID>`
+`DELETE /projects/<Project ID>/task_check_items/<TaskCheckItem ID>`
 
 ### URL Parameters
 

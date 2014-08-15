@@ -10,16 +10,20 @@ template_check_items | Array of [template_check_items](#templatecheckitems)
 
 ## Get TemplateChecklists
 
-```shell
-curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/template_checklists" \
-  -H "Authorization: Token api=[api token]>,project=[project token]"
+```http
+GET /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/template_checklists HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns:
 
-```json
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
 [
-{
+    {
         "created_at": "2014-07-08T23:45:19.000Z",
         "updated_at": "2014-07-08T23:47:22.000Z",
         "device_created_at": "2014-07-08T23:45:19.000Z",
@@ -71,7 +75,7 @@ This endpoint retrieves all template_checklists.
 
 ### HTTP Requests
 
-`GET https://console.fieldwire.net/api/v2/projects/<Project ID>/template_checklists`
+`GET /projects/<Project ID>/template_checklists`
 
 ### URL Parameters
 
@@ -81,14 +85,18 @@ Project ID | The ID of the project to retrieve
 
 ## Get TemplateChecklist
 
-```shell
-curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/template_checklists/29ca4ad0-a413-48aa-b8b8-28242d3cc205" \
-  -H "Authorization: Token api=[api token]>,project=[project token]"
+```http
+GET /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/template_checklists/29ca4ad0-a413-48aa-b8b8-28242d3cc205 HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns:
 
-```json
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
 {
     "created_at": "2014-07-08T23:48:45.000Z",
     "updated_at": "2014-07-08T23:48:51.000Z",
@@ -107,7 +115,7 @@ This endpoint retrieves a specific template_checklist.
 
 ### HTTP Request
 
-`GET https://console.fieldwire.net/api/v2/projects/<Project ID>/template_checklists/<TemplateChecklist ID>`
+`GET /projects/<Project ID>/template_checklists/<TemplateChecklist ID>`
 
 ### URL Parameters
 
@@ -118,17 +126,19 @@ TemplateChecklist ID | The ID of the template_checklist to retrieve
 
 ## Post TemplateChecklist
 
-```shell
-curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/template_checklists" \
-  -X POST \
-  -H "Authorization: Token api=[api token]>,project=[project token]" \
-  -H "Content-type: application/json" \
-  -d '{ "template_checklist": { "name": "Template 2" }}'
+```http
+POST /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/template_checklists HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
+{ "template_checklist": { "name": "Template 2" } }
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns:
 
-```json
+```http
+HTTP/1.1 201 Created
+Content-Type: application/json
+
 {
     "created_at": "2014-07-08T23:48:45.000Z",
     "updated_at": "2014-07-08T23:48:51.000Z",
@@ -147,7 +157,7 @@ This endpoint creates a new template_checklist.
 
 ### HTTP Request
 
-`POST https://console.fieldwire.net/api/v2/projects/<Project ID>/template_checklists`
+`POST /projects/<Project ID>/template_checklists`
 
 ### URL Parameters
 
@@ -157,17 +167,20 @@ Project ID | The ID of the template_checklist's project
 
 ## Update TemplateChecklist
 
-```shell
-curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/template_checklists/75d68ca1-0fc1-456a-bd9d-8b23875ac540" \
-  -X PATCH \
-  -H "Authorization: Token api=[api token]>,project=[project token]" \
-  -H "Content-type: application/json" \
-  -d '{ "template_checklist": { "name": "Updated template" }'
+```http
+PATCH /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/template_checklists/75d68ca1-0fc1-456a-bd9d-8b23875ac540 HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
+
+{ "template_checklist": { "name": "Updated template" } }
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns:
 
-```json
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
 {
     "created_at": "2014-07-08T23:48:45.000Z",
     "updated_at": "2014-07-08T23:48:51.000Z",
@@ -186,7 +199,7 @@ This endpoint updates a specific template_checklist.
 
 ### HTTP Request
 
-`PATCH https://console.fieldwire.net/api/v2/projects/<Project ID>/template_checklists/<TemplateChecklist ID>`
+`PATCH /projects/<Project ID>/template_checklists/<TemplateChecklist ID>`
 
 ### URL Parameters
 
@@ -197,20 +210,24 @@ TemplateChecklist ID | The ID of the template_checklist to retrieve
 
 ## Delete TemplateChecklist
 
-```shell
-curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/template_checklists/75d68ca1-0fc1-456a-bd9d-8b23875ac540" \
-  -X DELETE \
-  -H "Authorization: Token api=[api token]>,project=[project token]" \
-  -H "Content-type: application/json"
+```http
+DELETE /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/template_checklists/75d68ca1-0fc1-456a-bd9d-8b23875ac540 HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
 ```
 
-> The above command returns 204 No Content
+> The above command returns:
+
+```http
+HTTP/1.1 204 OK
+Content-Type: application/json
+```
 
 This endpoint updates a specific template_checklist.
 
 ### HTTP Request
 
-`DELETE https://console.fieldwire.net/api/v2/projects/<Project ID>/template_checklists/<TemplateChecklist ID>`
+`DELETE /projects/<Project ID>/template_checklists/<TemplateChecklist ID>`
 
 ### URL Parameters
 

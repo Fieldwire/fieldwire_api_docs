@@ -6,7 +6,7 @@ Field | Description
 --------- | -----------
 task_id | Task ID the bubble belongs to
 content | Text content of bubble
-annotations | iOS bubble annotations
+annotations (deprecated) | iOS bubble annotations
 kind | Enumeration of bubble (see below)
 file_url | Url of photo or attachment
 flattened_file_url | Url of photo with annotations
@@ -27,14 +27,18 @@ Kind | Description
 
 ## Get Bubbles
 
-```shell
-curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubbles" \
-  -H "Authorization: Token api=[api token]>,project=[project token]"
+```http
+GET /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubbles HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns:
 
-```json
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
 [
     {
         "created_at": "2014-04-30T19:02:13.000Z",
@@ -81,9 +85,9 @@ This endpoint retrieves all bubbles.
 
 ### HTTP Requests
 
-`GET https://console.fieldwire.net/api/v2/projects/<Project ID>/bubbles`
+`GET /projects/<Project ID>/bubbles`
 
-`GET https://console.fieldwire.net/api/v2/projects/<Project ID>/tasks/<Task ID>/bubbles`
+`GET /projects/<Project ID>/tasks/<Task ID>/bubbles`
 
 ### URL Parameters
 
@@ -94,14 +98,18 @@ Task ID | The ID of the task to retrieve
 
 ## Get Bubble
 
-```shell
-curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubbles/29ca4ad0-a413-48aa-b8b8-28242d3cc205" \
-  -H "Authorization: Token api=[api token]>,project=[project token]"
+```http
+GET /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubbles/29ca4ad0-a413-48aa-b8b8-28242d3cc205 HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns:
 
-```json
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
 {
     "created_at": "2014-04-30T19:02:13.000Z",
     "updated_at": "2014-04-30T19:02:13.000Z",
@@ -128,7 +136,7 @@ This endpoint retrieves a specific bubble.
 
 ### HTTP Request
 
-`GET https://console.fieldwire.net/api/v2/projects/<Project ID>/bubbles/<Bubble ID>`
+`GET /projects/<Project ID>/bubbles/<Bubble ID>`
 
 ### URL Parameters
 
@@ -139,19 +147,26 @@ Bubble ID | The ID of the bubble to retrieve
 
 ## Post Bubble
 
-```shell
-curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/tasks/75b86f78-0a94-42ea-9d58-a0f8fb5ed4bb/bubbles" \
-  -X POST \
-  -H "Authorization: Token api=[api token]>,project=[project token]" \
-  -H "Content-type: application/json" \
-  -d '{ "bubble": { "content": "Check the spec for specific details on soffit install", \
-                    "kind": 1, \
-                    "user_id": 3 }}'
+```http
+POST /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/tasks/75b86f78-0a94-42ea-9d58-a0f8fb5ed4bb/bubbles HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
+
+{
+    "bubble": {
+        "content": "Check the spec for specific details on soffit install",
+        "kind": 1,
+        "user_id": 3
+    }
+}
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns:
 
-```json
+```http
+HTTP/1.1 201 Created
+Content-Type: application/json
+
 {
     "created_at": "2014-04-30T19:02:14.000Z",
     "updated_at": "2014-04-30T19:02:14.000Z",
@@ -176,7 +191,7 @@ This endpoint creates a new bubble.
 
 ### HTTP Request
 
-`POST https://console.fieldwire.net/api/v2/projects/<Project ID>/tasks/<Task ID>/bubbles`
+`POST /projects/<Project ID>/tasks/<Task ID>/bubbles`
 
 ### URL Parameters
 
@@ -187,17 +202,24 @@ Task ID | The ID of the bubble's task
 
 ## Update Bubble
 
-```shell
-curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubbles/75d68ca1-0fc1-456a-bd9d-8b23875ac540" \
-  -X PATCH \
-  -H "Authorization: Token api=[api token]>,project=[project token]" \
-  -H "Content-type: application/json" \
-  -d '{ "bubble": { "content": "Spec not available. Check with foreman."}'
+```http
+PATCH /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubbles/75d68ca1-0fc1-456a-bd9d-8b23875ac540 HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
+
+{
+    "bubble": {
+        "content": "Spec not available. Check with foreman."
+    }
+}
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns:
 
-```json
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
 {
     "created_at": "2014-04-30T19:02:14.000Z",
     "updated_at": "2014-04-30T19:02:14.000Z",
@@ -222,7 +244,7 @@ This endpoint updates a specific bubble.
 
 ### HTTP Request
 
-`PATCH https://console.fieldwire.net/api/v2/projects/<Project ID>/bubbles/<Bubble ID>`
+`PATCH /projects/<Project ID>/bubbles/<Bubble ID>`
 
 ### URL Parameters
 
@@ -233,20 +255,24 @@ Bubble ID | The ID of the bubble to retrieve
 
 ## Delete Bubble
 
-```shell
-curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubbles/75d68ca1-0fc1-456a-bd9d-8b23875ac540" \
-  -X DELETE \
-  -H "Authorization: Token api=[api token]>,project=[project token]" \
-  -H "Content-type: application/json"
+```http
+DELETE /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubbles/75d68ca1-0fc1-456a-bd9d-8b23875ac540 HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
 ```
 
-> The above command returns 204 No Content
+> The above command returns:
+
+```http
+HTTP/1.1 204 OK
+Content-Type: application/json
+```
 
 This endpoint updates a specific bubble.
 
 ### HTTP Request
 
-`DELETE https://console.fieldwire.net/api/v2/projects/<Project ID>/bubbles/<Bubble ID>`
+`DELETE /projects/<Project ID>/bubbles/<Bubble ID>`
 
 ### URL Parameters
 

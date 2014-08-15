@@ -25,14 +25,18 @@ tags | Array of strings of all tags on this task's bubbles
 
 ## Get Tasks
 
-```shell
-curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/tasks" \
-  -H "Authorization: Token api=[api token]>,project=[project token]"
+```http
+GET /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/tasks HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns:
 
-```json
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
 [
     {
         "created_at": "2014-04-30T19:02:13.000Z",
@@ -95,7 +99,7 @@ This endpoint retrieves all tasks.
 
 ### HTTP Request
 
-`GET https://console.fieldwire.net/api/v2/projects/<Project ID>/tasks`
+`GET /projects/<Project ID>/tasks`
 
 ### URL Parameters
 
@@ -105,14 +109,18 @@ Project ID | The ID of the project to retrieve
 
 ## Get Task
 
-```shell
-curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/tasks/29ca4ad0-a413-48aa-b8b8-28242d3cc205" \
-  -H "Authorization: Token api=[api token]>,project=[project token]"
+```http
+GET /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/tasks/29ca4ad0-a413-48aa-b8b8-28242d3cc205 HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns:
 
-```json
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
 {
     "created_at": "2014-04-30T19:02:13.000Z",
     "updated_at": "2014-04-30T19:02:13.000Z",
@@ -146,7 +154,7 @@ This endpoint retrieves a specific task.
 
 ### HTTP Request
 
-`GET https://console.fieldwire.net/api/v2/projects/<Project ID>/tasks/<Task ID>`
+`GET /projects/<Project ID>/tasks/<Task ID>`
 
 ### URL Parameters
 
@@ -157,23 +165,30 @@ Task ID | The ID of the task to retrieve
 
 ## Post Task
 
-```shell
-curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/tasks" \
-  -X POST \
-  -H "Authorization: Token api=[api token]>,project=[project token]" \
-  -H "Content-type: application/json" \
-  -d '{ "task": { "name": "Light socket under 2nd diffuser not getting power", \
-                  "priority": 2, \
-                  "pos_x": 1071, \
-                  "pos_y": 457, \
-                  "floorplan_id": "d94f128b-d5a0-4325-95d8-32457af9ab3b", \
-                  "team_id": "3919a956-6f5b-4a25-abd8-eefa81378ef0", \
-                  "owner_user_id": 2, }}'
+```http
+POST /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/tasks HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
+
+{
+    "task": {
+        "name": "Light socket under 2nd diffuser not getting power",
+        "priority": 2,
+        "pos_x": 1071,
+        "pos_y": 457,
+        "floorplan_id": "d94f128b-d5a0-4325-95d8-32457af9ab3b",
+        "team_id": "3919a956-6f5b-4a25-abd8-eefa81378ef0",
+        "owner_user_id": 2
+    }
+}
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns:
 
-```json
+```http
+HTTP/1.1 201 Created
+Content-Type: application/json
+
 {
     "created_at": "2014-04-30T19:02:14.000Z",
     "updated_at": "2014-04-30T19:02:14.000Z",
@@ -207,7 +222,7 @@ This endpoint creates a new task.
 
 ### HTTP Request
 
-`POST https://console.fieldwire.net/api/v2/projects/<Project ID>/tasks`
+`POST /projects/<Project ID>/tasks`
 
 ### URL Parameters
 
@@ -217,17 +232,20 @@ Project ID | The ID of the task's project
 
 ## Update Task
 
-```shell
-curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/tasks/75d68ca1-0fc1-456a-bd9d-8b23875ac540" \
-  -X PATCH \
-  -H "Authorization: Token api=[api token]>,project=[project token]" \
-  -H "Content-type: application/json" \
-  -d '{ "task": { "verified_at": "2014-04-30T19:02:14.000Z", "fixed_at": "2014-04-30T19:02:14.000Z" } }'
+```http
+PATCH /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/tasks/75d68ca1-0fc1-456a-bd9d-8b23875ac540 HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
+
+{ "task": { "verified_at": "2014-04-30T19:02:14.000Z", "fixed_at": "2014-04-30T19:02:14.000Z" } }
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns:
 
-```json
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
 {
     "created_at": "2014-04-30T19:02:14.000Z",
     "updated_at": "2014-04-30T19:02:14.000Z",
@@ -261,7 +279,7 @@ This endpoint updates a specific task.
 
 ### HTTP Request
 
-`PATCH https://console.fieldwire.net/api/v2/projects/<Project ID>/tasks/<Task ID>`
+`PATCH /projects/<Project ID>/tasks/<Task ID>`
 
 ### URL Parameters
 
@@ -272,20 +290,24 @@ Task ID | The ID of the task to retrieve
 
 ## Delete Task
 
-```shell
-curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/tasks/75d68ca1-0fc1-456a-bd9d-8b23875ac540" \
-  -X DELETE \
-  -H "Authorization: Token api=[api token]>,project=[project token]" \
-  -H "Content-type: application/json"
+```http
+DELETE /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/tasks/75d68ca1-0fc1-456a-bd9d-8b23875ac540 HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
 ```
 
-> The above command returns 204 No Content
+> The above command returns:
+
+```http
+HTTP/1.1 204 OK
+Content-Type: application/json
+```
 
 This endpoint updates a specific task.
 
 ### HTTP Request
 
-`DELETE https://console.fieldwire.net/api/v2/projects/<Project ID>/tasks/<Task ID>`
+`DELETE /projects/<Project ID>/tasks/<Task ID>`
 
 ### URL Parameters
 

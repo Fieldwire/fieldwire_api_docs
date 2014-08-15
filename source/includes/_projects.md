@@ -12,14 +12,18 @@ is_email_notifications_enabled | If enabled, project members will receive an ema
 
 ## Get Projects
 
-```shell
-curl "https://console.fieldwire.net/api/v2/projects" \
-  -H "Authorization: Token api=[api token]>"
+```http
+GET /projects HTTP/1.1
+Authorization: Token api=[api token]
+Content-Type: application/json
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns:
 
-```json
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
 [
     {
         "created_at": "2014-08-15T00:38:29.683Z",
@@ -56,18 +60,22 @@ This endpoint retrieves all projects created by the api token.
 
 ### HTTP Request
 
-`GET https://console.fieldwire.net/api/v2/projects`
+`GET /projects`
 
 ## Get Project
 
-```shell
-curl "https://console.fieldwire.net/api/v2/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027"
-  -H "Authorization: Token api=[api token]>,project=[project token]"
+```http
+GET /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027 HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns:
 
-```json
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
 {
     "created_at": "2014-04-30T19:02:10.000Z",
     "updated_at": "2014-04-30T19:02:10.000Z",
@@ -86,7 +94,7 @@ This endpoint retrieves a specific project.
 
 ### HTTP Request
 
-`GET https://console.fieldwire.net/api/v2/projects/<Project ID>`
+`GET /projects/<Project ID>`
 
 ### URL Parameters
 
@@ -96,17 +104,20 @@ Project ID | The ID of the project to retrieve
 
 ## Post Project
 
-```shell
-curl "https://console.fieldwire.net/api/v2/projects" \
-  -X POST \
-  -H "Authorization: Token api=[api token]>,project=[project token]" \
-  -H "Content-type: application/json" \
-  -d '{ "project": { "name": "Project 1" } }'
+```http
+POST /projects HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
+
+{ "project": { "name": "Project 1" } }
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns:
 
-```json
+```http
+HTTP/1.1 201 Created
+Content-Type: application/json
+
 {
     "created_at": "2014-08-15T00:38:29.683Z",
     "updated_at": "2014-08-15T00:38:30.059Z",
@@ -127,7 +138,7 @@ This endpoint creates a new Project.
 
 ### HTTP Request
 
-`POST https://console.fieldwire.net/api/v2/projects`
+`POST /projects`
 
 ## Cloning Projects
 
@@ -152,17 +163,20 @@ Cloning projects: when creating a project you can automatically re-invite member
 
 ## Update Project
 
-```shell
-curl "https://console.fieldwire.net/api/v2/projects/b5c08097-74f1-4a8f-a9a8-52e16295f6a4" \
-  -X PATCH \
-  -H "Authorization: Token api=[api token]>,project=[project token]" \
-  -H "Content-type: application/json" \
-  -d '{ "Project": { "name": "Updated Project" } }'
+```http
+PATCH /projects/b5c08097-74f1-4a8f-a9a8-52e16295f6a4 HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
+
+{ "project": { "name": "Updated Project" } }
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns:
 
-```json
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
 {
     "created_at": "2014-08-15T00:38:29.683Z",
     "updated_at": "2014-08-15T00:38:30.059Z",
@@ -183,7 +197,7 @@ This endpoint updates a specific Project.
 
 ### HTTP Request
 
-`PATCH https://console.fieldwire.net/api/v2/projects/<Project ID>`
+`PATCH /projects/<Project ID>`
 
 ### URL Parameters
 
@@ -193,20 +207,24 @@ Project ID | The ID of the project
 
 ## Delete Project
 
-```shell
-curl "https://console.fieldwire.net/api/v2/projects/b5c08097-74f1-4a8f-a9a8-52e16295f6a4" \
-  -X DELETE \
-  -H "Authorization: Token api=[api token]>,project=[project token]" \
-  -H "Content-type: application/json"
+```http
+DELETE /projects/b5c08097-74f1-4a8f-a9a8-52e16295f6a4 HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
 ```
 
-> The above command returns 204 No Content
+> The above command returns:
+
+```http
+HTTP/1.1 204 OK
+Content-Type: application/json
+```
 
 This endpoint updates a specific Project.
 
 ### HTTP Request
 
-`DELETE https://console.fieldwire.net/api/v2/projects/<Project ID>`
+`DELETE /projects/<Project ID>`
 
 ### URL Parameters
 
