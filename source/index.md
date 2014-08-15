@@ -14,6 +14,7 @@ includes:
   - users
   - teams
   - floorplans
+  - sheets
   - tasks
   - task_check_items
   - template_checklists
