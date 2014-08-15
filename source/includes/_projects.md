@@ -136,7 +136,7 @@ This endpoint retrieves a specific project.
 
 ### HTTP Request
 
-`GET /projects/<Project ID>`
+`GET /projects/<Project ID>/activity`
 
 ### URL Parameters
 

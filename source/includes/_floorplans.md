@@ -144,6 +144,11 @@ Content-Type: application/json
 }
 ```
 
+<aside class="warning">
+    Fieldwire API does not currently support multipage PDFs.
+</aside>
+
+
 <aside class="notice">
     By default only processed sheets are returned, therefore when the floorplan is first created it will be returned with 0 sheets.
 </aside>
