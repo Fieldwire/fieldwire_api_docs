@@ -118,6 +118,7 @@ Content-type: application/json
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json
+
 {
     "created_at": "2014-04-30T19:02:13.000Z",
     "updated_at": "2014-04-30T19:02:13.000Z",

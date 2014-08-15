@@ -11,8 +11,8 @@ toc_footers:
 
 includes:
   - projects
-  - teams
   - users
+  - teams
   - floorplans
   - tasks
   - task_check_items
