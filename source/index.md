@@ -27,6 +27,7 @@ includes:
   - markup_data
   - errors
 
+search: true
 ---
 
 # Introduction
