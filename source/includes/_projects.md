@@ -100,6 +100,48 @@ This endpoint retrieves a specific project.
 
 Parameter | Description
 --------- | -----------
+Project ID | The ID of the project to retrieve activity for
+
+## Get Project Activity
+
+```http
+GET /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/activity HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
+```
+
+> The above command returns:
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+    "users": "2014-08-15T19:42:24.359Z",
+    "teams": "2014-08-15T00:42:36.722Z",
+    "floorplans": "2014-08-15T01:28:17.107Z",
+    "tasks": null,
+    "bubbles": null,
+    "hyperlinks": null,
+    "markups": null,
+    "attachments": null,
+    "task_check_items": null,
+    "template_checklists": null,
+    "automatic_hyperlinks": null,
+    "bubble_markups": null
+}
+```
+
+This endpoint retrieves a specific project.
+
+### HTTP Request
+
+`GET /projects/<Project ID>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
 Project ID | The ID of the project to retrieve
 
 ## Post Project

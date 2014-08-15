@@ -31,10 +31,11 @@ search: true
 ---
 
 # Introduction
-<aside class="warning">This is an alpha version of the fieldwire API and we don't yet make commitments to preserve backwards compatibility.</aside>
+
+**Welcome to the fieldwire API! You can use our API to access your fieldwire projects.**
+
 <aside class="notice">Current API endpoint: https://console.fieldwire.net/api/v2</aside>
 
-Welcome to the fieldwire API! You can use our API to access your fieldwire projects.
 
 
 # Authentication
@@ -65,6 +66,81 @@ Fieldwire expects for the API and project token to be included in all API reques
 <aside class="notice">
 You must replace [api token] and [project token] with your api and project tokens, respectively.
 </aside>
+
+# Request Headers
+
+Header | Description
+--------- | -----------
+Fieldwire-Per-Page | Number of items returned (default: 50, max: 1000)
+Fieldwire-With-Deleted | Boolean that determines if deleted entities are returned (default: true)
+
+# Response Headers
+
+Header | Description
+--------- | -----------
+X-Total-Pages | Number of total pages that exist for this resource
+X-Current-Page | Number of current page (add 1 to this to retrieve the next page of entities)
+X-Count | Number of entities in response
+X-Last-Synced-At | Timestamp indicating exactly how up to date the client is after processing/storing these entities (see [Syncing Data](#syncing-data))
+
+# Syncing Data
+
+```http
+GET /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/activity HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
+```
+
+> The above command returns:
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+    "users": "2014-08-15T19:42:24.359Z",
+    "teams": "2014-08-15T00:42:36.722Z",
+    "floorplans": "2014-08-15T01:28:17.107Z",
+    "tasks": null,
+    "bubbles": null,
+    "hyperlinks": null,
+    "markups": null,
+    "attachments": null,
+    "task_check_items": null,
+    "template_checklists": null,
+    "automatic_hyperlinks": null,
+    "bubble_markups": null
+}
+```
+> Local stored timestamp for floorplans, teams, and users are 2014-08-12T01:28:17.107Z, 2014-08-13T01:28:17.107Z, 2014-08-14T01:28:17.107Z respectively
+
+```http
+GET /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/floorplans?last_synced_at=2014-08-12T01:28:17.107Z HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
+```
+
+```http
+GET /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/teams?last_synced_at=2014-08-13T01:28:17.107Z HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
+```
+
+```http
+GET /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/users?last_synced_at=2014-08-14T01:28:17.107Z HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
+```
+
+If you want to retain a synced local copy of your project data you can use a combination of [Project Activity](#get-project-activity) and [Last Synced At](#response-headers) to guarantee correctness while minimizing API requests.
+
+Steps:
+
+* Retrieve [Project Activity](#get-project-activity)
+* Skip all resources with `null` values since they have 0 entities.
+* For resources with values, compare timestamp to your stored local timestamp (from [Last Synced At](#response-headers))
+* If your local timestamp is greater or equal than the activities' timestamp, no need to query that response
+* If your local timestamp is less than the activities' timestamp, query the resource using `?last_synced_at=[local timestamp]` (omit if you are querying for the first time)
 
 # Common fields
 
