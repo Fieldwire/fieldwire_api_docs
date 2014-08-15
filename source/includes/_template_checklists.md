@@ -130,6 +130,7 @@ TemplateChecklist ID | The ID of the template_checklist to retrieve
 POST /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/template_checklists HTTP/1.1
 Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
+
 { "template_checklist": { "name": "Template 2" } }
 ```
 
