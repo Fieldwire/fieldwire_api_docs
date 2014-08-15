@@ -285,7 +285,7 @@ This endpoint will update a user's role and approval status on a project.
 
 ### HTTP Request
 
-`PUT /projects/<Project ID>/users/<User ID>`
+`PUT /projects/<Project ID>/users/<User ID>/profile`
 
 ### URL Parameters
 
