@@ -14,17 +14,17 @@ includes:
   - teams
   - users
   - floorplans
+  - template_checklists
+  - template_check_items
   - tasks
+  - task_check_items
   - bubbles
   - bubble_markups
   - attachments
   - hyperlinks
+  - automatic_hyperlinks
   - markups
   - markup_data
-  - template_checklists
-  - template_check_items
-  - task_check_items
-  - automatic_hyperlinks
   - errors
 
 ---

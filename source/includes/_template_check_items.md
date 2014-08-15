@@ -1,4 +1,4 @@
-# TemplateCheckItems
+# Template Check Items
 
 ## TemplateCheckItem Fields
 

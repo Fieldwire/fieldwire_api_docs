@@ -1,4 +1,4 @@
-# TemplateChecklists
+# Template Checklists
 
 ## TemplateChecklist Fields
 
