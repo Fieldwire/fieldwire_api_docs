@@ -264,7 +264,7 @@ HTTP/1.1 204 OK
 Content-Type: application/json
 ```
 
-This endpoint updates a specific bubble.
+This endpoint deletes the bubble.
 
 ### HTTP Request
 

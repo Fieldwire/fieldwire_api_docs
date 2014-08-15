@@ -303,7 +303,7 @@ HTTP/1.1 204 OK
 Content-Type: application/json
 ```
 
-This endpoint updates a specific task.
+This endpoint deletes the task.
 
 ### HTTP Request
 

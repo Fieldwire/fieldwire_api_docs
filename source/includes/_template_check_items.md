@@ -104,7 +104,7 @@ HTTP/1.1 204 OK
 Content-Type: application/json
 ```
 
-This endpoint updates a specific template_check_item.
+This endpoint deletes the template_check_item.
 
 ### HTTP Request
 

@@ -203,7 +203,7 @@ HTTP/1.1 204 OK
 Content-Type: application/json
 ```
 
-This endpoint updates a specific team.
+This endpoint deletes a team.
 
 ### HTTP Request
 
