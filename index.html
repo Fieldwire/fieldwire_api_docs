@@ -3777,13 +3777,12 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <td>The ID of the project to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='post-hyperlink'>Post Hyperlink</h2><pre class="highlight http"><span class="nf">POST</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/hyperlinks</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<h2 id='post-hyperlink'>Post Hyperlink</h2><pre class="highlight http"><span class="nf">POST</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/sheet/a5056209-4430-4407-a300-5dfcc4114993/hyperlinks</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
 <span class="p">{</span><span class="w">
     </span><span class="s2">"hyperlink"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"sheet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a5056209-4430-4407-a300-5dfcc4114993"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hyperlink #1"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"pos_x"</span><span class="p">:</span><span class="w"> </span><span class="mi">215</span><span class="p">,</span><span class="w">
         </span><span class="s2">"pos_y"</span><span class="p">:</span><span class="w"> </span><span class="mi">118</span><span class="p">,</span><span class="w">
@@ -3797,7 +3796,6 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 </blockquote>
 <pre class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="s2">"hyperlink"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"sheet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a5056209-4430-4407-a300-5dfcc4114993"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hyperlink #1"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"pos_x"</span><span class="p">:</span><span class="w"> </span><span class="mi">215</span><span class="p">,</span><span class="w">
         </span><span class="s2">"pos_y"</span><span class="p">:</span><span class="w"> </span><span class="mi">118</span><span class="p">,</span><span class="w">
@@ -3811,7 +3809,6 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 </blockquote>
 <pre class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="s2">"hyperlink"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"sheet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a5056209-4430-4407-a300-5dfcc4114993"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hyperlink #1"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"pos_x"</span><span class="p">:</span><span class="w"> </span><span class="mi">215</span><span class="p">,</span><span class="w">
         </span><span class="s2">"pos_y"</span><span class="p">:</span><span class="w"> </span><span class="mi">118</span><span class="p">,</span><span class="w">
@@ -3855,7 +3852,7 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 
 <p>Hyperlinks can be created linking to an existing floorplan or attachment, or alternatively you can create an <a href="#attachment-fields">attachment</a> as part of the same request.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">POST /projects/&lt;Project ID&gt;/hyperlinks</code></p>
+<p><code class="prettyprint">POST /projects/&lt;Project ID&gt;/sheets/&lt;Sheet ID&gt;/hyperlinks</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -3866,6 +3863,10 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <tr>
 <td>Project ID</td>
 <td>The ID of the hyperlink&rsquo;s project</td>
+</tr>
+<tr>
+<td>Sheet ID</td>
+<td>The ID of the hyperlink&rsquo;s sheet</td>
 </tr>
 </tbody></table>
 <h3 id='attachment-parameters'>Attachment Parameters</h3>
@@ -4243,7 +4244,7 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <td>The ID of the markup to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='post-markup'>Post Markup</h2><pre class="highlight http"><span class="nf">POST</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubble/75b86f78-0a94-42ea-9d58-a0f8fb5ed4bb/markups</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<h2 id='post-markup'>Post Markup</h2><pre class="highlight http"><span class="nf">POST</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/sheets/75b86f78-0a94-42ea-9d58-a0f8fb5ed4bb/markups</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
@@ -4300,7 +4301,7 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 
 <p>This endpoint creates a new markup.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">POST /projects/&lt;Project ID&gt;/bubbles/&lt;Bubble ID&gt;/markups</code></p>
+<p><code class="prettyprint">POST /projects/&lt;Project ID&gt;/sheets/&lt;Sheet ID&gt;/markups</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -4313,8 +4314,8 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <td>The ID of the markup&rsquo;s project</td>
 </tr>
 <tr>
-<td>Bubble ID</td>
-<td>The ID of the markup&rsquo;s bubble</td>
+<td>Sheet ID</td>
+<td>The ID of the markup&rsquo;s sheet</td>
 </tr>
 </tbody></table>
 <h2 id='update-markup'>Update Markup</h2><pre class="highlight http"><span class="nf">PATCH</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/markups/75d68ca1-0fc1-456a-bd9d-8b23875ac540</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
