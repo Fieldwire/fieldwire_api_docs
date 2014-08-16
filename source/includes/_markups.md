@@ -150,7 +150,7 @@ Markup ID | The ID of the markup to retrieve
 ## Post Markup
 
 ```http
-POST /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubble/75b86f78-0a94-42ea-9d58-a0f8fb5ed4bb/markups HTTP/1.1
+POST /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/sheets/75b86f78-0a94-42ea-9d58-a0f8fb5ed4bb/markups HTTP/1.1
 Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 
@@ -209,14 +209,14 @@ This endpoint creates a new markup.
 
 ### HTTP Request
 
-`POST /projects/<Project ID>/bubbles/<Bubble ID>/markups`
+`POST /projects/<Project ID>/sheets/<Sheet ID>/markups`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
 Project ID | The ID of the markup's project
-Bubble ID | The ID of the markup's bubble
+Sheet ID | The ID of the markup's sheet
 
 ## Update Markup
 

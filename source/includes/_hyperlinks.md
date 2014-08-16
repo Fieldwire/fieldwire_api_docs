@@ -91,13 +91,12 @@ Project ID | The ID of the project to retrieve
 ## Post Hyperlink
 
 ```http
-POST /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/hyperlinks HTTP/1.1
+POST /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/sheet/a5056209-4430-4407-a300-5dfcc4114993/hyperlinks HTTP/1.1
 Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 
 {
     "hyperlink": {
-        "sheet_id": "a5056209-4430-4407-a300-5dfcc4114993",
         "description": "Hyperlink #1",
         "pos_x": 215,
         "pos_y": 118,
@@ -110,7 +109,6 @@ Content-type: application/json
 ```json
 {
     "hyperlink": {
-        "sheet_id": "a5056209-4430-4407-a300-5dfcc4114993",
         "description": "Hyperlink #1",
         "pos_x": 215,
         "pos_y": 118,
@@ -124,7 +122,6 @@ Content-type: application/json
 ```json
 {
     "hyperlink": {
-        "sheet_id": "a5056209-4430-4407-a300-5dfcc4114993",
         "description": "Hyperlink #1",
         "pos_x": 215,
         "pos_y": 118,
@@ -170,13 +167,14 @@ Hyperlinks can be created linking to an existing floorplan or attachment, or alt
 
 ### HTTP Request
 
-`POST /projects/<Project ID>/hyperlinks`
+`POST /projects/<Project ID>/sheets/<Sheet ID>/hyperlinks`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
 Project ID | The ID of the hyperlink's project
+Sheet ID | The ID of the hyperlink's sheet
 
 ### Attachment Parameters
 
