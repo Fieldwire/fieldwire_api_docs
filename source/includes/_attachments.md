@@ -73,10 +73,6 @@ Project ID | The ID of the project to retrieve
 
 ## Managing Attachments
 
-<aside class="warning">
-    Fieldwire API does not currently support managing attachments.
-</aside>
-
 <aside class="notice">
-    <a href='https://console.fieldwire.net'>Log In</a> to manage attachments.
+    Attachments can currently only be created through [hyperlinks](#post-hyperlink)
 </aside>
