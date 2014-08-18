@@ -175,7 +175,7 @@ original_url | Public url of sheet
 ## Update Floorplan
 
 ```http
-PATCH /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/floorplans HTTP/1.1
+PATCH /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/floorplans/9af615e2-c091-4235-ae8a-b94c73b8e4ca HTTP/1.1
 Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 

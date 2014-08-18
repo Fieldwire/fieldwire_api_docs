@@ -73,6 +73,6 @@ Project ID | The ID of the project to retrieve
 
 ## Managing Attachments
 
-<aside class="notice">
+<aside class="warning">
     Attachments can currently only be created through [hyperlinks](#post-hyperlink)
 </aside>
