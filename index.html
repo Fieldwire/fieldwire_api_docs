@@ -1140,6 +1140,186 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 </tr>
 </tbody></table>
 
+          <h1 id='sheet-uploads'>Sheet Uploads</h1><h2 id='sheet-upload-fields'>Sheet Upload Fields</h2>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>Name of the sheet</td>
+</tr>
+<tr>
+<td>file_url</td>
+<td>Url of the sheet</td>
+</tr>
+<tr>
+<td>file_size</td>
+<td>Size of the sheet</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>User that uploaded sheet</td>
+</tr>
+<tr>
+<td>is_processed</td>
+<td>Indicated if sheet upload is finished processing</td>
+</tr>
+<tr>
+<td>pages</td>
+<td>Number of pages in upload</td>
+</tr>
+</tbody></table>
+<h2 id='get-sheet-uploads'>Get Sheet Uploads</h2><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/sheet_uploads</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+</pre>
+
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http"><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-26T00:18:17.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-26T00:18:22.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"51af34a9-b8fc-477d-907d-0b9064120b88"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Single.pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/Single.pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"file_size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2244590"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"is_processed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-26T00:20:00.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-26T00:20:10.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"701f69be-02bb-4786-ab48-be0d993bf2a5"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Multipage.pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/.pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"file_size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5584913"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"is_processed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></pre>
+
+<p>This endpoint retrieves all sheet_uploads.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET /projects/&lt;Project ID&gt;/sheet_uploads</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the project to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='get-sheet-upload'>Get Sheet Upload</h2><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/sheet_uploads/51af34a9-b8fc-477d-907d-0b9064120b88</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+</pre>
+
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http"><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-26T00:18:17.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-26T00:18:22.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"51af34a9-b8fc-477d-907d-0b9064120b88"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Single.pdf"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/Single.pdf"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"file_size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2244590"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"is_processed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<p>This endpoint retrieves a specific sheet_upload.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET /projects/&lt;Project ID&gt;/sheet_uploads/&lt;Sheet Upload ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the sheet_upload&rsquo;s project</td>
+</tr>
+<tr>
+<td>Sheet Upload ID</td>
+<td>The ID of the sheet_upload to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='post-sheet-upload'>Post Sheet Upload</h2><pre class="highlight http"><span class="nf">POST</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/sheet_uploads</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"sheet_upload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Single.pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/Single.pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"file_size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2244590"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http"><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">Created</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-26T00:18:17.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-26T00:18:22.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"51af34a9-b8fc-477d-907d-0b9064120b88"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Single.pdf"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/Single.pdf"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"file_size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2244590"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"is_processed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<p>This endpoint creates a new sheet_upload.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">POST /projects/&lt;Project ID&gt;/sheet_uploads</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the sheet_upload&rsquo;s project</td>
+</tr>
+</tbody></table>
+<h2 id='managing-sheet-uploads'>Managing Sheet Uploads</h2>
+<p><aside class="warning">
+    Once created, sheet uploads cannot be modified or deleted. To remove floorplans/sheets created from the sheet upload, delete them through their respective endpoints.
+</aside></p>
+
           <h1 id='floorplans-plans'>Floorplans (Plans)</h1><h2 id='floorplan-fields'>Floorplan Fields</h2>
 <table><thead>
 <tr>
@@ -1154,6 +1334,14 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <tr>
 <td>is_auto_versioning</td>
 <td>Indicates if the floorplan has automatic versioning</td>
+</tr>
+<tr>
+<td>is_name_confirmed</td>
+<td>Indicates if the floorplan was creating from a multipage pdf and needs to be confirmed</td>
+</tr>
+<tr>
+<td>path</td>
+<td>Folder or multipage source of floorplan</td>
 </tr>
 <tr>
 <td>sheets</td>
@@ -1268,70 +1456,10 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <td>The ID of the project to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='post-floorplan'>Post Floorplan</h2><pre class="highlight http"><span class="nf">POST</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/floorplans</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
-<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
-
-<span class="p">{</span><span class="w"> </span><span class="s2">"sheets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A1.12.png"</span><span class="p">,</span><span class="w"> </span><span class="s2">"original_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/A1.12.png"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w">
-</span></pre>
-
-<blockquote>
-<p>The above command returns:</p>
-</blockquote>
-<pre class="highlight http"><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">Created</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-
-<span class="p">{</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-15T22:23:18.934Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-15T22:23:18.934Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9af615e2-c091-4235-ae8a-b94c73b8e4ca"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A1.12"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"37b9103e-e3eb-438f-8c38-5f2736a952dd"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"is_auto_versioning"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"sheets"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></pre>
-
-<p><aside class="warning">
-    Fieldwire API does not currently support multipage PDFs.
-</aside></p>
-
+<h2 id='creating-floorplans'>Creating Floorplans</h2>
 <p><aside class="notice">
-    By default only processed sheets are returned, therefore when the floorplan is first created it will be returned with 0 sheets.
+    See <a href="#post-sheet-upload">Sheet Uploads</a>
 </aside></p>
-
-<p>This endpoint creates a new floorplan.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">POST /projects/&lt;Project ID&gt;/floorplans</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Project ID</td>
-<td>The ID of the floorplan&rsquo;s project</td>
-</tr>
-</tbody></table>
-<h3 id='sheet-parameters'>Sheet Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>name</td>
-<td>Sheet file name</td>
-</tr>
-<tr>
-<td>original_url</td>
-<td>Public url of sheet</td>
-</tr>
-</tbody></table>
 <h2 id='update-floorplan'>Update Floorplan</h2><pre class="highlight http"><span class="nf">PATCH</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/floorplans/9af615e2-c091-4235-ae8a-b94c73b8e4ca</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
@@ -1775,8 +1903,12 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <td>Time when task is to be started</td>
 </tr>
 <tr>
-<td>due_at</td>
-<td>Time when task is to be fixed</td>
+<td><em>due_at (DEPRECATED)</em></td>
+<td><em>Time when task is to be completed by</em></td>
+</tr>
+<tr>
+<td>due_date</td>
+<td>Date when task is to be completed by</td>
 </tr>
 <tr>
 <td>sequence_number</td>
