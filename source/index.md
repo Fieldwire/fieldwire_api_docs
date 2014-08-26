@@ -13,6 +13,7 @@ includes:
   - projects
   - users
   - teams
+  - sheet_uploads
   - floorplans
   - sheets
   - tasks

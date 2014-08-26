@@ -17,7 +17,8 @@ fixed_at | Time when task was fixed
 owner_user_id | User ID of task's owner
 is_local | Indicates if task is positioned on floorplan
 start_at | Time when task is to be started
-due_at | Time when task is to be fixed
+*due_at (DEPRECATED)* | *Time when task is to be completed by*
+due_date | Date when task is to be completed by
 sequence_number | Unique sequential identifier of task on project
 is_private | Indicates if task is private
 user_ids | Array of User IDs that are following this task

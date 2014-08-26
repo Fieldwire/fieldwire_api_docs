@@ -6,6 +6,8 @@ Field | Description
 --------- | -----------
 name | Name of the floorplan
 is_auto_versioning | Indicates if the floorplan has automatic versioning
+is_name_confirmed | Indicates if the floorplan was creating from a multipage pdf and needs to be confirmed
+path | Folder or multipage source of floorplan
 sheets | [Sheets](#sheets)
 
 ## Get Floorplans
@@ -116,61 +118,11 @@ Parameter | Description
 --------- | -----------
 Project ID | The ID of the project to retrieve
 
-## Post Floorplan
-
-```http
-POST /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/floorplans HTTP/1.1
-Authorization: Token api=[api token]>,project=[project token]
-Content-type: application/json
-
-{ "sheets": [ { "name": "A1.12.png", "original_url": "https://example.com/A1.12.png" } ] }
-```
-
-> The above command returns:
-
-```http
-HTTP/1.1 201 Created
-Content-Type: application/json
-
-{
-    "created_at": "2014-08-15T22:23:18.934Z",
-    "updated_at": "2014-08-15T22:23:18.934Z",
-    "id": "9af615e2-c091-4235-ae8a-b94c73b8e4ca",
-    "name": "A1.12",
-    "project_id": "37b9103e-e3eb-438f-8c38-5f2736a952dd",
-    "is_auto_versioning": false,
-    "deleted_at": null,
-    "sheets": []
-}
-```
-
-<aside class="warning">
-    Fieldwire API does not currently support multipage PDFs.
-</aside>
-
+## Creating Floorplans
 
 <aside class="notice">
-    By default only processed sheets are returned, therefore when the floorplan is first created it will be returned with 0 sheets.
+    See [Sheet Uploads](#post-sheet-upload)
 </aside>
-
-This endpoint creates a new floorplan.
-
-### HTTP Request
-
-`POST /projects/<Project ID>/floorplans`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-Project ID | The ID of the floorplan's project
-
-### Sheet Parameters
-
-Parameter | Description
---------- | -----------
-name | Sheet file name
-original_url | Public url of sheet
 
 ## Update Floorplan
 
