@@ -74,5 +74,5 @@ Project ID | The ID of the project to retrieve
 ## Managing Attachments
 
 <aside class="warning">
-    Attachments can currently only be created through [hyperlinks](#post-hyperlink)
+    Attachments can currently only be created through [hyperlinks](#post-hyperlink) or [multi-hyperlinks](#post-attachment)
 </aside>

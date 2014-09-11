@@ -148,7 +148,7 @@ Project ID | The ID of the project to retrieve
 
 ```http
 POST /projects HTTP/1.1
-Authorization: Token api=[api token]>,project=[project token]
+Authorization: Token api=[api token]>
 Content-type: application/json
 
 { "project": { "name": "Project 1" } }

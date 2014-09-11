@@ -24,6 +24,7 @@ includes:
   - bubble_markups
   - attachments
   - hyperlinks
+  - multi_hyperlinks
   - automatic_hyperlinks
   - markups
   - markup_data
