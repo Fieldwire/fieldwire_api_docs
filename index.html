@@ -372,7 +372,7 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 </tr>
 </tbody></table>
 <h2 id='post-project'>Post Project</h2><pre class="highlight http"><span class="nf">POST</span> <span class="nn">/projects</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;</span>
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
 <span class="p">{</span><span class="w"> </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Project 1"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
@@ -3788,7 +3788,7 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 </tbody></table>
 <h2 id='managing-attachments'>Managing Attachments</h2>
 <p><aside class="warning">
-    Attachments can currently only be created through <a href="#post-hyperlink">hyperlinks</a>
+    Attachments can currently only be created through <a href="#post-hyperlink">hyperlinks</a> or <a href="#post-attachment">multi-hyperlinks</a>
 </aside></p>
 
           <h1 id='hyperlinks'>Hyperlinks</h1><h2 id='hyperlink-fields'>Hyperlink Fields</h2>
@@ -4108,6 +4108,340 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <tr>
 <td>Hyperlink ID</td>
 <td>The ID of the hyperlink to retrieve</td>
+</tr>
+</tbody></table>
+
+          <h1 id='multihyperlinks'>MultiHyperlinks</h1><h2 id='multihyperlink-fields'>MultiHyperlink Fields</h2>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project_id</td>
+<td>Project ID multi_hyperlink belongs to</td>
+</tr>
+<tr>
+<td>sheet_id</td>
+<td>Sheet ID multi_hyperlink belongs to</td>
+</tr>
+<tr>
+<td>creator_user_id</td>
+<td>User ID of the multi_hyperlink&rsquo;s creator</td>
+</tr>
+<tr>
+<td>last_editor_user_id</td>
+<td>User ID of the multi_hyperlink&rsquo;s last editor</td>
+</tr>
+<tr>
+<td>pos_x</td>
+<td>Horizontal pixels (from left of floorplan) of multi_hyperlink&rsquo;s center</td>
+</tr>
+<tr>
+<td>pos_y</td>
+<td>Vertical pixels (from top of floorplan) of multi_hyperlink&rsquo;s center</td>
+</tr>
+</tbody></table>
+<h2 id='get-multihyperlinks'>Get MultiHyperlinks</h2><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/multi_hyperlinks</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+</pre>
+
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http"><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-09-10T21:33:20.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-09-10T21:33:20.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-09-10T21:33:20.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-09-10T21:33:20.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92371c34-4393-4a72-ab5e-5dd9b17c0f00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2135d73e-257c-495b-99db-71bf5221c31e"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sheet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b905934f-30d4-42e9-aa4e-dfdc3d9e62a3"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"creator_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_editor_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pos_x"</span><span class="p">:</span><span class="w"> </span><span class="mi">966</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pos_y"</span><span class="p">:</span><span class="w"> </span><span class="mi">201</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"attachment_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-09-10T21:37:32.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-09-10T21:46:31.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-09-10T21:37:32.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-09-10T21:46:31.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4216e08f-5f28-4da7-b8fd-a9a2dce3d1ea"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2135d73e-257c-495b-99db-71bf5221c31e"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sheet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b905934f-30d4-42e9-aa4e-dfdc3d9e62a3"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"creator_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_editor_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pos_x"</span><span class="p">:</span><span class="w"> </span><span class="mi">1837</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pos_y"</span><span class="p">:</span><span class="w"> </span><span class="mi">568</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"attachment_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"86639e3c-8849-4db4-8d3f-0647d58268ad"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"14e3aff5-28ac-45a5-baae-3b9a809a3e41"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></pre>
+
+<p>This endpoint retrieves all multi_hyperlinks.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET /projects/&lt;Project ID&gt;/multi_hyperlinks</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the project to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='post-multihyperlink'>Post MultiHyperlink</h2><pre class="highlight http"><span class="nf">POST</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/sheet/a5056209-4430-4407-a300-5dfcc4114993/multi_hyperlinks</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"multi_hyperlink"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"pos_x"</span><span class="p">:</span><span class="w"> </span><span class="mi">966</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pos_y"</span><span class="p">:</span><span class="w"> </span><span class="mi">201</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http"><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-09-10T21:33:20.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-09-10T21:33:20.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-09-10T21:33:20.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-09-10T21:33:20.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92371c34-4393-4a72-ab5e-5dd9b17c0f00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2135d73e-257c-495b-99db-71bf5221c31e"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sheet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b905934f-30d4-42e9-aa4e-dfdc3d9e62a3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"creator_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_editor_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pos_x"</span><span class="p">:</span><span class="w"> </span><span class="mi">966</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pos_y"</span><span class="p">:</span><span class="w"> </span><span class="mi">201</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attachment_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<p>This endpoint creates a new multi_hyperlink.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">POST /projects/&lt;Project ID&gt;/sheets/&lt;Sheet ID&gt;/multi_hyperlinks</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the multi_hyperlink&rsquo;s project</td>
+</tr>
+<tr>
+<td>Sheet ID</td>
+<td>The ID of the multi_hyperlink&rsquo;s sheet</td>
+</tr>
+</tbody></table>
+<h2 id='update-multihyperlink'>Update MultiHyperlink</h2><pre class="highlight http"><span class="nf">PATCH</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/multi_hyperlinks/92371c34-4393-4a72-ab5e-5dd9b17c0f00</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"multi_hyperlink"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"pos_x"</span><span class="p">:</span><span class="w"> </span><span class="mi">1966</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pos_y"</span><span class="p">:</span><span class="w"> </span><span class="mi">1201</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http"><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-09-10T21:33:20.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-09-10T21:33:20.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-09-10T21:33:20.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-09-10T21:33:20.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92371c34-4393-4a72-ab5e-5dd9b17c0f00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2135d73e-257c-495b-99db-71bf5221c31e"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sheet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b905934f-30d4-42e9-aa4e-dfdc3d9e62a3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"creator_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_editor_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pos_x"</span><span class="p">:</span><span class="w"> </span><span class="mi">1966</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pos_y"</span><span class="p">:</span><span class="w"> </span><span class="mi">1201</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attachment_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<p>This endpoint updates a specific multi_hyperlink.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">PATCH /projects/&lt;Project ID&gt;/multi_hyperlinks/&lt;MultiHyperlink ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the multi_hyperlink&rsquo;s project</td>
+</tr>
+<tr>
+<td>MultiHyperlink ID</td>
+<td>The ID of the multi_hyperlink to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='delete-multihyperlink'>Delete MultiHyperlink</h2><pre class="highlight http"><span class="nf">DELETE</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/multi_hyperlinks/75d68ca1-0fc1-456a-bd9d-8b23875ac540</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+</pre>
+
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http"><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">204</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+</pre>
+
+<p>This endpoint deletes a multi_hyperlink.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">DELETE /projects/&lt;Project ID&gt;/multi_hyperlinks/&lt;MultiHyperlink ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the multi_hyperlink&rsquo;s project</td>
+</tr>
+<tr>
+<td>MultiHyperlink ID</td>
+<td>The ID of the multi_hyperlink to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='post-attachment'>Post Attachment</h2><pre class="highlight http"><span class="nf">POST</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/multi_hyperlinks/92371c34-4393-4a72-ab5e-5dd9b17c0f00/attachments</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"attachment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"attachment 1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/attachment1-thumb.jpeg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/attachment1.jpeg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"file_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">736623</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http"><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-09-11T18:06:35.747Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-09-11T18:06:35.747Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-09-11T18:06:35.747Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-09-11T18:06:35.747Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"941394d5-7143-40e7-a503-0cc3b0bd13f2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2135d73e-257c-495b-99db-71bf5221c31e"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"creator_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"attachment 1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/attachment1-thumb.jpeg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/attachment1.jpeg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"file_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">736623</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<p>This endpoint creates a new attachment and adds it to the multi_hyperlink.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">POST /projects/&lt;Project ID&gt;/multi_hyperlinks/&lt;MultiHyperlink ID&gt;/attachments</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the multi_hyperlink&rsquo;s project</td>
+</tr>
+<tr>
+<td>MultiHyperlink ID</td>
+<td>The ID of the multi_hyperlink to retrieve</td>
+</tr>
+</tbody></table>
+
+<p><aside class="warning">
+    thumb_url is required for attachments on MultiHyperlinks
+</aside></p>
+<h2 id='delete-attachment'>Delete Attachment</h2><pre class="highlight http"><span class="nf">DELETE</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/multi_hyperlinks/75d68ca1-0fc1-456a-bd9d-8b23875ac540/attachments/941394d5-7143-40e7-a503-0cc3b0bd13f2</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+</pre>
+
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http"><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">204</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+</pre>
+
+<p>This endpoint deletes an attachment from a multi_hyperlink.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">DELETE /projects/&lt;Project ID&gt;/multi_hyperlinks/&lt;MultiHyperlink ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the multi_hyperlink&rsquo;s project</td>
+</tr>
+<tr>
+<td>MultiHyperlink ID</td>
+<td>The ID of the multi_hyperlink to retrieve</td>
+</tr>
+<tr>
+<td>Attachment ID</td>
+<td>The ID of the attachment to retrieve</td>
 </tr>
 </tbody></table>
 
