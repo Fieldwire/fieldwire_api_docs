@@ -1140,6 +1140,204 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 </tr>
 </tbody></table>
 
+          <h1 id='folders'>Folders</h1><h2 id='folder-fields'>Folder Fields</h2>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project_id</td>
+<td>Project ID folder belongs to</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Name of the folder</td>
+</tr>
+</tbody></table>
+<h2 id='get-folders'>Get Folders</h2><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/folders</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+</pre>
+
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http"><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d426dce3-1b5f-446c-9ba2-7fd8e5781db5"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aceb1617-2dcf-4b01-a6b1-d8ae02bc3027"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Folder 1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:44:18.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:44:18.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:44:18.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:44:18.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8c0c87d3-603a-4dd5-ac64-f11dd3ac2cf9"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aceb1617-2dcf-4b01-a6b1-d8ae02bc3027"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Folder 2"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></pre>
+
+<p>This endpoint retrieves all folders.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET /projects/&lt;Project ID&gt;/folders</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the project to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='post-folder'>Post Folder</h2><pre class="highlight http"><span class="nf">POST</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/folders</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"folder"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"folder 1"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http"><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d426dce3-1b5f-446c-9ba2-7fd8e5781db5"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aceb1617-2dcf-4b01-a6b1-d8ae02bc3027"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Folder 1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<p><aside class="notice">
+    Folder names will be automatically titleized, e.g. &ldquo;folder 1&rdquo; becomes &ldquo;Folder 1&rdquo;
+</aside></p>
+
+<p>This endpoint creates a new folder.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">POST /projects/&lt;Project ID&gt;/folders</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the folder&rsquo;s project</td>
+</tr>
+</tbody></table>
+<h2 id='update-folder'>Update Folder</h2><pre class="highlight http"><span class="nf">PATCH</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/folders/92371c34-4393-4a72-ab5e-5dd9b17c0f00</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"folder"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updated folder"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http"><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d426dce3-1b5f-446c-9ba2-7fd8e5781db5"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aceb1617-2dcf-4b01-a6b1-d8ae02bc3027"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updated folder"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<p>This endpoint updates a specific folder.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">PATCH /projects/&lt;Project ID&gt;/folders/&lt;Folder ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the folder&rsquo;s project</td>
+</tr>
+<tr>
+<td>Folder ID</td>
+<td>The ID of the folder to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='delete-folder'>Delete Folder</h2><pre class="highlight http"><span class="nf">DELETE</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/folders/75d68ca1-0fc1-456a-bd9d-8b23875ac540</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+</pre>
+
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http"><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">204</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+</pre>
+
+<p>This endpoint deletes a folder.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">DELETE /projects/&lt;Project ID&gt;/folders/&lt;Folder ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the folder&rsquo;s project</td>
+</tr>
+<tr>
+<td>Folder ID</td>
+<td>The ID of the folder to retrieve</td>
+</tr>
+</tbody></table>
+
           <h1 id='sheet-uploads'>Sheet Uploads</h1><h2 id='sheet-upload-fields'>Sheet Upload Fields</h2>
 <table><thead>
 <tr>
@@ -1170,6 +1368,10 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <tr>
 <td>pages</td>
 <td>Number of pages in upload</td>
+</tr>
+<tr>
+<td>folder_id</td>
+<td>ID of the folder the sheet upload was added to</td>
 </tr>
 </tbody></table>
 <h2 id='get-sheet-uploads'>Get Sheet Uploads</h2><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/sheet_uploads</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -1340,8 +1542,8 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <td>Indicates if the floorplan was creating from a multipage pdf and needs to be confirmed</td>
 </tr>
 <tr>
-<td>path</td>
-<td>Folder or multipage source of floorplan</td>
+<td>folder_id</td>
+<td>Folder ID floorplan belongs to</td>
 </tr>
 <tr>
 <td>sheets</td>
@@ -3786,10 +3988,146 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <td>The ID of the project to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='managing-attachments'>Managing Attachments</h2>
-<p><aside class="warning">
-    Attachments can currently only be created through <a href="#post-hyperlink">hyperlinks</a> or <a href="#post-attachment">multi-hyperlinks</a>
+<h2 id='post-attachment'>Post Attachment</h2>
+<p><aside class="notice">
+    Attachments can also be created through <a href="#post-hyperlink">hyperlinks</a> or <a href="#post-attachment">multi-hyperlinks</a>
 </aside></p>
+<pre class="highlight http"><span class="nf">POST</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/attachments</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"attachment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"attachment 1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/attachment1.jpeg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"file_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">736623</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http"><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d426dce3-1b5f-446c-9ba2-7fd8e5781db5"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aceb1617-2dcf-4b01-a6b1-d8ae02bc3027"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"creator_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"attachment 1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/attachment1.jpeg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"file_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">736623</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<p>This endpoint creates a new attachment.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">POST /projects/&lt;Project ID&gt;/attachments</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the attachment&rsquo;s project</td>
+</tr>
+</tbody></table>
+<h2 id='update-attachment'>Update Attachment</h2><pre class="highlight http"><span class="nf">PATCH</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/attachments/92371c34-4393-4a72-ab5e-5dd9b17c0f00</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"attachment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updated attachment"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http"><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d426dce3-1b5f-446c-9ba2-7fd8e5781db5"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aceb1617-2dcf-4b01-a6b1-d8ae02bc3027"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"creator_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updated attachment"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/attachment1.jpeg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"file_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">736623</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<p>This endpoint updates a specific attachment.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">PATCH /projects/&lt;Project ID&gt;/attachments/&lt;Attachment ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the attachment&rsquo;s project</td>
+</tr>
+<tr>
+<td>Attachment ID</td>
+<td>The ID of the attachment to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='delete-attachment'>Delete Attachment</h2><pre class="highlight http"><span class="nf">DELETE</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/attachments/75d68ca1-0fc1-456a-bd9d-8b23875ac540</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+</pre>
+
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http"><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">204</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+</pre>
+
+<p>This endpoint deletes a attachment.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">DELETE /projects/&lt;Project ID&gt;/attachments/&lt;Attachment ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the attachment&rsquo;s project</td>
+</tr>
+<tr>
+<td>Attachment ID</td>
+<td>The ID of the attachment to retrieve</td>
+</tr>
+</tbody></table>
 
           <h1 id='hyperlinks'>Hyperlinks</h1><h2 id='hyperlink-fields'>Hyperlink Fields</h2>
 <table><thead>
