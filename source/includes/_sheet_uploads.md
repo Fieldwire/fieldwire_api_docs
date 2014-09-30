@@ -10,6 +10,7 @@ file_size | Size of the sheet
 user_id | User that uploaded sheet
 is_processed | Indicated if sheet upload is finished processing
 pages | Number of pages in upload
+folder_id | ID of the folder the sheet upload was added to
 
 
 ## Get Sheet Uploads

@@ -7,7 +7,7 @@ Field | Description
 name | Name of the floorplan
 is_auto_versioning | Indicates if the floorplan has automatic versioning
 is_name_confirmed | Indicates if the floorplan was creating from a multipage pdf and needs to be confirmed
-path | Folder or multipage source of floorplan
+folder_id | Folder ID floorplan belongs to
 sheets | [Sheets](#sheets)
 
 ## Get Floorplans
