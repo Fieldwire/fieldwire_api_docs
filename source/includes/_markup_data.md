@@ -183,7 +183,7 @@ x2, y2 = coordinates[1]
 x_delta = x2 - x1
 y_delta = y2 - y1
 
-arrow_width = stroke_width * 16
+arrow_width = stroke_width * 12
 
 stem_width = arrow_width / 4
 half_stem_width = stem_width / 2
