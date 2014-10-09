@@ -10,6 +10,8 @@ creator_user_id | User ID of the attachment's creator
 thumb_url | Url of the attachment thumb (optional)
 file_url | Url of the attachment
 file_size | Size of the attachment
+*floorplan_ids (READ ONLY)* | *Floorplan IDs that hyperlink to this attachment*
+*multi_hyperlink_ids (READ ONLY)* | *MultiHyperlink IDs that link to this attachment*
 
 ## Get Attachments
 
@@ -39,7 +41,9 @@ Content-Type: application/json
         "thumb_url": null,
         "file_url": "http://example.com/attachment1.jpeg",
         "file_size": 736623,
-        "deleted_at": null
+        "deleted_at": null,
+        "floorplan_ids": [],
+        "multi_hyperlink_ids": []
     },
     {
         "created_at": "2014-06-17T00:44:18.000Z",
@@ -54,7 +58,9 @@ Content-Type: application/json
         "thumb_url": null,
         "file_url": "http://example.com/attachment2.jpeg",
         "file_size": 736623,
-        "deleted_at": null
+        "deleted_at": null,
+        "floorplan_ids": [],
+        "multi_hyperlink_ids": []
     }
 ]
 ```
@@ -111,7 +117,9 @@ Content-Type: application/json
     "thumb_url": null,
     "file_url": "http://example.com/attachment1.jpeg",
     "file_size": 736623,
-    "deleted_at": null
+    "deleted_at": null,
+    "floorplan_ids": [],
+    "multi_hyperlink_ids": []
 }
 ```
 
@@ -160,7 +168,9 @@ Content-Type: application/json
     "thumb_url": null,
     "file_url": "http://example.com/attachment1.jpeg",
     "file_size": 736623,
-    "deleted_at": null
+    "deleted_at": null,
+    "floorplan_ids": [],
+    "multi_hyperlink_ids": []
 }
 ```
 
