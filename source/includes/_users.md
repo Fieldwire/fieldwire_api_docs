@@ -16,7 +16,7 @@ user_blocked_at | Time when user was blocked from accessing this project
 user_deleted_at | Time when user was removed from project
 current_sign_in_at | Approximately last time user signed into fieldwire
 invited_by_id | The user ID that invited this user
-is_email_notifications_enabled | Indicates if the user receives email notifications
+email_notifications | Indicates how often the user receives emails ("never", "daily", "instantly"). This overrides any project setting.
 emails_address | Contains array of emails with an is_primary indicator
 
 ## Get Users
@@ -50,7 +50,7 @@ Content-Type: application/json
         "user_deleted_at": null,
         "current_sign_in_at": null,
         "invited_by_id": null,
-        "is_email_notifications_enabled": true,
+        "email_notifications": "instantly",
         "email_addresses": [
             {
                 "email": "bob@fieldwire.net",
@@ -74,7 +74,7 @@ Content-Type: application/json
         "user_deleted_at": null,
         "current_sign_in_at": null,
         "invited_by_id": null,
-        "is_email_notifications_enabled": true,
+        "email_notifications": "instantly",
         "email_addresses": [
             {
                 "email": "james@fieldwire.net",
@@ -132,7 +132,7 @@ Content-Type: application/json
             "user_deleted_at": null,
             "current_sign_in_at": null,
             "invited_by_id": null,
-            "is_email_notifications_enabled": true,
+            "email_notifications": "instantly",
             "email_addresses": [
                 {
                     "email": "bob@fieldwire.net",
@@ -156,7 +156,7 @@ Content-Type: application/json
             "user_deleted_at": null,
             "current_sign_in_at": null,
             "invited_by_id": null,
-            "is_email_notifications_enabled": true,
+            "email_notifications": "instantly",
             "email_addresses": [
                 {
                     "email": "james@fieldwire.net",
@@ -216,7 +216,7 @@ Content-Type: application/json
     "user_deleted_at": null,
     "current_sign_in_at": null,
     "invited_by_id": null,
-    "is_email_notifications_enabled": true,
+    "email_notifications": "instantly",
     "email_addresses": [
         {
             "email": "bob@fieldwire.net",
@@ -271,7 +271,7 @@ Content-Type: application/json
     "user_deleted_at": null,
     "current_sign_in_at": null,
     "invited_by_id": null,
-    "is_email_notifications_enabled": true,
+    "email_notifications": "instantly",
     "email_addresses": [
         {
             "email": "bob@fieldwire.net",
