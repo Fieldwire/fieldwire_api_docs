@@ -17,6 +17,7 @@ user_deleted_at | Time when user was removed from project
 current_sign_in_at | Approximately last time user signed into fieldwire
 invited_by_id | The user ID that invited this user
 email_notifications | Indicates how often the user receives emails ("never", "daily", "instantly"). This overrides any project setting.
+role | Indicates user's role on project ("admin", "member", "follower")
 emails_address | Contains array of emails with an is_primary indicator
 
 ## Get Users
@@ -50,7 +51,8 @@ Content-Type: application/json
         "user_deleted_at": null,
         "current_sign_in_at": null,
         "invited_by_id": null,
-        "email_notifications": "instantly",
+        "email_notifications": "instantly",,
+        "role": "admin",
         "email_addresses": [
             {
                 "email": "bob@fieldwire.net",
@@ -74,7 +76,8 @@ Content-Type: application/json
         "user_deleted_at": null,
         "current_sign_in_at": null,
         "invited_by_id": null,
-        "email_notifications": "instantly",
+        "email_notifications": "instantly",,
+        "role": "admin",
         "email_addresses": [
             {
                 "email": "james@fieldwire.net",
@@ -133,6 +136,7 @@ Content-Type: application/json
             "current_sign_in_at": null,
             "invited_by_id": null,
             "email_notifications": "instantly",
+            "role": "admin",
             "email_addresses": [
                 {
                     "email": "bob@fieldwire.net",
@@ -157,6 +161,7 @@ Content-Type: application/json
             "current_sign_in_at": null,
             "invited_by_id": null,
             "email_notifications": "instantly",
+            "role": "admin",
             "email_addresses": [
                 {
                     "email": "james@fieldwire.net",
@@ -191,7 +196,7 @@ PUT /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/users/15 HTTP/1.1
 Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 
-{ "user": { "is_admin": true, "is_approved": true } }
+{ "user": { "role": "admin", "is_approved": true } }
 ```
 
 > The above command returns:
@@ -217,6 +222,7 @@ Content-Type: application/json
     "current_sign_in_at": null,
     "invited_by_id": null,
     "email_notifications": "instantly",
+    "role": "admin",
     "email_addresses": [
         {
             "email": "bob@fieldwire.net",
@@ -272,6 +278,7 @@ Content-Type: application/json
     "current_sign_in_at": null,
     "invited_by_id": null,
     "email_notifications": "instantly",
+    "role": "admin",
     "email_addresses": [
         {
             "email": "bob@fieldwire.net",
