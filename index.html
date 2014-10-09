@@ -548,8 +548,8 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <td>The user ID that invited this user</td>
 </tr>
 <tr>
-<td>is_email_notifications_enabled</td>
-<td>Indicates if the user receives email notifications</td>
+<td>email_notifications</td>
+<td>Indicates how often the user receives emails (&ldquo;never&rdquo;, &ldquo;daily&rdquo;, &ldquo;instantly&rdquo;). This overrides any project setting.</td>
 </tr>
 <tr>
 <td>emails_address</td>
@@ -584,7 +584,7 @@ When displaying entities, sort using device_created_at/device_updated_at as this
         </span><span class="s2">"user_deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"current_sign_in_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"invited_by_id"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"is_email_notifications_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email_notifications"</span><span class="p">:</span><span class="w"> </span><span class="s2">"instantly"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"email_addresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bob@fieldwire.net"</span><span class="p">,</span><span class="w">
@@ -608,7 +608,7 @@ When displaying entities, sort using device_created_at/device_updated_at as this
         </span><span class="s2">"user_deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"current_sign_in_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"invited_by_id"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"is_email_notifications_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email_notifications"</span><span class="p">:</span><span class="w"> </span><span class="s2">"instantly"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"email_addresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"james@fieldwire.net"</span><span class="p">,</span><span class="w">
@@ -666,7 +666,7 @@ When displaying entities, sort using device_created_at/device_updated_at as this
             </span><span class="s2">"user_deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
             </span><span class="s2">"current_sign_in_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
             </span><span class="s2">"invited_by_id"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"is_email_notifications_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"email_notifications"</span><span class="p">:</span><span class="w"> </span><span class="s2">"instantly"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"email_addresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bob@fieldwire.net"</span><span class="p">,</span><span class="w">
@@ -690,7 +690,7 @@ When displaying entities, sort using device_created_at/device_updated_at as this
             </span><span class="s2">"user_deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
             </span><span class="s2">"current_sign_in_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
             </span><span class="s2">"invited_by_id"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"is_email_notifications_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"email_notifications"</span><span class="p">:</span><span class="w"> </span><span class="s2">"instantly"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"email_addresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"james@fieldwire.net"</span><span class="p">,</span><span class="w">
@@ -748,7 +748,7 @@ When displaying entities, sort using device_created_at/device_updated_at as this
     </span><span class="s2">"user_deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"current_sign_in_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"invited_by_id"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"is_email_notifications_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email_notifications"</span><span class="p">:</span><span class="w"> </span><span class="s2">"instantly"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"email_addresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bob@fieldwire.net"</span><span class="p">,</span><span class="w">
@@ -806,7 +806,7 @@ When displaying entities, sort using device_created_at/device_updated_at as this
     </span><span class="s2">"user_deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"current_sign_in_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"invited_by_id"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"is_email_notifications_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email_notifications"</span><span class="p">:</span><span class="w"> </span><span class="s2">"instantly"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"email_addresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bob@fieldwire.net"</span><span class="p">,</span><span class="w">
