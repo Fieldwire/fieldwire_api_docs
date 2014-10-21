@@ -1986,7 +1986,19 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 </tr>
 <tr>
 <td>sheet_upload_id</td>
-<td>ID of the Sheet Upload that created this sheet (optional)</td>
+<td>ID of the Sheet Upload that created this sheet</td>
+</tr>
+<tr>
+<td>inches_per_pixel</td>
+<td>User calibrated conversion from pixels to inches</td>
+</tr>
+<tr>
+<td>version_name</td>
+<td>User defined name of sheet version</td>
+</tr>
+<tr>
+<td>description</td>
+<td>User defined description of sheets</td>
 </tr>
 </tbody></table>
 <h2 id='resolve-conflict'>Resolve Conflict</h2><pre class="highlight http"><span class="nf">PATCH</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/sheets/9f5ab19a-5813-47a9-a767-7319a4171c52</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -3937,6 +3949,14 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <td>file_size</td>
 <td>Size of the attachment</td>
 </tr>
+<tr>
+<td><em>floorplan_ids (READ ONLY)</em></td>
+<td><em>Floorplan IDs that hyperlink to this attachment</em></td>
+</tr>
+<tr>
+<td><em>multi_hyperlink_ids (READ ONLY)</em></td>
+<td><em>MultiHyperlink IDs that link to this attachment</em></td>
+</tr>
 </tbody></table>
 <h2 id='get-attachments'>Get Attachments</h2><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/attachments</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
@@ -3963,7 +3983,9 @@ When displaying entities, sort using device_created_at/device_updated_at as this
         </span><span class="s2">"thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/attachment1.jpeg"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"file_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">736623</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+        </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"floorplan_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"multi_hyperlink_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
         </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:44:18.000Z"</span><span class="p">,</span><span class="w">
@@ -3978,7 +4000,9 @@ When displaying entities, sort using device_created_at/device_updated_at as this
         </span><span class="s2">"thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/attachment2.jpeg"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"file_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">736623</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+        </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"floorplan_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"multi_hyperlink_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></pre>
@@ -4035,7 +4059,9 @@ When displaying entities, sort using device_created_at/device_updated_at as this
     </span><span class="s2">"thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/attachment1.jpeg"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"file_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">736623</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+    </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"floorplan_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"multi_hyperlink_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
 
@@ -4084,7 +4110,9 @@ When displaying entities, sort using device_created_at/device_updated_at as this
     </span><span class="s2">"thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/attachment1.jpeg"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"file_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">736623</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+    </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"floorplan_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"multi_hyperlink_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
 
@@ -5487,7 +5515,7 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <span class="n">x_delta</span> <span class="o">=</span> <span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span>
 <span class="n">y_delta</span> <span class="o">=</span> <span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span>
 
-<span class="n">arrow_width</span> <span class="o">=</span> <span class="n">stroke_width</span> <span class="o">*</span> <span class="mi">16</span>
+<span class="n">arrow_width</span> <span class="o">=</span> <span class="n">stroke_width</span> <span class="o">*</span> <span class="mi">12</span>
 
 <span class="n">stem_width</span> <span class="o">=</span> <span class="n">arrow_width</span> <span class="o">/</span> <span class="mi">4</span>
 <span class="n">half_stem_width</span> <span class="o">=</span> <span class="n">stem_width</span> <span class="o">/</span> <span class="mi">2</span>
