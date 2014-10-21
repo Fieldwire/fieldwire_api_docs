@@ -25,7 +25,11 @@ page_number | Page number of sheet if created from multi-page PDF
 android_file_url | Url of the low resolution floorplan (used on Android devices with max resolution 2048)
 android_file_width | Width of the android file_url
 android_file_height | Height of the android file_url
-sheet_upload_id | ID of the Sheet Upload that created this sheet (optional)
+sheet_upload_id | ID of the Sheet Upload that created this sheet
+inches_per_pixel | User calibrated conversion from pixels to inches
+version_name | User defined name of sheet version
+description | User defined description of sheets
+
 
 ## Resolve Conflict
 
