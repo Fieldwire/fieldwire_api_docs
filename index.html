@@ -5509,42 +5509,75 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <p><aside class="notice">
     Arrow has outline (always white) with specified stroke width and fill with specified color
 </aside></p>
-<pre class="highlight ruby"><span class="c1"># example svg arrow path in ruby</span>
-<span class="n">x1</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">coordinates</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span>
-<span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">coordinates</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span>
-<span class="n">x_delta</span> <span class="o">=</span> <span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span>
-<span class="n">y_delta</span> <span class="o">=</span> <span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span>
 
-<span class="n">arrow_width</span> <span class="o">=</span> <span class="n">stroke_width</span> <span class="o">*</span> <span class="mi">12</span>
+<p>Isosceles triangle:</p>
 
-<span class="n">stem_width</span> <span class="o">=</span> <span class="n">arrow_width</span> <span class="o">/</span> <span class="mi">4</span>
-<span class="n">half_stem_width</span> <span class="o">=</span> <span class="n">stem_width</span> <span class="o">/</span> <span class="mi">2</span>
-<span class="n">arrow_side</span> <span class="o">=</span> <span class="n">arrow_width</span> <span class="o">/</span> <span class="mi">2</span>
+<ul>
+<li>Arrow height = width * 12</li>
+<li>Arrow width =  Arrow height / 2</li>
+</ul>
+<h2 id='measurement'>Measurement</h2><pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"measurement"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#FF0000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15'5\""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"fontSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">48</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LineString"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mi">455</span><span class="p">,</span><span class="mi">168</span><span class="p">],[</span><span class="mi">1085</span><span class="p">,</span><span class="mi">219</span><span class="p">]</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
 
-<span class="n">length</span> <span class="o">=</span> <span class="no">Math</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">x_delta</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y_delta</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">angle</span> <span class="o">=</span> <span class="no">Math</span><span class="p">.</span><span class="nf">atan2</span><span class="p">(</span><span class="n">y_delta</span><span class="p">,</span> <span class="n">x_delta</span><span class="p">)</span>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>style</td>
+<td>Always &lsquo;arrow&rsquo;</td>
+</tr>
+<tr>
+<td>color</td>
+<td>Color of markup</td>
+</tr>
+<tr>
+<td>width</td>
+<td>Stroke width</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Text to be displayed (single line)</td>
+</tr>
+<tr>
+<td>fontSize</td>
+<td>Size of text in pixels</td>
+</tr>
+</tbody></table>
 
-<span class="n">points</span> <span class="o">=</span> <span class="o">[</span>
-  <span class="o">[</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span> <span class="o">+</span> <span class="n">half_stem_width</span><span class="o">]</span><span class="p">,</span>
-  <span class="o">[</span><span class="p">(</span><span class="n">x1</span> <span class="o">+</span> <span class="n">length</span><span class="p">)</span> <span class="o">-</span> <span class="n">arrow_side</span><span class="p">,</span> <span class="n">y1</span> <span class="o">+</span> <span class="n">half_stem_width</span><span class="o">]</span><span class="p">,</span>
-  <span class="o">[</span><span class="p">(</span><span class="n">x1</span> <span class="o">+</span> <span class="n">length</span><span class="p">)</span> <span class="o">-</span> <span class="n">arrow_side</span><span class="p">,</span> <span class="n">y1</span> <span class="o">+</span> <span class="n">arrow_width</span> <span class="o">/</span> <span class="mi">2</span><span class="o">]</span><span class="p">,</span>
-  <span class="o">[</span><span class="p">(</span><span class="n">x1</span> <span class="o">+</span> <span class="n">length</span><span class="p">),</span> <span class="n">y1</span><span class="o">]</span><span class="p">,</span>
-  <span class="o">[</span><span class="p">(</span><span class="n">x1</span> <span class="o">+</span> <span class="n">length</span><span class="p">)</span> <span class="o">-</span> <span class="n">arrow_side</span><span class="p">,</span> <span class="n">y1</span> <span class="o">-</span> <span class="n">arrow_width</span> <span class="o">/</span> <span class="mi">2</span><span class="o">]</span><span class="p">,</span>
-  <span class="o">[</span><span class="p">(</span><span class="n">x1</span> <span class="o">+</span> <span class="n">length</span><span class="p">)</span> <span class="o">-</span> <span class="n">arrow_side</span><span class="p">,</span> <span class="n">y1</span> <span class="o">-</span> <span class="n">half_stem_width</span><span class="o">]</span><span class="p">,</span>
-  <span class="o">[</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span> <span class="o">-</span> <span class="n">half_stem_width</span><span class="o">]</span><span class="p">,</span>
-<span class="o">]</span>
+<p><aside class="notice">
+    Line connecting arrows should provide gap to fit text
+</aside>
+<aside class="notice">
+    Do not draw arrows if text width is larger than markup width
+</aside>
+<aside class="notice">
+    Text should rotate between -90 and 90 degrees only
+</aside></p>
 
-<span class="n">path</span> <span class="o">=</span> <span class="s2">"M </span><span class="si">#{</span><span class="n">x1</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">y1</span><span class="si">}</span><span class="s2">"</span>
+<p>Equilateral triangle:</p>
 
-<span class="n">points</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">|</span>
-  <span class="n">x_prime</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">+</span> <span class="no">Math</span><span class="p">.</span><span class="nf">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x1</span><span class="p">)</span> <span class="o">-</span> <span class="no">Math</span><span class="p">.</span><span class="nf">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span>
-  <span class="n">y_prime</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">+</span> <span class="no">Math</span><span class="p">.</span><span class="nf">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x1</span><span class="p">)</span> <span class="o">+</span> <span class="no">Math</span><span class="p">.</span><span class="nf">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span>
-
-  <span class="n">path</span> <span class="o">+=</span> <span class="s2">" L </span><span class="si">#{</span><span class="n">x_prime</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">y_prime</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-
-<span class="n">path</span> <span class="o">+=</span> <span class="s2">" z"</span>
-</pre>
+<ul>
+<li>Arrow height = Arrow width = width * 6</li>
+</ul>
 
           <h1 id='errors'>Errors</h1><pre class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
