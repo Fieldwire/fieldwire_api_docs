@@ -176,40 +176,52 @@ width | Stroke width
     Arrow has outline (always white) with specified stroke width and fill with specified color
 </aside>
 
-``` ruby
-# example svg arrow path in ruby
-x1, y1 = coordinates[0]
-x2, y2 = coordinates[1]
-x_delta = x2 - x1
-y_delta = y2 - y1
+Isosceles triangle:
 
-arrow_width = stroke_width * 12
+* Arrow height = width * 12
+* Arrow width =  Arrow height / 2
 
-stem_width = arrow_width / 4
-half_stem_width = stem_width / 2
-arrow_side = arrow_width / 2
+## Measurement
 
-length = Math.sqrt(x_delta**2 + y_delta**2)
-angle = Math.atan2(y_delta, x_delta)
-
-points = [
-  [x1, y1 + half_stem_width],
-  [(x1 + length) - arrow_side, y1 + half_stem_width],
-  [(x1 + length) - arrow_side, y1 + arrow_width / 2],
-  [(x1 + length), y1],
-  [(x1 + length) - arrow_side, y1 - arrow_width / 2],
-  [(x1 + length) - arrow_side, y1 - half_stem_width],
-  [x1, y1 - half_stem_width],
-]
-
-path = "M #{x1} #{y1}"
-
-points.each do |(x,y)|
-  x_prime = x1 + Math.cos(angle) * (x - x1) - Math.sin(angle) * (y - y1)
-  y_prime = y1 + Math.sin(angle) * (x - x1) + Math.cos(angle) * (y - y1)
-
-  path += " L #{x_prime} #{y_prime}"
-end
-
-path += " z"
 ```
+{
+    "data": {
+        "type": "Feature",
+        "properties": {
+            "style": "measurement",
+            "color": "#FF0000",
+            "width": 5,
+            "description": "15'5\"",
+            "fontSize": 48
+        },
+        "geometry": {
+            "type": "LineString",
+            "coordinates": [[455,168],[1085,219]
+            ]
+        }
+    }
+}
+```
+
+Property | Description
+--------- | -----------
+style | Always 'arrow'
+color | Color of markup
+width | Stroke width
+description | Text to be displayed (single line)
+fontSize | Size of text in pixels
+
+<aside class="notice">
+    Line connecting arrows should provide gap to fit text
+</aside>
+<aside class="notice">
+    Do not draw arrows if text width is larger than markup width
+</aside>
+<aside class="notice">
+    Text should rotate between -90 and 90 degrees only
+</aside>
+
+
+Equilateral triangle:
+
+* Arrow height = Arrow width = width * 6
