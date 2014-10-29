@@ -205,7 +205,7 @@ Isosceles triangle:
 
 Property | Description
 --------- | -----------
-style | Always 'arrow'
+style | Always 'measurement'
 color | Color of markup
 width | Stroke width
 description | Text to be displayed (single line)
