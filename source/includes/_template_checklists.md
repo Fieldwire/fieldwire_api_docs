@@ -131,7 +131,7 @@ POST /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/template_checklists HTTP/1.1
 Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 
-{ "template_checklist": { "name": "Template 2" } }
+{ "name": "Template 2" }
 ```
 
 > The above command returns:
@@ -173,7 +173,7 @@ PATCH /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/template_checklists/75d68ca
 Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 
-{ "template_checklist": { "name": "Updated template" } }
+{ "name": "Updated template" }
 ```
 
 > The above command returns:

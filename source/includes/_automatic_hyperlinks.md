@@ -65,6 +65,47 @@ Parameter | Description
 --------- | -----------
 Project ID | The ID of the project to retrieve
 
+## Get AutomaticHyperlink
+
+```http
+GET /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/automatic_hyperlinks/fa1fe4df-39ad-42e6-b11a-af7f2b97cf75 HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
+```
+
+> The above command returns:
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+    "created_at": "2014-07-17T00:50:53.000Z",
+    "updated_at": "2014-07-17T00:50:53.000Z",
+    "id": "fa1fe4df-39ad-42e6-b11a-af7f2b97cf75w",
+    "project_id": "aa0635ec-f95c-4458-8f56-e82af3d3634f",
+    "sheet_id": "5c007e3c-9a1a-42ad-9cdc-4e71e035c0ea",
+    "pos_x": 885,
+    "pos_y": 922,
+    "floorplan_id": "88273c0f-4341-442b-b2f2-539bfe01b872",
+    "radius": 14,
+    "deleted_at": null
+}
+```
+
+This endpoint retrieves a specific automatic_hyperlink.
+
+### HTTP Request
+
+`GET /projects/<Project ID>/automatic_hyperlinks/<AutomaticHyperlink ID>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Project ID | The ID of the automatic_hyperlink's project
+AutomaticHyperlink ID | The ID of the automatic_hyperlink to retrieve
+
 ## Managing Automatic Hyperlinks
 
 <aside class="warning">

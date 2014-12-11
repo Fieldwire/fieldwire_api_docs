@@ -151,7 +151,7 @@ POST /projects HTTP/1.1
 Authorization: Token api=[api token]>
 Content-type: application/json
 
-{ "project": { "name": "Project 1" } }
+{ "name": "Project 1" }
 ```
 
 > The above command returns:
@@ -210,7 +210,7 @@ PATCH /projects/b5c08097-74f1-4a8f-a9a8-52e16295f6a4 HTTP/1.1
 Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 
-{ "project": { "name": "Updated Project" } }
+{ "name": "Updated Project" }
 ```
 
 > The above command returns:

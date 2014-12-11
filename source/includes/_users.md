@@ -196,7 +196,7 @@ PATCH /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/users/15 HTTP/1.1
 Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 
-{ "user": { "role": "admin", "is_approved": true } }
+{ "role": "admin", "is_approved": true }
 ```
 
 > The above command returns:
@@ -252,7 +252,7 @@ PATCH /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/users/15/profile HTTP/1.1
 Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 
-{ "user": { "company": "Fieldwire", "phone_number": "(415) 555-5555" } }
+{ "company": "Fieldwire", "phone_number": "(415) 555-5555" }
 ```
 
 > The above command returns:

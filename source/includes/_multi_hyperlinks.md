@@ -10,6 +10,7 @@ creator_user_id | User ID of the multi_hyperlink's creator
 last_editor_user_id | User ID of the multi_hyperlink's last editor
 pos_x | Horizontal pixels (from left of floorplan) of multi_hyperlink's center
 pos_y | Vertical pixels (from top of floorplan) of multi_hyperlink's center
+*attachment_ids (read only)* | IDs of attachment the multi_hyperlink links to
 
 
 ## Get MultiHyperlinks
@@ -77,6 +78,51 @@ Parameter | Description
 --------- | -----------
 Project ID | The ID of the project to retrieve
 
+## Get MultiHyperlink
+
+```http
+GET /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/multi_hyperlinks/fa1fe4df-39ad-42e6-b11a-af7f2b97cf75 HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
+```
+
+> The above command returns:
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+    "created_at": "2014-09-10T21:33:20.000Z",
+    "updated_at": "2014-09-10T21:33:20.000Z",
+    "device_created_at": "2014-09-10T21:33:20.000Z",
+    "device_updated_at": "2014-09-10T21:33:20.000Z",
+    "resolved_conflict": false,
+    "id": "92371c34-4393-4a72-ab5e-5dd9b17c0f00",
+    "project_id": "2135d73e-257c-495b-99db-71bf5221c31e",
+    "sheet_id": "b905934f-30d4-42e9-aa4e-dfdc3d9e62a3",
+    "creator_user_id": 1,
+    "last_editor_user_id": 1,
+    "pos_x": 966,
+    "pos_y": 201,
+    "deleted_at": null,
+    "attachment_ids": []
+}
+```
+
+This endpoint retrieves a specific multi_hyperlink.
+
+### HTTP Request
+
+`GET /projects/<Project ID>/multi_hyperlinks/<MultiHyperlink ID>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Project ID | The ID of the multi_hyperlink's project
+MultiHyperlink ID | The ID of the multi_hyperlink to retrieve
+
 ## Post MultiHyperlink
 
 ```http
@@ -85,10 +131,8 @@ Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 
 {
-    "multi_hyperlink": {
-        "pos_x": 966,
-        "pos_y": 201
-    }
+    "pos_x": 966,
+    "pos_y": 201
 }
 ```
 
@@ -137,10 +181,8 @@ Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 
 {
-    "multi_hyperlink": {
-        "pos_x": 1966,
-        "pos_y": 1201
-    }
+    "pos_x": 1966,
+    "pos_y": 1201
 }
 ```
 

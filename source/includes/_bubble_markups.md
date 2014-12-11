@@ -186,19 +186,17 @@ Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 
 {
-  "bubble_markup": {
-    "data": {
-      "type": "Feature",
-      "properties": {
-        "style": "text",
-        "color": "#FF0000",
-        "description": "text",
-        "fontSize": 96
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [[152,98],[342,98],[342,229],[152,229]]
-      }
+  "data": {
+    "type": "Feature",
+    "properties": {
+      "style": "text",
+      "color": "#FF0000",
+      "description": "text",
+      "fontSize": 96
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [[152,98],[342,98],[342,229],[152,229]]
     }
   }
 }
@@ -256,19 +254,17 @@ Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 
 {
-  "bubble_markup": {
-    "data": {
-      "type": "Feature",
-      "properties": {
-        "style": "text",
-        "color": "#FF0000",
-        "description": "text",
-        "fontSize": 96
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [[152,98],[342,98],[342,229],[152,229]]
-      }
+  "data": {
+    "type": "Feature",
+    "properties": {
+      "style": "text",
+      "color": "#FF0000",
+      "description": "text",
+      "fontSize": 96
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [[152,98],[342,98],[342,229],[152,229]]
     }
   }
 }

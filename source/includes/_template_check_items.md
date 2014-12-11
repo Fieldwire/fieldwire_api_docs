@@ -14,7 +14,7 @@ POST /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/template_checklists/be0f608-
 Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 
-{ "template_check_item": { "name": "First" }}
+{ "name": "First" }
 ```
 
 > The above command returns:
@@ -55,7 +55,7 @@ PATCH /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/template_check_items/75d68c
 Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 
-{ "template_check_item": { "name": "Updated item" } }
+{ "name": "Updated item" }
 ```
 
 > The above command returns:

@@ -207,15 +207,13 @@ Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 
 {
-    "task": {
-        "name": "Light socket under 2nd diffuser not getting power",
-        "priority": 2,
-        "pos_x": 1071,
-        "pos_y": 457,
-        "floorplan_id": "d94f128b-d5a0-4325-95d8-32457af9ab3b",
-        "team_id": "3919a956-6f5b-4a25-abd8-eefa81378ef0",
-        "owner_user_id": 2
-    }
+    "name": "Light socket under 2nd diffuser not getting power",
+    "priority": 2,
+    "pos_x": 1071,
+    "pos_y": 457,
+    "floorplan_id": "d94f128b-d5a0-4325-95d8-32457af9ab3b",
+    "team_id": "3919a956-6f5b-4a25-abd8-eefa81378ef0",
+    "owner_user_id": 2
 }
 ```
 
@@ -273,7 +271,7 @@ PATCH /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/tasks/75d68ca1-0fc1-456a-bd
 Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 
-{ "task": { "verified_at": "2014-04-30T19:02:14.000Z", "fixed_at": "2014-04-30T19:02:14.000Z" } }
+{ "verified_at": "2014-04-30T19:02:14.000Z", "fixed_at": "2014-04-30T19:02:14.000Z" }
 ```
 
 > The above command returns:

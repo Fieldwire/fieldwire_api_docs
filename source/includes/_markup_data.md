@@ -178,8 +178,8 @@ width | Stroke width
 
 Isosceles triangle:
 
-* Arrow height = width * 12
-* Arrow width =  Arrow height / 2
+* Arrow width = width * 10
+* Arrow height =  Arrow width * Math.sqrt(3) / 2.0
 
 ## Measurement
 
@@ -222,6 +222,7 @@ fontSize | Size of text in pixels
 </aside>
 
 
-Equilateral triangle:
+Isosceles triangle:
 
-* Arrow height = Arrow width = width * 6
+* Arrow width = width * 10
+* Arrow height =  Arrow width * Math.sqrt(3) / 2.0

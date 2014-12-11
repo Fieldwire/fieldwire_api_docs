@@ -88,6 +88,53 @@ Parameter | Description
 --------- | -----------
 Project ID | The ID of the project to retrieve
 
+## Get Hyperlink
+
+```http
+GET /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/hyperlinks/6757d318-d81d-463e-a8e4-9ae001112e59 HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
+```
+
+> The above command returns:
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+    "created_at": "2014-06-16T18:55:07.000Z",
+    "updated_at": "2014-06-16T19:01:03.000Z",
+    "device_created_at": "2014-06-16T18:55:07.000Z",
+    "device_updated_at": "2014-06-16T19:01:03.000Z",
+    "resolved_conflict": false,
+    "id": "6757d318-d81d-463e-a8e4-9ae001112e59",
+    "project_id": "aceb1617-2dcf-4b01-a6b1-d8ae02bc3027",
+    "sheet_id": "a93f75ad-a90c-4f7c-8b4a-1432bdddc8f1",
+    "creator_user_id": 1,
+    "last_editor_user_id": 1,
+    "description": "Hyperlink #1",
+    "pos_x": 1246,
+    "pos_y": 108,
+    "floorplan_id": null,
+    "attachment_id": "2bd071a9-81a0-4ada-8ecf-ababb78f4ac3",
+    "deleted_at": null
+}
+```
+
+This endpoint retrieves a specific hyperlink.
+
+### HTTP Request
+
+`GET /projects/<Project ID>/hyperlinks/<Hyperlink ID>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Project ID | The ID of the hyperlink's project
+Hyperlink ID | The ID of the hyperlink to retrieve
+
 ## Post Hyperlink
 
 ```http
@@ -96,24 +143,20 @@ Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 
 {
-    "hyperlink": {
-        "description": "Hyperlink #1",
-        "pos_x": 215,
-        "pos_y": 118,
-        "floorplan_id": "20b57726-31ed-40f4-a608-ef29bc74b657"
-    }
+    "description": "Hyperlink #1",
+    "pos_x": 215,
+    "pos_y": 118,
+    "floorplan_id": "20b57726-31ed-40f4-a608-ef29bc74b657"
 }
 ```
 > or
 
 ```json
 {
-    "hyperlink": {
-        "description": "Hyperlink #1",
-        "pos_x": 215,
-        "pos_y": 118,
-        "attachment_id": "2bd071a9-81a0-4ada-8ecf-ababb78f4ac3"
-    }
+    "description": "Hyperlink #1",
+    "pos_x": 215,
+    "pos_y": 118,
+    "attachment_id": "2bd071a9-81a0-4ada-8ecf-ababb78f4ac3"
 }
 ```
 
@@ -121,16 +164,14 @@ Content-type: application/json
 
 ```json
 {
-    "hyperlink": {
-        "description": "Hyperlink #1",
-        "pos_x": 215,
-        "pos_y": 118,
-        "attachment": {
-            "name": "attachment 1",
-            "thumb_url": "http://example.com/attachment1-thumb.jpeg",
-            "file_url": "http://example.com/attachment1.jpeg",
-            "file_size": 736623
-        }
+    "description": "Hyperlink #1",
+    "pos_x": 215,
+    "pos_y": 118,
+    "attachment": {
+        "name": "attachment 1",
+        "thumb_url": "http://example.com/attachment1-thumb.jpeg",
+        "file_url": "http://example.com/attachment1.jpeg",
+        "file_size": 736623
     }
 }
 ```
@@ -193,7 +234,7 @@ PATCH /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/hyperlinks/6757d318-d81d-46
 Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 
-{ "hyperlink": { "description": "Updated description" } }
+{ "description": "Updated description" }
 ```
 
 > The above command returns:

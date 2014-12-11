@@ -110,7 +110,7 @@ POST /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/teams HTTP/1.1
 Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 
-{ "team": { "name": "Carpenter" } }
+{ "name": "Carpenter" }
 ```
 
 > The above command returns:
@@ -152,7 +152,7 @@ PATCH /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/teams/45d03dc5-f096-4c89-9f
 Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 
-{ "team": { "name": "Electrical" } }
+{ "name": "Electrical" }
 ```
 
 > The above command returns:

@@ -155,18 +155,16 @@ Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 
 {
-    "markup": {
-        "data": {
-            "type": "Feature",
-            "properties": {
-                "style": "text",
-                "description": "line 1\nline 2\nline 3",
-                "fontSize": 32
-            },
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [[1661,394],[1991,394],[1991,614],[1661,614]]
-            }
+    "data": {
+        "type": "Feature",
+        "properties": {
+            "style": "text",
+            "description": "line 1\nline 2\nline 3",
+            "fontSize": 32
+        },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[1661,394],[1991,394],[1991,614],[1661,614]]
         }
     }
 }
@@ -226,18 +224,16 @@ Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 
 {
-    "markup": {
-        "data": {
-            "type": "Feature",
-            "properties": {
-                "style": "text",
-                "description": "updated description",
-                "fontSize": 32
-            },
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [[1661,394],[1991,394],[1991,614],[1661,614]]
-            }
+    "data": {
+        "type": "Feature",
+        "properties": {
+            "style": "text",
+            "description": "updated description",
+            "fontSize": 32
+        },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[1661,394],[1991,394],[1991,614],[1661,614]]
         }
     }
 }

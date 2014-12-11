@@ -126,9 +126,7 @@ Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 
 {
-    "task_check_item": {
-        "name": "Step 1: Fix"
-    }
+    "name": "Step 1: Fix"
 }
 ```
 
@@ -244,7 +242,7 @@ PATCH /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/task_check_items/75d68ca1-0
 Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 
-{ "task_check_item": { "checked": true } }
+{ "checked": true }
 ```
 
 > The above command returns:
@@ -275,34 +273,6 @@ This endpoint updates a specific task_check_item.
 ### HTTP Request
 
 `PATCH /projects/<Project ID>/task_check_items/<TaskCheckItem ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-Project ID | The ID of the task_check_item's project
-TaskCheckItem ID | The ID of the task_check_item to retrieve
-
-## Delete TaskCheckItem
-
-```http
-DELETE /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/task_check_items/75d68ca1-0fc1-456a-bd9d-8b23875ac540 HTTP/1.1
-Authorization: Token api=[api token]>,project=[project token]
-Content-type: application/json
-```
-
-> The above command returns:
-
-```http
-HTTP/1.1 204 OK
-Content-Type: application/json
-```
-
-This endpoint deletes the specific task_check_item.
-
-### HTTP Request
-
-`DELETE /projects/<Project ID>/task_check_items/<TaskCheckItem ID>`
 
 ### URL Parameters
 

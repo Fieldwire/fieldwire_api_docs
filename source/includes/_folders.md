@@ -59,6 +59,46 @@ Parameter | Description
 --------- | -----------
 Project ID | The ID of the project to retrieve
 
+## Get Folder
+
+```http
+GET /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/folders/d426dce3-1b5f-446c-9ba2-7fd8e5781db5 HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
+```
+
+> The above command returns:
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+    "created_at": "2014-06-17T00:40:11.000Z",
+    "updated_at": "2014-06-17T00:40:11.000Z",
+    "device_created_at": "2014-06-17T00:40:11.000Z",
+    "device_updated_at": "2014-06-17T00:40:11.000Z",
+    "resolved_conflict": false,
+    "id": "d426dce3-1b5f-446c-9ba2-7fd8e5781db5",
+    "project_id": "aceb1617-2dcf-4b01-a6b1-d8ae02bc3027",
+    "name": "Folder 1",
+    "deleted_at": null
+}
+```
+
+This endpoint retrieves a specific team.
+
+### HTTP Request
+
+`GET /projects/<Project ID>/folders/<Folder ID>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Project ID | The ID of the team's project
+Folder ID | The ID of the team to retrieve
+
 ## Post Folder
 
 ```http
@@ -66,11 +106,7 @@ POST /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/folders HTTP/1.1
 Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 
-{
-    "folder": {
-        "name": "folder 1"
-    }
-}
+{ "name": "folder 1" }
 ```
 
 > The above command returns:
@@ -115,11 +151,7 @@ PATCH /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/folders/92371c34-4393-4a72-
 Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 
-{
-    "folder": {
-        "name": "updated folder"
-    }
-}
+{ "name": "updated folder" }
 ```
 
 > The above command returns:

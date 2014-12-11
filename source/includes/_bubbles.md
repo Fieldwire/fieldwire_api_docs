@@ -153,11 +153,9 @@ Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 
 {
-    "bubble": {
-        "content": "Check the spec for specific details on soffit install",
-        "kind": 1,
-        "user_id": 3
-    }
+    "content": "Check the spec for specific details on soffit install",
+    "kind": 1,
+    "user_id": 3
 }
 ```
 
@@ -207,7 +205,7 @@ PATCH /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubbles/75d68ca1-0fc1-456a-
 Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 
-{ "bubble": { "content": "Spec not available. Check with foreman." } }
+{ "content": "Spec not available. Check with foreman." }
 ```
 
 > The above command returns:
