@@ -207,7 +207,7 @@ You must replace [api token] and [project token] with your api and project token
 </tr>
 <tr>
 <td>resolved_conflict</td>
-<td>Indicates if the PUT request was rejected - do not store this field!</td>
+<td>Indicates if the PUT/PATCH request was rejected - do not store this field!</td>
 </tr>
 </tbody></table>
 
@@ -375,7 +375,7 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;</span>
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
-<span class="p">{</span><span class="w"> </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Project 1"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
+<span class="p">{</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Project 1"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></pre>
 
 <blockquote>
@@ -424,7 +424,7 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
-<span class="p">{</span><span class="w"> </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Updated Project"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
+<span class="p">{</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Updated Project"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></pre>
 
 <blockquote>
@@ -727,11 +727,11 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 </tbody></table>
 <h3 id='email'>Email</h3>
 <p>Can be up to 25 emails separated by commas or semicolons.</p>
-<h2 id='update-user39s-role'>Update User&rsquo;s Role</h2><pre class="highlight http"><span class="nf">PUT</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/users/15</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<h2 id='update-user39s-role'>Update User&rsquo;s Role</h2><pre class="highlight http"><span class="nf">PATCH</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/users/15</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
-<span class="p">{</span><span class="w"> </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="p">,</span><span class="w"> </span><span class="s2">"is_approved"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
+<span class="p">{</span><span class="w"> </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="p">,</span><span class="w"> </span><span class="s2">"is_approved"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></pre>
 
 <blockquote>
@@ -769,7 +769,7 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 
 <p>This endpoint will update a user&rsquo;s role and approval status on a project.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">PUT /projects/&lt;Project ID&gt;/users/&lt;User ID&gt;</code></p>
+<p><code class="prettyprint">PATCH /projects/&lt;Project ID&gt;/users/&lt;User ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -786,11 +786,11 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <td>The ID of the user</td>
 </tr>
 </tbody></table>
-<h2 id='update-user39s-profile'>Update User&rsquo;s Profile</h2><pre class="highlight http"><span class="nf">PUT</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/users/15/profile</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<h2 id='update-user39s-profile'>Update User&rsquo;s Profile</h2><pre class="highlight http"><span class="nf">PATCH</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/users/15/profile</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
-<span class="p">{</span><span class="w"> </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fieldwire"</span><span class="p">,</span><span class="w"> </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(415) 555-5555"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
+<span class="p">{</span><span class="w"> </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fieldwire"</span><span class="p">,</span><span class="w"> </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(415) 555-5555"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></pre>
 
 <blockquote>
@@ -828,7 +828,7 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 
 <p>This endpoint will update a user&rsquo;s role and approval status on a project.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">PUT /projects/&lt;Project ID&gt;/users/&lt;User ID&gt;/profile</code></p>
+<p><code class="prettyprint">PATCH /projects/&lt;Project ID&gt;/users/&lt;User ID&gt;/profile</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1034,7 +1034,7 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
-<span class="p">{</span><span class="w"> </span><span class="s2">"team"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Carpenter"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
+<span class="p">{</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Carpenter"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></pre>
 
 <blockquote>
@@ -1076,7 +1076,7 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
-<span class="p">{</span><span class="w"> </span><span class="s2">"team"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Electrical"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
+<span class="p">{</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Electrical"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></pre>
 
 <blockquote>
@@ -1218,15 +1218,54 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <td>The ID of the project to retrieve</td>
 </tr>
 </tbody></table>
+<h2 id='get-folder'>Get Folder</h2><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/folders/d426dce3-1b5f-446c-9ba2-7fd8e5781db5</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+</pre>
+
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http"><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d426dce3-1b5f-446c-9ba2-7fd8e5781db5"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aceb1617-2dcf-4b01-a6b1-d8ae02bc3027"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Folder 1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<p>This endpoint retrieves a specific team.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET /projects/&lt;Project ID&gt;/folders/&lt;Folder ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the team&rsquo;s project</td>
+</tr>
+<tr>
+<td>Folder ID</td>
+<td>The ID of the team to retrieve</td>
+</tr>
+</tbody></table>
 <h2 id='post-folder'>Post Folder</h2><pre class="highlight http"><span class="nf">POST</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/folders</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
-<span class="p">{</span><span class="w">
-    </span><span class="s2">"folder"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"folder 1"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<span class="p">{</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"folder 1"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></pre>
 
 <blockquote>
@@ -1271,11 +1310,7 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
-<span class="p">{</span><span class="w">
-    </span><span class="s2">"folder"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updated folder"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<span class="p">{</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updated folder"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></pre>
 
 <blockquote>
@@ -1484,12 +1519,10 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
 <span class="p">{</span><span class="w">
-    </span><span class="s2">"sheet_upload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Single.pdf"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/Single.pdf"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"file_size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2244590"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Single.pdf"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/Single.pdf"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"file_size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2244590"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
 
@@ -1525,6 +1558,51 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <tr>
 <td>Project ID</td>
 <td>The ID of the sheet_upload&rsquo;s project</td>
+</tr>
+</tbody></table>
+<h2 id='update-sheet-upload'>Update Sheet Upload</h2><pre class="highlight http"><span class="nf">PATCH</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/sheet_uploads/51af34a9-b8fc-477d-907d-0b9064120b88</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w"> </span><span class="s2">"is_processed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></pre>
+
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http"><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-26T00:18:17.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-26T00:18:22.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"51af34a9-b8fc-477d-907d-0b9064120b88"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Single.pdf"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/Single.pdf"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"file_size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2244590"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"is_processed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<p>This endpoint updates a specific sheet upload.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">PATCH /projects/&lt;Project ID&gt;/sheet_uploads/&lt;Sheet Upload ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the sheet upload&rsquo;s project</td>
+</tr>
+<tr>
+<td>Sheet Upload ID</td>
+<td>The ID of the sheet upload to retrieve</td>
 </tr>
 </tbody></table>
 <h2 id='managing-sheet-uploads'>Managing Sheet Uploads</h2>
@@ -1666,6 +1744,77 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <tr>
 <td>Project ID</td>
 <td>The ID of the project to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='get-floorplan'>Get Floorplan</h2><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/floorplans/d94f128b-d5a0-4325-95d8-32457af9ab3b</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+</pre>
+
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http"><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-04-30T19:02:13.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-04-30T19:02:13.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d94f128b-d5a0-4325-95d8-32457af9ab3b"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Harrison Ceiling"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aceb1617-2dcf-4b01-a6b1-d8ae02bc3027"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"is_auto_versioning"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sheets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-15T22:23:18.995Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-15T22:24:08.743Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9f5ab19a-5813-47a9-a767-7319a4171c52"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plan1.png"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plan1.png"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plan1.jpeg"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plan-thumb.jpeg"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"is_tiled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"floorplan_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9af615e2-c091-4235-ae8a-b94c73b8e4ca"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"file_width"</span><span class="p">:</span><span class="w"> </span><span class="mi">2364</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"file_height"</span><span class="p">:</span><span class="w"> </span><span class="mi">1689</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"original_width"</span><span class="p">:</span><span class="w"> </span><span class="mi">4662</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"original_height"</span><span class="p">:</span><span class="w"> </span><span class="mi">3330</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"has_conflicts"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"has_errors"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tile_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">493</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name_crop_url"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">95</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"page_number"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"37b9103e-e3eb-438f-8c38-5f2736a952dd"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"android_file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plan1-android.jpeg"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"android_file_width"</span><span class="p">:</span><span class="w"> </span><span class="mi">2048</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"android_file_height"</span><span class="p">:</span><span class="w"> </span><span class="mi">1463</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sheet_upload_id"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<p>This endpoint retrieves a specific floorplan.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET /projects/&lt;Project ID&gt;/floorplans/&lt;Floorplan ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the floorplan&rsquo;s project</td>
+</tr>
+<tr>
+<td>Floorplan ID</td>
+<td>The ID of the floorplan to retrieve</td>
 </tr>
 </tbody></table>
 <h2 id='creating-floorplans'>Creating Floorplans</h2>
@@ -1999,6 +2148,100 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <tr>
 <td>description</td>
 <td>User defined description of sheets</td>
+</tr>
+<tr>
+<td><em>folder_id (deprecated)</em></td>
+<td><em>ID of the folder this sheet was uploaded to</em></td>
+</tr>
+<tr>
+<td>tiles_package_url</td>
+<td>Url of zip archive containing all tiles</td>
+</tr>
+</tbody></table>
+<h2 id='get-sheets'>Get Sheets</h2><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/sheets</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+</pre>
+
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http"><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-15T22:23:18.995Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-15T22:24:08.743Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9f5ab19a-5813-47a9-a767-7319a4171c52"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plan1.png"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plan1.png"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plan1.jpeg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plan-thumb.jpeg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"is_tiled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"floorplan_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9af615e2-c091-4235-ae8a-b94c73b8e4ca"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"file_width"</span><span class="p">:</span><span class="w"> </span><span class="mi">2364</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"file_height"</span><span class="p">:</span><span class="w"> </span><span class="mi">1689</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"original_width"</span><span class="p">:</span><span class="w"> </span><span class="mi">4662</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"original_height"</span><span class="p">:</span><span class="w"> </span><span class="mi">3330</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"has_conflicts"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"has_errors"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tile_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">493</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_crop_url"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">95</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"page_number"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"37b9103e-e3eb-438f-8c38-5f2736a952dd"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"android_file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plan1-android.jpeg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"android_file_width"</span><span class="p">:</span><span class="w"> </span><span class="mi">2048</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"android_file_height"</span><span class="p">:</span><span class="w"> </span><span class="mi">1463</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sheet_upload_id"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-15T22:23:18.995Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-15T22:24:08.743Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9f5ab19a-5813-47a9-a767-7319a4171c52"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plan2.png"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plan2.png"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plan2.jpeg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plan-thumb.jpeg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"is_tiled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"floorplan_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9af615e2-c091-4235-ae8a-b94c73b8e4ca"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"file_width"</span><span class="p">:</span><span class="w"> </span><span class="mi">2364</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"file_height"</span><span class="p">:</span><span class="w"> </span><span class="mi">1689</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"original_width"</span><span class="p">:</span><span class="w"> </span><span class="mi">4662</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"original_height"</span><span class="p">:</span><span class="w"> </span><span class="mi">3330</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"has_conflicts"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"has_errors"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tile_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">493</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_crop_url"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">95</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"page_number"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"37b9103e-e3eb-438f-8c38-5f2736a952dd"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"android_file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plan2-android.jpeg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"android_file_width"</span><span class="p">:</span><span class="w"> </span><span class="mi">2048</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"android_file_height"</span><span class="p">:</span><span class="w"> </span><span class="mi">1463</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sheet_upload_id"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></pre>
+
+<p>This endpoint retrieves all sheets.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET /projects/&lt;Project ID&gt;/sheets</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the project to retrieve</td>
 </tr>
 </tbody></table>
 <h2 id='resolve-conflict'>Resolve Conflict</h2><pre class="highlight http"><span class="nf">PATCH</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/sheets/9f5ab19a-5813-47a9-a767-7319a4171c52</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -2334,15 +2577,13 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
 <span class="p">{</span><span class="w">
-    </span><span class="s2">"task"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Light socket under 2nd diffuser not getting power"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"pos_x"</span><span class="p">:</span><span class="w"> </span><span class="mi">1071</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"pos_y"</span><span class="p">:</span><span class="w"> </span><span class="mi">457</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"floorplan_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d94f128b-d5a0-4325-95d8-32457af9ab3b"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"team_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3919a956-6f5b-4a25-abd8-eefa81378ef0"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"owner_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Light socket under 2nd diffuser not getting power"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pos_x"</span><span class="p">:</span><span class="w"> </span><span class="mi">1071</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pos_y"</span><span class="p">:</span><span class="w"> </span><span class="mi">457</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"floorplan_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d94f128b-d5a0-4325-95d8-32457af9ab3b"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"team_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3919a956-6f5b-4a25-abd8-eefa81378ef0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"owner_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
 
@@ -2400,7 +2641,7 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
-<span class="p">{</span><span class="w"> </span><span class="s2">"task"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"verified_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-04-30T19:02:14.000Z"</span><span class="p">,</span><span class="w"> </span><span class="s2">"fixed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-04-30T19:02:14.000Z"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
+<span class="p">{</span><span class="w"> </span><span class="s2">"verified_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-04-30T19:02:14.000Z"</span><span class="p">,</span><span class="w"> </span><span class="s2">"fixed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-04-30T19:02:14.000Z"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></pre>
 
 <blockquote>
@@ -2639,9 +2880,7 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
 <span class="p">{</span><span class="w">
-    </span><span class="s2">"task_check_item"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Step 1: Fix"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Step 1: Fix"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
 
@@ -2769,7 +3008,7 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
-<span class="p">{</span><span class="w"> </span><span class="s2">"task_check_item"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"checked"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
+<span class="p">{</span><span class="w"> </span><span class="s2">"checked"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></pre>
 
 <blockquote>
@@ -2798,37 +3037,6 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <p>This endpoint updates a specific task_check_item.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code class="prettyprint">PATCH /projects/&lt;Project ID&gt;/task_check_items/&lt;TaskCheckItem ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Project ID</td>
-<td>The ID of the task_check_item&rsquo;s project</td>
-</tr>
-<tr>
-<td>TaskCheckItem ID</td>
-<td>The ID of the task_check_item to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-taskcheckitem'>Delete TaskCheckItem</h2><pre class="highlight http"><span class="nf">DELETE</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/task_check_items/75d68ca1-0fc1-456a-bd9d-8b23875ac540</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
-<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
-</pre>
-
-<blockquote>
-<p>The above command returns:</p>
-</blockquote>
-<pre class="highlight http"><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">204</span> <span class="ne">OK</span>
-<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
-</pre>
-
-<p>This endpoint deletes the specific task_check_item.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code class="prettyprint">DELETE /projects/&lt;Project ID&gt;/task_check_items/&lt;TaskCheckItem ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2989,7 +3197,7 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
-<span class="p">{</span><span class="w"> </span><span class="s2">"template_checklist"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Template 2"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
+<span class="p">{</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Template 2"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></pre>
 
 <blockquote>
@@ -3031,7 +3239,7 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
-<span class="p">{</span><span class="w"> </span><span class="s2">"template_checklist"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Updated template"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
+<span class="p">{</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Updated template"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></pre>
 
 <blockquote>
@@ -3125,7 +3333,7 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
-<span class="p">{</span><span class="w"> </span><span class="s2">"template_check_item"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First"</span><span class="w"> </span><span class="p">}}</span><span class="w">
+<span class="p">{</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></pre>
 
 <blockquote>
@@ -3169,7 +3377,7 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
-<span class="p">{</span><span class="w"> </span><span class="s2">"template_check_item"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Updated item"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
+<span class="p">{</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Updated item"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></pre>
 
 <blockquote>
@@ -3448,11 +3656,9 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
 <span class="p">{</span><span class="w">
-    </span><span class="s2">"bubble"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Check the spec for specific details on soffit install"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"kind"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Check the spec for specific details on soffit install"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"kind"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
 
@@ -3505,7 +3711,7 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
-<span class="p">{</span><span class="w"> </span><span class="s2">"bubble"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Spec not available. Check with foreman."</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
+<span class="p">{</span><span class="w"> </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Spec not available. Check with foreman."</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></pre>
 
 <blockquote>
@@ -3780,19 +3986,17 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
 <span class="p">{</span><span class="w">
-  </span><span class="s2">"bubble_markup"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#FF0000"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"fontSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">96</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polygon"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mi">152</span><span class="p">,</span><span class="mi">98</span><span class="p">],[</span><span class="mi">342</span><span class="p">,</span><span class="mi">98</span><span class="p">],[</span><span class="mi">342</span><span class="p">,</span><span class="mi">229</span><span class="p">],[</span><span class="mi">152</span><span class="p">,</span><span class="mi">229</span><span class="p">]]</span><span class="w">
-      </span><span class="p">}</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#FF0000"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"fontSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">96</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polygon"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mi">152</span><span class="p">,</span><span class="mi">98</span><span class="p">],[</span><span class="mi">342</span><span class="p">,</span><span class="mi">98</span><span class="p">],[</span><span class="mi">342</span><span class="p">,</span><span class="mi">229</span><span class="p">],[</span><span class="mi">152</span><span class="p">,</span><span class="mi">229</span><span class="p">]]</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -3853,19 +4057,17 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
 <span class="p">{</span><span class="w">
-  </span><span class="s2">"bubble_markup"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#FF0000"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"fontSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">96</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polygon"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mi">152</span><span class="p">,</span><span class="mi">98</span><span class="p">],[</span><span class="mi">342</span><span class="p">,</span><span class="mi">98</span><span class="p">],[</span><span class="mi">342</span><span class="p">,</span><span class="mi">229</span><span class="p">],[</span><span class="mi">152</span><span class="p">,</span><span class="mi">229</span><span class="p">]]</span><span class="w">
-      </span><span class="p">}</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#FF0000"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"fontSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">96</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polygon"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mi">152</span><span class="p">,</span><span class="mi">98</span><span class="p">],[</span><span class="mi">342</span><span class="p">,</span><span class="mi">98</span><span class="p">],[</span><span class="mi">342</span><span class="p">,</span><span class="mi">229</span><span class="p">],[</span><span class="mi">152</span><span class="p">,</span><span class="mi">229</span><span class="p">]]</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -4057,6 +4259,55 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <td>The ID of the project to retrieve</td>
 </tr>
 </tbody></table>
+<h2 id='get-attachment'>Get Attachment</h2><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/attachments/d426dce3-1b5f-446c-9ba2-7fd8e5781db5</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+</pre>
+
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http"><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-17T00:40:11.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d426dce3-1b5f-446c-9ba2-7fd8e5781db5"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aceb1617-2dcf-4b01-a6b1-d8ae02bc3027"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"creator_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"attachment 1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/attachment1.jpeg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"file_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">736623</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"floorplan_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"multi_hyperlink_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<p>This endpoint retrieves a specific attachment.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET /projects/&lt;Project ID&gt;/attachments/&lt;Attachment ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the attachment&rsquo;s project</td>
+</tr>
+<tr>
+<td>Attachment ID</td>
+<td>The ID of the attachment to retrieve</td>
+</tr>
+</tbody></table>
 <h2 id='post-attachment'>Post Attachment</h2>
 <p><aside class="notice">
     Attachments can also be created through <a href="#post-hyperlink">hyperlinks</a> or <a href="#post-attachment">multi-hyperlinks</a>
@@ -4066,12 +4317,10 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
 <span class="p">{</span><span class="w">
-    </span><span class="s2">"attachment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"attachment 1"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/attachment1.jpeg"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"file_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">736623</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"attachment 1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/attachment1.jpeg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"file_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">736623</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
 
@@ -4120,9 +4369,7 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
 <span class="p">{</span><span class="w">
-    </span><span class="s2">"attachment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updated attachment"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updated attachment"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
 
@@ -4320,17 +4567,65 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <td>The ID of the project to retrieve</td>
 </tr>
 </tbody></table>
+<h2 id='get-hyperlink'>Get Hyperlink</h2><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/hyperlinks/6757d318-d81d-463e-a8e4-9ae001112e59</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+</pre>
+
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http"><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-16T18:55:07.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-16T19:01:03.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-16T18:55:07.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-06-16T19:01:03.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6757d318-d81d-463e-a8e4-9ae001112e59"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aceb1617-2dcf-4b01-a6b1-d8ae02bc3027"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sheet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a93f75ad-a90c-4f7c-8b4a-1432bdddc8f1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"creator_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_editor_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hyperlink #1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pos_x"</span><span class="p">:</span><span class="w"> </span><span class="mi">1246</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pos_y"</span><span class="p">:</span><span class="w"> </span><span class="mi">108</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"floorplan_id"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attachment_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2bd071a9-81a0-4ada-8ecf-ababb78f4ac3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<p>This endpoint retrieves a specific hyperlink.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET /projects/&lt;Project ID&gt;/hyperlinks/&lt;Hyperlink ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the hyperlink&rsquo;s project</td>
+</tr>
+<tr>
+<td>Hyperlink ID</td>
+<td>The ID of the hyperlink to retrieve</td>
+</tr>
+</tbody></table>
 <h2 id='post-hyperlink'>Post Hyperlink</h2><pre class="highlight http"><span class="nf">POST</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/sheet/a5056209-4430-4407-a300-5dfcc4114993/hyperlinks</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
 <span class="p">{</span><span class="w">
-    </span><span class="s2">"hyperlink"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hyperlink #1"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"pos_x"</span><span class="p">:</span><span class="w"> </span><span class="mi">215</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"pos_y"</span><span class="p">:</span><span class="w"> </span><span class="mi">118</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"floorplan_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20b57726-31ed-40f4-a608-ef29bc74b657"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hyperlink #1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pos_x"</span><span class="p">:</span><span class="w"> </span><span class="mi">215</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pos_y"</span><span class="p">:</span><span class="w"> </span><span class="mi">118</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"floorplan_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20b57726-31ed-40f4-a608-ef29bc74b657"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
 
@@ -4338,12 +4633,10 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <p>or</p>
 </blockquote>
 <pre class="highlight json"><span class="p">{</span><span class="w">
-    </span><span class="s2">"hyperlink"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hyperlink #1"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"pos_x"</span><span class="p">:</span><span class="w"> </span><span class="mi">215</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"pos_y"</span><span class="p">:</span><span class="w"> </span><span class="mi">118</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"attachment_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2bd071a9-81a0-4ada-8ecf-ababb78f4ac3"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hyperlink #1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pos_x"</span><span class="p">:</span><span class="w"> </span><span class="mi">215</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pos_y"</span><span class="p">:</span><span class="w"> </span><span class="mi">118</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attachment_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2bd071a9-81a0-4ada-8ecf-ababb78f4ac3"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
 
@@ -4351,16 +4644,14 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <p>or</p>
 </blockquote>
 <pre class="highlight json"><span class="p">{</span><span class="w">
-    </span><span class="s2">"hyperlink"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hyperlink #1"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"pos_x"</span><span class="p">:</span><span class="w"> </span><span class="mi">215</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"pos_y"</span><span class="p">:</span><span class="w"> </span><span class="mi">118</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"attachment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"attachment 1"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/attachment1-thumb.jpeg"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/attachment1.jpeg"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"file_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">736623</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hyperlink #1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pos_x"</span><span class="p">:</span><span class="w"> </span><span class="mi">215</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pos_y"</span><span class="p">:</span><span class="w"> </span><span class="mi">118</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attachment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"attachment 1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/attachment1-thumb.jpeg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"file_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.com/attachment1.jpeg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"file_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">736623</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
@@ -4440,7 +4731,7 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
-<span class="p">{</span><span class="w"> </span><span class="s2">"hyperlink"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Updated description"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
+<span class="p">{</span><span class="w"> </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Updated description"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></pre>
 
 <blockquote>
@@ -4553,6 +4844,10 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <td>pos_y</td>
 <td>Vertical pixels (from top of floorplan) of multi_hyperlink&rsquo;s center</td>
 </tr>
+<tr>
+<td><em>attachment_ids (read only)</em></td>
+<td>IDs of attachment the multi_hyperlink links to</td>
+</tr>
 </tbody></table>
 <h2 id='get-multihyperlinks'>Get MultiHyperlinks</h2><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/multi_hyperlinks</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
@@ -4619,15 +4914,61 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <td>The ID of the project to retrieve</td>
 </tr>
 </tbody></table>
+<h2 id='get-multihyperlink'>Get MultiHyperlink</h2><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/multi_hyperlinks/fa1fe4df-39ad-42e6-b11a-af7f2b97cf75</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+</pre>
+
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http"><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-09-10T21:33:20.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-09-10T21:33:20.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-09-10T21:33:20.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-09-10T21:33:20.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92371c34-4393-4a72-ab5e-5dd9b17c0f00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2135d73e-257c-495b-99db-71bf5221c31e"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sheet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b905934f-30d4-42e9-aa4e-dfdc3d9e62a3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"creator_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_editor_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pos_x"</span><span class="p">:</span><span class="w"> </span><span class="mi">966</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pos_y"</span><span class="p">:</span><span class="w"> </span><span class="mi">201</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attachment_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<p>This endpoint retrieves a specific multi_hyperlink.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET /projects/&lt;Project ID&gt;/multi_hyperlinks/&lt;MultiHyperlink ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the multi_hyperlink&rsquo;s project</td>
+</tr>
+<tr>
+<td>MultiHyperlink ID</td>
+<td>The ID of the multi_hyperlink to retrieve</td>
+</tr>
+</tbody></table>
 <h2 id='post-multihyperlink'>Post MultiHyperlink</h2><pre class="highlight http"><span class="nf">POST</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/sheet/a5056209-4430-4407-a300-5dfcc4114993/multi_hyperlinks</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
 <span class="p">{</span><span class="w">
-    </span><span class="s2">"multi_hyperlink"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"pos_x"</span><span class="p">:</span><span class="w"> </span><span class="mi">966</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"pos_y"</span><span class="p">:</span><span class="w"> </span><span class="mi">201</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="s2">"pos_x"</span><span class="p">:</span><span class="w"> </span><span class="mi">966</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pos_y"</span><span class="p">:</span><span class="w"> </span><span class="mi">201</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
 
@@ -4679,10 +5020,8 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
 <span class="p">{</span><span class="w">
-    </span><span class="s2">"multi_hyperlink"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"pos_x"</span><span class="p">:</span><span class="w"> </span><span class="mi">1966</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"pos_y"</span><span class="p">:</span><span class="w"> </span><span class="mi">1201</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="s2">"pos_x"</span><span class="p">:</span><span class="w"> </span><span class="mi">1966</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pos_y"</span><span class="p">:</span><span class="w"> </span><span class="mi">1201</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre>
 
@@ -4942,6 +5281,50 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <td>The ID of the project to retrieve</td>
 </tr>
 </tbody></table>
+<h2 id='get-automatichyperlink'>Get AutomaticHyperlink</h2><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/automatic_hyperlinks/fa1fe4df-39ad-42e6-b11a-af7f2b97cf75</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+</pre>
+
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http"><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-07-17T00:50:53.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-07-17T00:50:53.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fa1fe4df-39ad-42e6-b11a-af7f2b97cf75w"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aa0635ec-f95c-4458-8f56-e82af3d3634f"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sheet_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c007e3c-9a1a-42ad-9cdc-4e71e035c0ea"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pos_x"</span><span class="p">:</span><span class="w"> </span><span class="mi">885</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pos_y"</span><span class="p">:</span><span class="w"> </span><span class="mi">922</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"floorplan_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"88273c0f-4341-442b-b2f2-539bfe01b872"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"radius"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="err">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre>
+
+<p>This endpoint retrieves a specific automatic_hyperlink.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code class="prettyprint">GET /projects/&lt;Project ID&gt;/automatic_hyperlinks/&lt;AutomaticHyperlink ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the automatic_hyperlink&rsquo;s project</td>
+</tr>
+<tr>
+<td>AutomaticHyperlink ID</td>
+<td>The ID of the automatic_hyperlink to retrieve</td>
+</tr>
+</tbody></table>
 <h2 id='managing-automatic-hyperlinks'>Managing Automatic Hyperlinks</h2>
 <p><aside class="warning">
     Fieldwire API creates automatic hyperlinks based off plan PDF data and naming
@@ -5126,18 +5509,16 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
 <span class="p">{</span><span class="w">
-    </span><span class="s2">"markup"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"line 1\nline 2\nline 3"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"fontSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polygon"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mi">1661</span><span class="p">,</span><span class="mi">394</span><span class="p">],[</span><span class="mi">1991</span><span class="p">,</span><span class="mi">394</span><span class="p">],[</span><span class="mi">1991</span><span class="p">,</span><span class="mi">614</span><span class="p">],[</span><span class="mi">1661</span><span class="p">,</span><span class="mi">614</span><span class="p">]]</span><span class="w">
-            </span><span class="p">}</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"line 1\nline 2\nline 3"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"fontSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polygon"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mi">1661</span><span class="p">,</span><span class="mi">394</span><span class="p">],[</span><span class="mi">1991</span><span class="p">,</span><span class="mi">394</span><span class="p">],[</span><span class="mi">1991</span><span class="p">,</span><span class="mi">614</span><span class="p">],[</span><span class="mi">1661</span><span class="p">,</span><span class="mi">614</span><span class="p">]]</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -5200,18 +5581,16 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
 
 <span class="p">{</span><span class="w">
-    </span><span class="s2">"markup"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updated description"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"fontSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polygon"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mi">1661</span><span class="p">,</span><span class="mi">394</span><span class="p">],[</span><span class="mi">1991</span><span class="p">,</span><span class="mi">394</span><span class="p">],[</span><span class="mi">1991</span><span class="p">,</span><span class="mi">614</span><span class="p">],[</span><span class="mi">1661</span><span class="p">,</span><span class="mi">614</span><span class="p">]]</span><span class="w">
-            </span><span class="p">}</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updated description"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"fontSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polygon"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mi">1661</span><span class="p">,</span><span class="mi">394</span><span class="p">],[</span><span class="mi">1991</span><span class="p">,</span><span class="mi">394</span><span class="p">],[</span><span class="mi">1991</span><span class="p">,</span><span class="mi">614</span><span class="p">],[</span><span class="mi">1661</span><span class="p">,</span><span class="mi">614</span><span class="p">]]</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -5548,8 +5927,8 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <p>Isosceles triangle:</p>
 
 <ul>
-<li>Arrow height = width * 12</li>
-<li>Arrow width =  Arrow height / 2</li>
+<li>Arrow width = width * 10</li>
+<li>Arrow height =  Arrow width * Math.sqrt(3) / 2.0</li>
 </ul>
 <h2 id='measurement'>Measurement</h2><pre class="highlight json"><span class="p">{</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -5608,10 +5987,11 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
     Text should rotate between -90 and 90 degrees only
 </aside></p>
 
-<p>Equilateral triangle:</p>
+<p>Isosceles triangle:</p>
 
 <ul>
-<li>Arrow height = Arrow width = width * 6</li>
+<li>Arrow width = width * 10</li>
+<li>Arrow height =  Arrow width * Math.sqrt(3) / 2.0</li>
 </ul>
 
           <h1 id='errors'>Errors</h1><pre class="highlight json"><span class="p">{</span><span class="w">
