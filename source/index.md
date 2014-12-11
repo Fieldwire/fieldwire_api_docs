@@ -158,7 +158,7 @@ updated_at | The time when the server last updated the entity
 device_created_at | The time when the device created the entity
 device_updated_at | The time when the device last updated the entity
 deleted_at | The time the entity was deleted
-resolved_conflict | Indicates if the PUT request was rejected - do not store this field!
+resolved_conflict | Indicates if the PUT/PATCH request was rejected - do not store this field!
 
 <aside class="notice">
 When displaying entities, sort using device_created_at/device_updated_at as this will guarantee that entities are displayed when the user actually created them

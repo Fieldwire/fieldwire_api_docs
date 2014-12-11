@@ -192,7 +192,7 @@ Can be up to 25 emails separated by commas or semicolons.
 ## Update User's Role
 
 ```http
-PUT /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/users/15 HTTP/1.1
+PATCH /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/users/15 HTTP/1.1
 Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 
@@ -236,7 +236,7 @@ This endpoint will update a user's role and approval status on a project.
 
 ### HTTP Request
 
-`PUT /projects/<Project ID>/users/<User ID>`
+`PATCH /projects/<Project ID>/users/<User ID>`
 
 ### URL Parameters
 
@@ -248,7 +248,7 @@ User ID | The ID of the user
 ## Update User's Profile
 
 ```http
-PUT /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/users/15/profile HTTP/1.1
+PATCH /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/users/15/profile HTTP/1.1
 Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 
@@ -292,7 +292,7 @@ This endpoint will update a user's role and approval status on a project.
 
 ### HTTP Request
 
-`PUT /projects/<Project ID>/users/<User ID>/profile`
+`PATCH /projects/<Project ID>/users/<User ID>/profile`
 
 ### URL Parameters
 
