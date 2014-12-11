@@ -36,7 +36,7 @@ search: true
 
 # Introduction
 
-**Welcome to the fieldwire API! You can use our API to access your fieldwire projects.**
+**Welcome to the Fieldwire API! You can use our API to access your Fieldwire projects.**
 
 <aside class="notice">Current API endpoint: https://console.fieldwire.net/api/v2</aside>
 
@@ -58,7 +58,7 @@ GET /projects/<ProjectID> HTTP/1.1
 Authorization: Token api=[api token]>,project=[project token]
 ```
 
-Fieldwire uses API tokens to allow access to the API. You can request a new fieldwire API token by emailing <a href="mailto:support@fieldwire.net?subject=Api Token Request">support</a>.
+Fieldwire uses API tokens to allow access to the API. You can request a new Fieldwire API token by emailing <a href="mailto:support@fieldwire.net?subject=Api Token Request">support</a>.
 
 Fieldwire expects for the API and project token to be included in all API requests to the server in a header that looks like one of the following:
 

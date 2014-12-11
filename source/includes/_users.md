@@ -14,7 +14,7 @@ is_approved | Indicates if user is approved by an admin on the project
 is_confirmed | Indicates if an invited user has accepted their invite
 user_blocked_at | Time when user was blocked from accessing this project
 user_deleted_at | Time when user was removed from project
-current_sign_in_at | Approximately last time user signed into fieldwire
+current_sign_in_at | Approximately last time user signed into Fieldwire
 invited_by_id | The user ID that invited this user
 email_notifications | Indicates how often the user receives emails ("never", "daily", "instantly"). This overrides any project setting.
 role | Indicates user's role on project ("admin", "member", "follower")
@@ -316,7 +316,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 ```
 
-This endpoint will resend an invite email to user if they haven't joined fieldwire yet.
+This endpoint will resend an invite email to user if they haven't joined Fieldwire yet.
 
 <aside class="warning">
     This will not reinvite removed users to a project. To re-add a user simply invite their email address again.
