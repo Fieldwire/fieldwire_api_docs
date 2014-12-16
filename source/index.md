@@ -40,6 +40,12 @@ search: true
 
 <aside class="notice">Current API endpoint: https://console.fieldwire.net/api/v2</aside>
 
+# Sample Apps
+
+These apps demonstrate some basic API authentication and calls:
+
+* Ruby: [https://github.com/Fieldwire/fieldwire_ruby_sample](https://github.com/Fieldwire/fieldwire_ruby_sample)
+* Java: [https://github.com/Fieldwire/fieldwire_java_sample](https://github.com/Fieldwire/fieldwire_java_sample)
 
 
 # Authentication
