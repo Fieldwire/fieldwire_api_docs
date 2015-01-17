@@ -38,7 +38,7 @@ search: true
 
 **Welcome to the Fieldwire API! You can use our API to access your Fieldwire projects.**
 
-<aside class="notice">Current API endpoint: https://console.fieldwire.net/api/v2</aside>
+<aside class="notice">Current API endpoint: https://console.fieldwire.net/api/v3</aside>
 
 # Sample Apps
 
