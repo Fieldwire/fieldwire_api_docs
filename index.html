@@ -249,6 +249,22 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <td>is_email_notifications_enabled</td>
 <td>If enabled, project members will receive an email notification whenever their tasks are updated</td>
 </tr>
+<tr>
+<td>currency</td>
+<td>Currency of project</td>
+</tr>
+<tr>
+<td>man_power_units</td>
+<td>Manpower units of project</td>
+</tr>
+<tr>
+<td>time_zone</td>
+<td>Timezone of project</td>
+</tr>
+<tr>
+<td>prompt_effort_on_complete</td>
+<td>Prompt users to enter manpower and cost when completing tasks</td>
+</tr>
 </tbody></table>
 <h2 id='get-projects'>Get Projects</h2><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]</span>
@@ -1629,12 +1645,20 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <td>Name of the floorplan</td>
 </tr>
 <tr>
+<td>description</td>
+<td>Description of the floorplan</td>
+</tr>
+<tr>
 <td>is_auto_versioning</td>
 <td>Indicates if the floorplan has automatic versioning</td>
 </tr>
 <tr>
+<td>is_user_confirmed</td>
+<td>Indicates if the floorplan was autonamed and requires the user to confirm</td>
+</tr>
+<tr>
 <td>is_name_confirmed</td>
-<td>Indicates if the floorplan was creating from a multipage pdf and needs to be confirmed</td>
+<td>Indicates if the floorplan was autonamed and conflicts with an existing floorplan</td>
 </tr>
 <tr>
 <td>folder_id</td>
@@ -2149,12 +2173,12 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <td>User calibrated conversion from pixels to inches</td>
 </tr>
 <tr>
-<td>version_name</td>
+<td>version_description</td>
 <td>User defined name of sheet version</td>
 </tr>
 <tr>
-<td>description</td>
-<td>User defined description of sheets</td>
+<td>version_notes</td>
+<td>User defined notes of sheet version</td>
 </tr>
 <tr>
 <td><em>folder_id (deprecated)</em></td>
@@ -2399,6 +2423,14 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <tr>
 <td>tags</td>
 <td>Array of strings of all tags on this task&rsquo;s bubbles</td>
+</tr>
+<tr>
+<td>cost_value</td>
+<td>Cost of completing task</td>
+</tr>
+<tr>
+<td>man_power_value</td>
+<td>Manpower of completing task</td>
 </tr>
 </tbody></table>
 <h2 id='get-tasks'>Get Tasks</h2><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/tasks</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
