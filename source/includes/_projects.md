@@ -9,6 +9,10 @@ address | Address of the project
 archived_at | The time when the project was archived
 access_token | Token to be used in successive API calls for this project
 is_email_notifications_enabled | If enabled, project members will receive an email notification whenever their tasks are updated
+currency | Currency of project
+man_power_units | Manpower units of project
+time_zone | Timezone of project
+prompt_effort_on_complete | Prompt users to enter manpower and cost when completing tasks
 
 ## Get Projects
 

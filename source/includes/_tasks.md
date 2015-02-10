@@ -23,6 +23,8 @@ sequence_number | Unique sequential identifier of task on project
 is_private | Indicates if task is private
 user_ids | Array of User IDs that are following this task
 tags | Array of strings of all tags on this task's bubbles
+cost_value | Cost of completing task
+man_power_value | Manpower of completing task
 
 ## Get Tasks
 

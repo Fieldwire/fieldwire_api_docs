@@ -27,8 +27,8 @@ android_file_width | Width of the android file_url
 android_file_height | Height of the android file_url
 sheet_upload_id | ID of the Sheet Upload that created this sheet
 inches_per_pixel | User calibrated conversion from pixels to inches
-version_name | User defined name of sheet version
-description | User defined description of sheets
+version_description | User defined name of sheet version
+version_notes | User defined notes of sheet version
 *folder_id (deprecated)* | *ID of the folder this sheet was uploaded to*
 tiles_package_url | Url of zip archive containing all tiles
 
