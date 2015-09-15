@@ -11,7 +11,7 @@ phone_number | Phone number of the user | String | x | x |
 photo_url | Photo of the user | String | x | x |
 is_approved | Indicates if user is approved by an admin on the project | Boolean | x | |
 is_confirmed | Indicates if an invited user has accepted their invite | Boolean | x | |
-user_deleted_at | Time when user was removed from project | DateTime | | |
+user_deleted_at | Time when user was removed from project | DateTime | | x |
 current_sign_in_at | Approximately last time user signed into Fieldwire | DateTime | x | | _generated_
 invited_by_id | The user ID that invited this user | Integer | | |
 email_notifications | Indicates how often the user receives emails ("never", "daily", "instantly"). This overrides any project setting. | String | x | x | instantly
