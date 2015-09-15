@@ -2,17 +2,18 @@
 
 ## Project Fields
 
-Field | Description
---------- | -----------
-name | Name of the project
-address | Address of the project
-archived_at | The time when the project was archived
-access_token | Token to be used in successive API calls for this project
-is_email_notifications_enabled | If enabled, project members will receive an email notification whenever their tasks are updated
-currency | Currency of project
-man_power_units | Manpower units of project
-time_zone | Timezone of project
-prompt_effort_on_complete | Prompt users to enter manpower and cost when completing tasks
+Field | Description | Type | Required? | Editable? | Default
+--------- | --------- | --------- | --------- | --------- | ---------
+name | Name of the project | String | x | x |
+address | Address of the project | String | | x |
+archived_at | The time when the project was archived | DateTime | | x |
+access_token | Token to be used in successive API calls for this project | String | x | | _generated_
+is_email_notifications_enabled | If enabled, project members will receive an email notification whenever their tasks are updated | Boolean | x | x | true
+currency | Currency of project (ISO) | String | x | x | USD
+man_power_units | Manpower units of project ("man-hours", "man-days", "man-months") | String | x | x | man-hours
+time_zone | Timezone of project | DateTime | x | x | Pacific Time (US & Canada)
+prompt_effort_on_complete | Prompt users to enter manpower and cost when completing tasks | Boolean | x | x | false
+logo_url | Url of project's logo | String | | x |
 
 ## Get Projects
 

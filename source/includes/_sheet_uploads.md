@@ -2,15 +2,16 @@
 
 ## Sheet Upload Fields
 
-Field | Description
---------- | -----------
-name | Name of the sheet
-file_url | Url of the sheet
-file_size | Size of the sheet
-user_id | User that uploaded sheet
-is_processed | Indicated if sheet upload is finished processing
-pages | Number of pages in upload
-folder_id | ID of the folder the sheet upload was added to
+Field | Description | Type | Required? | Editable? | Default
+--------- | --------- | --------- | --------- | --------- | ---------
+project_id | Project ID sheet_uploads belongs to | UUID | x | |
+name | Name of the sheet | String | x | x |
+file_url | Url of the sheet | String | x | x |
+file_size | Size of the sheet | String |  | x |
+user_id | User that uploaded sheet | Integer | x | | _generated_
+is_processed | Indicated if sheet upload is finished processing | Boolean | x | x | false
+pages | Number of pages in upload | Integer | x | | _generated_
+folder_id | ID of the folder the sheet upload was added to | UUID | x | |
 
 
 ## Get Sheet Uploads

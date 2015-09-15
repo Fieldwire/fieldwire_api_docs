@@ -2,23 +2,22 @@
 
 ## User Fields
 
-Field | Description
---------- | -----------
-first_name | First name of the user
-last_name | Last name of the user
-company | Company of the user
-phone_number | Phone number of the user
-photo_url | Photo of the user
-is_admin | Indicates if user is an admin on the project
-is_approved | Indicates if user is approved by an admin on the project
-is_confirmed | Indicates if an invited user has accepted their invite
-user_blocked_at | Time when user was blocked from accessing this project
-user_deleted_at | Time when user was removed from project
-current_sign_in_at | Approximately last time user signed into Fieldwire
-invited_by_id | The user ID that invited this user
-email_notifications | Indicates how often the user receives emails ("never", "daily", "instantly"). This overrides any project setting.
-role | Indicates user's role on project ("admin", "member", "follower")
-emails_address | Contains array of emails with an is_primary indicator
+Field | Description | Type | Required? | Editable? | Default
+--------- | --------- | --------- | --------- | --------- | ---------
+first_name | First name of the user | String | x | x |
+last_name | Last name of the user | String | x | x |
+company | Company of the user | String | x | x |
+phone_number | Phone number of the user | String | x | x |
+photo_url | Photo of the user | String | x | x |
+is_approved | Indicates if user is approved by an admin on the project | Boolean | x | |
+is_confirmed | Indicates if an invited user has accepted their invite | Boolean | x | |
+user_deleted_at | Time when user was removed from project | DateTime | | |
+current_sign_in_at | Approximately last time user signed into Fieldwire | DateTime | x | | _generated_
+invited_by_id | The user ID that invited this user | Integer | | |
+email_notifications | Indicates how often the user receives emails ("never", "daily", "instantly"). This overrides any project setting. | String | x | x | instantly
+role | Indicates user's role on project ("admin", "member", "follower") | String | x | x | member
+emails_addresses | Contains array of emails with an is_primary indicator | Array, string | x | |
+language | Two language code of user (ISO) | x | x | en
 
 ## Get Users
 

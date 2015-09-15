@@ -2,17 +2,16 @@
 
 ## Bubble Fields
 
-Field | Description
---------- | -----------
-task_id | Task ID the bubble belongs to
-content | Text content of bubble
-annotations (deprecated) | iOS bubble annotations
-kind | Enumeration of bubble (see below)
-file_url | Url of photo or attachment
-flattened_file_url | Url of photo with annotations
-thumb_url | Url of photo thumb
-user_id | User ID that created bubble
-tags | Array of strings of all tags on this bubble's bubbles
+Field | Description | Type | Required? | Editable? | Default
+--------- | --------- | --------- | --------- | --------- | ---------
+task_id | Task ID the bubble belongs to | UUID | x | |
+content | Text content of bubble | String | | x |
+kind | Enumeration of bubble (see below) | Integer | x | x | 1
+file_url | Url of photo or attachment | String | | x |
+flattened_file_url | Url of photo with annotation | String | | x |
+thumb_url | Url of photo thumb | String | | x |
+user_id | User ID that created bubble | Integer | x | | _generated_
+tags | Array of strings of all tags on this bubble's bubbles | Array, string | x | x | [ ]
 
 ## Bubble Kinds
 

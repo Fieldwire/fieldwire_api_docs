@@ -2,15 +2,15 @@
 
 ## MultiHyperlink Fields
 
-Field | Description
---------- | -----------
-project_id | Project ID multi_hyperlink belongs to
-sheet_id | Sheet ID multi_hyperlink belongs to
-creator_user_id | User ID of the multi_hyperlink's creator
-last_editor_user_id | User ID of the multi_hyperlink's last editor
-pos_x | Horizontal pixels (from left of floorplan) of multi_hyperlink's center
-pos_y | Vertical pixels (from top of floorplan) of multi_hyperlink's center
-*attachment_ids (read only)* | IDs of attachment the multi_hyperlink links to
+Field | Description | Type | Required? | Editable? | Default
+--------- | --------- | --------- | --------- | --------- | ---------
+project_id | Project ID multi_hyperlink belongs to | UUID | x | |
+sheet_id | Sheet ID multi_hyperlink belongs to | UUID | x | |
+creator_user_id | User ID of the multi_hyperlink's creator | Integer | x | | _generated_
+last_editor_user_id | User ID of the multi_hyperlink's last editor | Integer | x | | _generated_
+pos_x | Horizontal pixels (from left of floorplan) of multi_hyperlink's center | Integer | x | x |
+pos_y | Vertical pixels (from top of floorplan) of multi_hyperlink's center | Integer | x | x  |
+attachment_ids | IDs of attachment the multi_hyperlink links t | Array, integers | x | | [ ]
 
 
 ## Get MultiHyperlinks

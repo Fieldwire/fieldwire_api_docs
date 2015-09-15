@@ -2,14 +2,14 @@
 
 ## Markup Fields
 
-Field | Description
---------- | -----------
-project_id | Project ID markup belongs to
-sheet_id | Sheet ID markup belongs to
-name | Name of the markup
-creator_user_id | User ID of the markup's creator
-last_editor_user_id | User ID of the markup's last editor
-data | [GeoJSON of markup](#markup-data)
+Field | Description | Type | Required? | Editable? | Default
+--------- | --------- | --------- | --------- | --------- | ---------
+project_id | Project ID markup belongs to | UUID | x | |
+sheet_id | Sheet ID markup belongs to | UUID | x | |
+name | Name of the markup | String | x | x |
+creator_user_id | User ID of the markup's creator | Integer | x | | _generated_
+last_editor_user_id | User ID of the markup's last editor | Integer | x | | _generated_
+data | [GeoJSON of markup](#markup-data) | JSON | x | x |
 
 ## Get Markups
 

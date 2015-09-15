@@ -2,10 +2,10 @@
 
 ## BubbleMarkup Fields
 
-Field | Description
---------- | -----------
-bubble_id | The ID of the bubble the markup belongs to
-data | [GeoJSON of markup](#markup-data)
+Field | Description | Type | Required? | Editable? | Default
+--------- | --------- | --------- | --------- | --------- | ---------
+bubble_id | The ID of the bubble the markup belongs to | UUID | x | |
+data | [GeoJSON of markup](#markup-data) | JSON | x | x |
 
 ## Get BubbleMarkups
 

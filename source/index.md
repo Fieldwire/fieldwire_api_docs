@@ -156,15 +156,15 @@ Steps:
 
 These fields are shared across entities
 
-Field | Description
---------- | -----------
-id | The id of the entity
-created_at | The time when the server created the entity
-updated_at | The time when the server last updated the entity
-device_created_at | The time when the device created the entity
-device_updated_at | The time when the device last updated the entity
-deleted_at | The time the entity was deleted
-resolved_conflict | Indicates if the PUT/PATCH request was rejected - do not store this field!
+Field | Description | Type | Required? | Editable? | Default
+--------- | --------- | --------- | --------- | --------- | ---------
+id | The id of the entity | UUID | x | | _generated_
+created_at | The time when the server created the entity | DateTime | x | | _generated_
+updated_at | The time when the server last updated the entity | DateTime | x | | _generated_
+device_created_at | The time when the device created the entity | DateTime | x | x | _generated_
+device_updated_at | The time when the device last updated the entity | DateTime | x | x | _generated_
+deleted_at | The time the entity was deleted | DateTime |  | x |
+resolved_conflict | Indicates if the PUT/PATCH request was rejected - do not store this field! | Boolean | | | false
 
 <aside class="notice">
 When displaying entities, sort using device_created_at/device_updated_at as this will guarantee that entities are displayed when the user actually created them

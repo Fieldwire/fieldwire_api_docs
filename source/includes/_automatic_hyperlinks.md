@@ -2,14 +2,14 @@
 
 ## Automatic Hyperlinks Fields
 
-Field | Description
---------- | -----------
-project_id | Project ID automatic hyperlink belongs to
-sheet_id | Sheet ID automatic hyperlink belongs to
-pos_x | Horizontal pixels (from left of floorplan) of automatic hyperlink's center
-pos_y | Vertical pixels (from top of floorplan) of automatic hyperlink's center
-radius | Radius in pixels of automatic hyperlink
-floorplan_id | ID of linked floorplan
+Field | Description | Type | Required? | Editable? | Default
+--------- | --------- | --------- | --------- | --------- | ---------
+project_id | Project ID automatic hyperlink belongs to | UUID | x | |
+sheet_id | Sheet ID automatic hyperlink belongs to to | UUID | x | |
+pos_x | Horizontal pixels (from left of floorplan) of automatic hyperlink's center to | Integer | x | | _generated_
+pos_y | Vertical pixels (from top of floorplan) of automatic hyperlink's center to | Integer | x | | _generated_
+radius | Radius in pixels of automatic hyperlink to | Integer | x | | _generated_
+floorplan_id | ID of linked floorplan to | UUID | | x |
 
 ## Get Automatic Hyperlinks
 

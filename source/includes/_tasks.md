@@ -2,29 +2,25 @@
 
 ## Task Fields
 
-Field | Description
---------- | -----------
-project_id | Project ID task belongs to
-team_id | Team ID task belongs to
-floorplan_id | Floorplan ID task belongs to
-name | Name of the task
-priority | Priority of the task
-pos_x | Horizontal pixels (from left of floorplan) of task pin's point
-pos_y | Vertical pixels (from top of floorplan) of task pin's point
-pos_z | Indicates layer of task
-verified_at | Time when task was verified
-fixed_at | Time when task was fixed
-owner_user_id | User ID of task's owner
-is_local | Indicates if task is positioned on floorplan
-start_at | Time when task is to be started
-*due_at (DEPRECATED)* | *Time when task is to be completed by*
-due_date | Date when task is to be completed by
-sequence_number | Unique sequential identifier of task on project
-is_private | Indicates if task is private
-user_ids | Array of User IDs that are following this task
-tags | Array of strings of all tags on this task's bubbles
-cost_value | Cost of completing task
-man_power_value | Manpower of completing task
+Field | Description | Type | Required? | Editable? | Default
+--------- | --------- | --------- | --------- | --------- | ---------
+project_id | Project ID task belongs to| UUID | x | |
+team_id | Team ID task belongs to| UUID | | x |
+floorplan_id | Floorplan ID task belongs to| UUID | | x |
+name | Name of the task | String | x | x |
+priority | Priority of the task (1, 2, 3) | Integer | x | x | 2
+pos_x | Horizontal pixels (from left of floorplan) of task pin's point | Integer | | x |
+pos_y | Vertical pixels (from top of floorplan) of task pin's point | Integer | | x |
+verified_at | Time when task was verified | DateTime | | x |
+fixed_at | Time when task was fixed | DateTime | | x |
+owner_user_id | User ID of task's owner | Integer | x | x
+is_local | Indicates if task is positioned on floorplan | Boolean | x | x | false
+due_date | Date when task is to be completed by | Date | | x |
+sequence_number | Unique sequential identifier of task on project | Integer | x | | _generated_
+user_ids | Array of User IDs that are following this task | Array, integer, | x | | _generated_
+tags | Array of strings of all tags on this task's bubbles | Array, string | x | | _generated_
+cost_value | Cost of completing task | Integer | | x |
+man_power_value | Manpower of completing task | Integer | | x |
 
 ## Get Tasks
 

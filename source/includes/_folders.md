@@ -2,10 +2,10 @@
 
 ## Folder Fields
 
-Field | Description
---------- | -----------
-project_id | Project ID folder belongs to
-name | Name of the folder
+Field | Description | Type | Required? | Editable? | Default
+--------- | --------- | --------- | --------- | --------- | ---------
+project_id | Project ID folder belongs to | UUID | x | |
+name | Name of the folder | UUID | x | x |
 
 ## Get Folders
 

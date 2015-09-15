@@ -1,10 +1,10 @@
 # Markup data
 
-Field | Description
---------- | -----------
-type | Always "Feature"
-properties | Contains markup specific data (style, description, etc.)
-geometry | Describes markup shape
+Field | Description | Type | Required? | Editable? | Default
+--------- | --------- | --------- | --------- | --------- | ---------
+type | Always "Feature" | String | x | x |
+properties | Contains markup specific data (style, description, etc.) | JSON | x | x |
+geometry | Describes markup shape | JSON | x | x |
 
 <aside class="notice">
     Polygon coordinates are [x,y] in clockwise order starting with top left corner

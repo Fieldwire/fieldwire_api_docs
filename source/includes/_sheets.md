@@ -2,35 +2,34 @@
 
 ## Sheet Fields
 
-Field | Description
---------- | -----------
-project_id | Project ID floorplan belongs to
-floorplan_id | Floorplan ID sheet belongs to
-name | Name of the sheet
-file_name | File name of sheet
-version | Version of the sheet
-file_url | Url of the low resolution floorplan
-thumb_url | Url of the floorplan thumb
-is_tiled | Indicates if floorplan is tiled.
-file_width | Width of the resized floorplan
-file_height | Height of the resized floorplan
-original_width | Width of the original floorplan
-original_height | Height of the original floorplan
-has_conflicts | Indicates if this version conflicts with the previous versions
-has_errors | Indicates if this version had errors processing
-tile_size | Tile size of the floorplan if tiled
-name_crop_url | Url of plan corner (used to identify plan name)
-user_id | User ID of sheet creator
-page_number | Page number of sheet if created from multi-page PDF
-android_file_url | Url of the low resolution floorplan (used on Android devices with max resolution 2048)
-android_file_width | Width of the android file_url
-android_file_height | Height of the android file_url
-sheet_upload_id | ID of the Sheet Upload that created this sheet
-inches_per_pixel | User calibrated conversion from pixels to inches
-version_description | User defined name of sheet version
-version_notes | User defined notes of sheet version
-*folder_id (deprecated)* | *ID of the folder this sheet was uploaded to*
-tiles_package_url | Url of zip archive containing all tiles
+Field | Description | Type | Required? | Editable? | Default
+--------- | --------- | --------- | --------- | --------- | ---------
+project_id | Project ID sheet belongs to | UUID | x | |
+floorplan_id | Floorplan ID sheet belongs to| UUID | x | |
+name | Name of the sheet | String | x | | _generated_
+file_name | File name of sheet | String | x | | _generated_
+version | Version of the sheet | Integer | x | x | _generated_
+file_url | Url of the low resolution floorplan | String | | | _generated_
+thumb_url | Url of the floorplan thumb | String | | | _generated_
+is_tiled | Indicates if floorplan is tiled. | Boolean | | | _generated_
+file_width | Width of the resized floorplan | Integer | | | _generated_
+file_height | Height of the resized floorplan | Integer | | | _generated_
+original_width | Width of the original floorplan | Integer | | | _generated_
+original_height | Height of the original floorplan | Integer | | | _generated_
+has_conflicts | Indicates if this version conflicts with the previous versions | Boolean | x | x | _generated_
+has_errors | Indicates if this version had errors processing | Boolean | x | | _generated_
+tile_size | Tile size of the floorplan if tiled | Integer | | | _generated_
+name_crop_url | Url of plan corner (used to identify plan name) | String | | | _generated_
+user_id | User ID of sheet creator | Integer | | | _generated_
+page_number | Page number of sheet if created from multi-page PDF | Integer | | | _generated_
+android_file_url | Url of the low resolution floorplan (used on Android devices with max resolution 2048) | String | | | _generated_
+android_file_width | Width of the android file_url | Integer | | | _generated_
+android_file_height | Height of the android file_url | Integer | | | _generated_
+sheet_upload_id | ID of the Sheet Upload that created this sheet | UUID | x | |
+inches_per_pixel | User calibrated conversion from pixels to inches | Integer | | x |
+version_description | User defined name of sheet version | String | | x | _generated_
+version_notes | User defined notes of sheet version | String | | x | _generated_
+tiles_package_url | Url of zip archive containing all tiles | String | | | _generated_
 
 ## Get Sheets
 

@@ -2,14 +2,14 @@
 
 ## TaskCheckItem Fields
 
-Field | Description
---------- | -----------
-project_id | Project ID the task_check_item belongs to
-task_id | Task ID the task_check_item belongs to
-name | Name of task_check_item
-checked | Status of task_check_item (true = yes, false = no, null = not set)
-creator_user_id | User ID of the task_check_item's creator
-last_editor_user_id | User ID of the task_check_item's last editor
+Field | Description | Type | Required? | Editable? | Default
+--------- | --------- | --------- | --------- | --------- | ---------
+project_id | Project ID the task_check_item belongs to| UUID | x | |
+task_id | Task ID the task_check_item belongs to| UUID | x | |
+name | Name of task_check_item | String | x | x |
+checked | Status of task_check_item (true = yes, false = no, null = not set) | Boolean | | x
+creator_user_id | User ID of the task_check_item's creator | Integer | x | | _generated_
+last_editor_user_id | User ID of the task_check_item's last editor | Integer | x | | _generated_
 
 ## Get TaskCheckItems
 

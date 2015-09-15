@@ -2,17 +2,17 @@
 
 ## Hyperlink Fields
 
-Field | Description
---------- | -----------
-project_id | Project ID hyperlink belongs to
-sheet_id | Sheet ID hyperlink belongs to
+Field | Description | Type | Required? | Editable? | Default
+--------- | --------- | --------- | --------- | --------- | ---------
+project_id | Project ID hyperlink belongs to | UUID | x | |
+sheet_id | Sheet ID hyperlink belongs to | UUID | x | |
 creator_user_id | User ID of the hyperlink's creator
 last_editor_user_id | User ID of the hyperlink's last editor
 description | Hyperlink description that appears on floorplan
 pos_x | Horizontal pixels (from left of floorplan) of hyperlink's center
 pos_y | Vertical pixels (from top of floorplan) of hyperlink's center
-floorplan_id | ID of linked floorplan
-attachment_id | ID of linked attachment
+floorplan_id | ID of linked floorplan | UUID | | x |
+attachment_id | ID of linked attachment | UUID | | x |
 
 <aside class="notice">
     Hyperlinks can link to either floorplans or attachments but not both

@@ -2,10 +2,10 @@
 
 ## TemplateChecklist Fields
 
-Field | Description
---------- | -----------
-project_id | Project ID the template_checklist belongs to
-name | Name of template_checklist
+Field | Description | Type | Required? | Editable? | Default
+--------- | --------- | --------- | --------- | --------- | ---------
+project_id | Project ID the template_checklist belongs to | UUID | x | |
+name | Name of template_checklist | String | x | x |
 template_check_items | Array of [template_check_items](#templatecheckitems)
 
 ## Get TemplateChecklists
