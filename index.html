@@ -186,35 +186,67 @@ You must replace [api token] and [project token] with your api and project token
 <tr>
 <th>Field</th>
 <th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+<th>Editable?</th>
+<th>Default</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>id</td>
 <td>The id of the entity</td>
+<td>UUID</td>
+<td>x</td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>created_at</td>
 <td>The time when the server created the entity</td>
+<td>DateTime</td>
+<td>x</td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>updated_at</td>
 <td>The time when the server last updated the entity</td>
+<td>DateTime</td>
+<td>x</td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>device_created_at</td>
 <td>The time when the device created the entity</td>
+<td>DateTime</td>
+<td>x</td>
+<td>x</td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>device_updated_at</td>
 <td>The time when the device last updated the entity</td>
+<td>DateTime</td>
+<td>x</td>
+<td>x</td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>deleted_at</td>
 <td>The time the entity was deleted</td>
+<td>DateTime</td>
+<td></td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>resolved_conflict</td>
 <td>Indicates if the PUT/PATCH request was rejected - do not store this field!</td>
+<td>Boolean</td>
+<td></td>
+<td></td>
+<td>false</td>
 </tr>
 </tbody></table>
 
@@ -227,43 +259,91 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <tr>
 <th>Field</th>
 <th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+<th>Editable?</th>
+<th>Default</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>name</td>
 <td>Name of the project</td>
+<td>String</td>
+<td>x</td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>address</td>
 <td>Address of the project</td>
+<td>String</td>
+<td></td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>archived_at</td>
 <td>The time when the project was archived</td>
+<td>DateTime</td>
+<td></td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>access_token</td>
 <td>Token to be used in successive API calls for this project</td>
+<td>String</td>
+<td>x</td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>is_email_notifications_enabled</td>
 <td>If enabled, project members will receive an email notification whenever their tasks are updated</td>
+<td>Boolean</td>
+<td>x</td>
+<td>x</td>
+<td>true</td>
 </tr>
 <tr>
 <td>currency</td>
-<td>Currency of project</td>
+<td>Currency of project (ISO)</td>
+<td>String</td>
+<td>x</td>
+<td>x</td>
+<td>USD</td>
 </tr>
 <tr>
 <td>man_power_units</td>
-<td>Manpower units of project</td>
+<td>Manpower units of project (&ldquo;man-hours&rdquo;, &ldquo;man-days&rdquo;, &ldquo;man-months&rdquo;)</td>
+<td>String</td>
+<td>x</td>
+<td>x</td>
+<td>man-hours</td>
 </tr>
 <tr>
 <td>time_zone</td>
 <td>Timezone of project</td>
+<td>DateTime</td>
+<td>x</td>
+<td>x</td>
+<td>Pacific Time (US &amp; Canada)</td>
 </tr>
 <tr>
 <td>prompt_effort_on_complete</td>
 <td>Prompt users to enter manpower and cost when completing tasks</td>
+<td>Boolean</td>
+<td>x</td>
+<td>x</td>
+<td>false</td>
+</tr>
+<tr>
+<td>logo_url</td>
+<td>Url of project&rsquo;s logo</td>
+<td>String</td>
+<td></td>
+<td>x</td>
+<td></td>
 </tr>
 </tbody></table>
 <h2 id='get-projects'>Get Projects</h2><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -520,67 +600,123 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <tr>
 <th>Field</th>
 <th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+<th>Editable?</th>
+<th>Default</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>first_name</td>
 <td>First name of the user</td>
+<td>String</td>
+<td>x</td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>last_name</td>
 <td>Last name of the user</td>
+<td>String</td>
+<td>x</td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>company</td>
 <td>Company of the user</td>
+<td>String</td>
+<td>x</td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>phone_number</td>
 <td>Phone number of the user</td>
+<td>String</td>
+<td>x</td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>photo_url</td>
 <td>Photo of the user</td>
-</tr>
-<tr>
-<td>is_admin</td>
-<td>Indicates if user is an admin on the project</td>
+<td>String</td>
+<td>x</td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>is_approved</td>
 <td>Indicates if user is approved by an admin on the project</td>
+<td>Boolean</td>
+<td>x</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>is_confirmed</td>
 <td>Indicates if an invited user has accepted their invite</td>
-</tr>
-<tr>
-<td>user_blocked_at</td>
-<td>Time when user was blocked from accessing this project</td>
+<td>Boolean</td>
+<td>x</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>user_deleted_at</td>
 <td>Time when user was removed from project</td>
+<td>DateTime</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>current_sign_in_at</td>
 <td>Approximately last time user signed into Fieldwire</td>
+<td>DateTime</td>
+<td>x</td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>invited_by_id</td>
 <td>The user ID that invited this user</td>
+<td>Integer</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>email_notifications</td>
 <td>Indicates how often the user receives emails (&ldquo;never&rdquo;, &ldquo;daily&rdquo;, &ldquo;instantly&rdquo;). This overrides any project setting.</td>
+<td>String</td>
+<td>x</td>
+<td>x</td>
+<td>instantly</td>
 </tr>
 <tr>
 <td>role</td>
 <td>Indicates user&rsquo;s role on project (&ldquo;admin&rdquo;, &ldquo;member&rdquo;, &ldquo;follower&rdquo;)</td>
+<td>String</td>
+<td>x</td>
+<td>x</td>
+<td>member</td>
 </tr>
 <tr>
-<td>emails_address</td>
+<td>emails_addresses</td>
 <td>Contains array of emails with an is_primary indicator</td>
+<td>Array, string</td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>language</td>
+<td>Two language code of user (ISO)</td>
+<td>x</td>
+<td>x</td>
+<td>en</td>
+<td></td>
 </tr>
 </tbody></table>
 <h2 id='get-users'>Get Users</h2><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/users</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -940,19 +1076,35 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <tr>
 <th>Field</th>
 <th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+<th>Editable?</th>
+<th>Default</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>project_id</td>
 <td>Project ID task belongs to</td>
+<td>UUID</td>
+<td>x</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>name</td>
 <td>Name of the team</td>
+<td>String</td>
+<td>x</td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>handle</td>
 <td>Autogenerated two letter handle of the team</td>
+<td>String</td>
+<td>x</td>
+<td>x</td>
+<td><em>generated</em></td>
 </tr>
 </tbody></table>
 <h2 id='get-teams'>Get Teams</h2><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/teams</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -1178,15 +1330,27 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <tr>
 <th>Field</th>
 <th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+<th>Editable?</th>
+<th>Default</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>project_id</td>
 <td>Project ID folder belongs to</td>
+<td>UUID</td>
+<td>x</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>name</td>
 <td>Name of the folder</td>
+<td>UUID</td>
+<td>x</td>
+<td>x</td>
+<td></td>
 </tr>
 </tbody></table>
 <h2 id='get-folders'>Get Folders</h2><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/folders</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -1411,35 +1575,75 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <tr>
 <th>Field</th>
 <th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+<th>Editable?</th>
+<th>Default</th>
 </tr>
 </thead><tbody>
 <tr>
+<td>project_id</td>
+<td>Project ID sheet_uploads belongs to</td>
+<td>UUID</td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
 <td>name</td>
 <td>Name of the sheet</td>
+<td>String</td>
+<td>x</td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>file_url</td>
 <td>Url of the sheet</td>
+<td>String</td>
+<td>x</td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>file_size</td>
 <td>Size of the sheet</td>
+<td>String</td>
+<td></td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>user_id</td>
 <td>User that uploaded sheet</td>
+<td>Integer</td>
+<td>x</td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>is_processed</td>
 <td>Indicated if sheet upload is finished processing</td>
+<td>Boolean</td>
+<td>x</td>
+<td>x</td>
+<td>false</td>
 </tr>
 <tr>
 <td>pages</td>
 <td>Number of pages in upload</td>
+<td>Integer</td>
+<td>x</td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>folder_id</td>
 <td>ID of the folder the sheet upload was added to</td>
+<td>UUID</td>
+<td>x</td>
+<td></td>
+<td></td>
 </tr>
 </tbody></table>
 <h2 id='get-sheet-uploads'>Get Sheet Uploads</h2><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/sheet_uploads</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -1638,35 +1842,75 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <tr>
 <th>Field</th>
 <th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+<th>Editable?</th>
+<th>Default</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>name</td>
 <td>Name of the floorplan</td>
+<td>String</td>
+<td>x</td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>description</td>
 <td>Description of the floorplan</td>
+<td>String</td>
+<td></td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>is_auto_versioning</td>
 <td>Indicates if the floorplan has automatic versioning</td>
+<td>Boolean</td>
+<td>x</td>
+<td></td>
+<td>false</td>
 </tr>
 <tr>
 <td>is_user_confirmed</td>
 <td>Indicates if the floorplan was autonamed and requires the user to confirm</td>
+<td>Boolean</td>
+<td>x</td>
+<td>x</td>
+<td>false</td>
 </tr>
 <tr>
 <td>is_name_confirmed</td>
 <td>Indicates if the floorplan was autonamed and conflicts with an existing floorplan</td>
+<td>Boolean</td>
+<td>x</td>
+<td>x</td>
+<td>true</td>
+</tr>
+<tr>
+<td>is_ocr_processing</td>
+<td>Indicates if the floorplan ocr is still pending</td>
+<td>Boolean</td>
+<td>x</td>
+<td></td>
+<td>false</td>
 </tr>
 <tr>
 <td>folder_id</td>
 <td>Folder ID floorplan belongs to</td>
+<td>UUID</td>
+<td></td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>sheets</td>
 <td><a href="#sheets">Sheets</a></td>
+<td>Array, JSON</td>
+<td>x</td>
+<td></td>
+<td>[ ]</td>
 </tr>
 </tbody></table>
 <h2 id='get-floorplans'>Get Floorplans</h2><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/floorplans</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -2078,115 +2322,219 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <tr>
 <th>Field</th>
 <th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+<th>Editable?</th>
+<th>Default</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>project_id</td>
-<td>Project ID floorplan belongs to</td>
+<td>Project ID sheet belongs to</td>
+<td>UUID</td>
+<td>x</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>floorplan_id</td>
 <td>Floorplan ID sheet belongs to</td>
+<td>UUID</td>
+<td>x</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>name</td>
 <td>Name of the sheet</td>
+<td>String</td>
+<td>x</td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>file_name</td>
 <td>File name of sheet</td>
+<td>String</td>
+<td>x</td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>version</td>
 <td>Version of the sheet</td>
+<td>Integer</td>
+<td>x</td>
+<td>x</td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>file_url</td>
 <td>Url of the low resolution floorplan</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>thumb_url</td>
 <td>Url of the floorplan thumb</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>is_tiled</td>
 <td>Indicates if floorplan is tiled.</td>
+<td>Boolean</td>
+<td></td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>file_width</td>
 <td>Width of the resized floorplan</td>
+<td>Integer</td>
+<td></td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>file_height</td>
 <td>Height of the resized floorplan</td>
+<td>Integer</td>
+<td></td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>original_width</td>
 <td>Width of the original floorplan</td>
+<td>Integer</td>
+<td></td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>original_height</td>
 <td>Height of the original floorplan</td>
+<td>Integer</td>
+<td></td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>has_conflicts</td>
 <td>Indicates if this version conflicts with the previous versions</td>
+<td>Boolean</td>
+<td>x</td>
+<td>x</td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>has_errors</td>
 <td>Indicates if this version had errors processing</td>
+<td>Boolean</td>
+<td>x</td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>tile_size</td>
 <td>Tile size of the floorplan if tiled</td>
+<td>Integer</td>
+<td></td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>name_crop_url</td>
 <td>Url of plan corner (used to identify plan name)</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>user_id</td>
 <td>User ID of sheet creator</td>
+<td>Integer</td>
+<td></td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>page_number</td>
 <td>Page number of sheet if created from multi-page PDF</td>
+<td>Integer</td>
+<td></td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>android_file_url</td>
 <td>Url of the low resolution floorplan (used on Android devices with max resolution 2048)</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>android_file_width</td>
 <td>Width of the android file_url</td>
+<td>Integer</td>
+<td></td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>android_file_height</td>
 <td>Height of the android file_url</td>
+<td>Integer</td>
+<td></td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>sheet_upload_id</td>
 <td>ID of the Sheet Upload that created this sheet</td>
+<td>UUID</td>
+<td>x</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>inches_per_pixel</td>
 <td>User calibrated conversion from pixels to inches</td>
+<td>Integer</td>
+<td></td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>version_description</td>
 <td>User defined name of sheet version</td>
+<td>String</td>
+<td></td>
+<td>x</td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>version_notes</td>
 <td>User defined notes of sheet version</td>
-</tr>
-<tr>
-<td><em>folder_id (deprecated)</em></td>
-<td><em>ID of the folder this sheet was uploaded to</em></td>
+<td>String</td>
+<td></td>
+<td>x</td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>tiles_package_url</td>
 <td>Url of zip archive containing all tiles</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 </tbody></table>
 <h2 id='get-sheets'>Get Sheets</h2><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/sheets</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -2346,91 +2694,147 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <tr>
 <th>Field</th>
 <th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+<th>Editable?</th>
+<th>Default</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>project_id</td>
 <td>Project ID task belongs to</td>
+<td>UUID</td>
+<td>x</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>team_id</td>
 <td>Team ID task belongs to</td>
+<td>UUID</td>
+<td></td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>floorplan_id</td>
 <td>Floorplan ID task belongs to</td>
+<td>UUID</td>
+<td></td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>name</td>
 <td>Name of the task</td>
+<td>String</td>
+<td>x</td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>priority</td>
-<td>Priority of the task</td>
+<td>Priority of the task (1, 2, 3)</td>
+<td>Integer</td>
+<td>x</td>
+<td>x</td>
+<td>2</td>
 </tr>
 <tr>
 <td>pos_x</td>
 <td>Horizontal pixels (from left of floorplan) of task pin&rsquo;s point</td>
+<td>Integer</td>
+<td></td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>pos_y</td>
 <td>Vertical pixels (from top of floorplan) of task pin&rsquo;s point</td>
-</tr>
-<tr>
-<td>pos_z</td>
-<td>Indicates layer of task</td>
+<td>Integer</td>
+<td></td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>verified_at</td>
 <td>Time when task was verified</td>
+<td>DateTime</td>
+<td></td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>fixed_at</td>
 <td>Time when task was fixed</td>
+<td>DateTime</td>
+<td></td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>owner_user_id</td>
 <td>User ID of task&rsquo;s owner</td>
+<td>Integer</td>
+<td>x</td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>is_local</td>
 <td>Indicates if task is positioned on floorplan</td>
-</tr>
-<tr>
-<td>start_at</td>
-<td>Time when task is to be started</td>
-</tr>
-<tr>
-<td><em>due_at (DEPRECATED)</em></td>
-<td><em>Time when task is to be completed by</em></td>
+<td>Boolean</td>
+<td>x</td>
+<td>x</td>
+<td>false</td>
 </tr>
 <tr>
 <td>due_date</td>
 <td>Date when task is to be completed by</td>
+<td>Date</td>
+<td></td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>sequence_number</td>
 <td>Unique sequential identifier of task on project</td>
-</tr>
-<tr>
-<td>is_private</td>
-<td>Indicates if task is private</td>
+<td>Integer</td>
+<td>x</td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>user_ids</td>
 <td>Array of User IDs that are following this task</td>
+<td>Array, integer,</td>
+<td>x</td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>tags</td>
 <td>Array of strings of all tags on this task&rsquo;s bubbles</td>
+<td>Array, string</td>
+<td>x</td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>cost_value</td>
 <td>Cost of completing task</td>
+<td>Integer</td>
+<td></td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>man_power_value</td>
 <td>Manpower of completing task</td>
+<td>Integer</td>
+<td></td>
+<td>x</td>
+<td></td>
 </tr>
 </tbody></table>
 <h2 id='get-tasks'>Get Tasks</h2><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/tasks</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -2774,31 +3178,59 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <tr>
 <th>Field</th>
 <th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+<th>Editable?</th>
+<th>Default</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>project_id</td>
 <td>Project ID the task_check_item belongs to</td>
+<td>UUID</td>
+<td>x</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>task_id</td>
 <td>Task ID the task_check_item belongs to</td>
+<td>UUID</td>
+<td>x</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>name</td>
 <td>Name of task_check_item</td>
+<td>String</td>
+<td>x</td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>checked</td>
 <td>Status of task_check_item (true = yes, false = no, null = not set)</td>
+<td>Boolean</td>
+<td></td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>creator_user_id</td>
 <td>User ID of the task_check_item&rsquo;s creator</td>
+<td>Integer</td>
+<td>x</td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>last_editor_user_id</td>
 <td>User ID of the task_check_item&rsquo;s last editor</td>
+<td>Integer</td>
+<td>x</td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 </tbody></table>
 <h2 id='get-taskcheckitems'>Get TaskCheckItems</h2><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/task_check_items</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -3098,19 +3530,35 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <tr>
 <th>Field</th>
 <th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+<th>Editable?</th>
+<th>Default</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>project_id</td>
 <td>Project ID the template_checklist belongs to</td>
+<td>UUID</td>
+<td>x</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>name</td>
 <td>Name of template_checklist</td>
+<td>String</td>
+<td>x</td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>template_check_items</td>
 <td>Array of <a href="#templatecheckitems">template_check_items</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody></table>
 <h2 id='get-templatechecklists'>Get TemplateChecklists</h2><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/template_checklists</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -3357,15 +3805,27 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <tr>
 <th>Field</th>
 <th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+<th>Editable?</th>
+<th>Default</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>project_id</td>
 <td>Project ID the template_check_item belongs to</td>
+<td>UUID</td>
+<td>x</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>name</td>
 <td>Name of template_check_item</td>
+<td>String</td>
+<td>x</td>
+<td>x</td>
+<td></td>
 </tr>
 </tbody></table>
 <h2 id='post-templatecheckitem'>Post TemplateCheckItem</h2><pre class="highlight http"><span class="nf">POST</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/template_checklists/be0f608-7e89-4301-bb13-ffd9db05d60c/template_check_items</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -3493,43 +3953,75 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <tr>
 <th>Field</th>
 <th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+<th>Editable?</th>
+<th>Default</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>task_id</td>
 <td>Task ID the bubble belongs to</td>
+<td>UUID</td>
+<td>x</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>content</td>
 <td>Text content of bubble</td>
-</tr>
-<tr>
-<td>annotations (deprecated)</td>
-<td>iOS bubble annotations</td>
+<td>String</td>
+<td></td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>kind</td>
 <td>Enumeration of bubble (see below)</td>
+<td>Integer</td>
+<td>x</td>
+<td>x</td>
+<td>1</td>
 </tr>
 <tr>
 <td>file_url</td>
 <td>Url of photo or attachment</td>
+<td>String</td>
+<td></td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>flattened_file_url</td>
-<td>Url of photo with annotations</td>
+<td>Url of photo with annotation</td>
+<td>String</td>
+<td></td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>thumb_url</td>
 <td>Url of photo thumb</td>
+<td>String</td>
+<td></td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>user_id</td>
 <td>User ID that created bubble</td>
+<td>Integer</td>
+<td>x</td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>tags</td>
 <td>Array of strings of all tags on this bubble&rsquo;s bubbles</td>
+<td>Array, string</td>
+<td>x</td>
+<td>x</td>
+<td>[ ]</td>
 </tr>
 </tbody></table>
 <h2 id='bubble-kinds'>Bubble Kinds</h2>
@@ -3835,15 +4327,27 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <tr>
 <th>Field</th>
 <th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+<th>Editable?</th>
+<th>Default</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>bubble_id</td>
 <td>The ID of the bubble the markup belongs to</td>
+<td>UUID</td>
+<td>x</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>data</td>
 <td><a href="#markup-data">GeoJSON of markup</a></td>
+<td>JSON</td>
+<td>x</td>
+<td>x</td>
+<td></td>
 </tr>
 </tbody></table>
 <h2 id='get-bubblemarkups'>Get BubbleMarkups</h2><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/bubble_markups</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -4199,39 +4703,83 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <tr>
 <th>Field</th>
 <th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+<th>Editable?</th>
+<th>Default</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>project_id</td>
 <td>Project ID attachment belongs to</td>
+<td>UUID</td>
+<td>x</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>name</td>
 <td>Name of the attachment</td>
+<td>String</td>
+<td>x</td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>creator_user_id</td>
 <td>User ID of the attachment&rsquo;s creator</td>
+<td>Integer</td>
+<td>x</td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>thumb_url</td>
 <td>Url of the attachment thumb (optional)</td>
+<td>String</td>
+<td></td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>file_url</td>
 <td>Url of the attachment</td>
+<td>String</td>
+<td>x</td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>file_size</td>
 <td>Size of the attachment</td>
+<td>Integer</td>
+<td></td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
-<td><em>floorplan_ids (READ ONLY)</em></td>
-<td><em>Floorplan IDs that hyperlink to this attachment</em></td>
+<td>kind</td>
+<td>Kind of attachment (&ldquo;file&rdquo;, &ldquo;photo&rdquo;)</td>
+<td>String</td>
+<td>x</td>
+<td>x</td>
+<td>file</td>
 </tr>
 <tr>
-<td><em>multi_hyperlink_ids (READ ONLY)</em></td>
-<td><em>MultiHyperlink IDs that link to this attachment</em></td>
+<td>floorplan_ids</td>
+<td>Floorplan IDs that hyperlink to this attachment</td>
+<td>Array, integers</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>multi_hyperlink_ids</td>
+<td>MultiHyperlink IDs that link to this attachment</td>
+<td>Array, integers</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody></table>
 <h2 id='get-attachments'>Get Attachments</h2><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/attachments</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -4493,43 +5041,83 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <tr>
 <th>Field</th>
 <th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+<th>Editable?</th>
+<th>Default</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>project_id</td>
 <td>Project ID hyperlink belongs to</td>
+<td>UUID</td>
+<td>x</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>sheet_id</td>
 <td>Sheet ID hyperlink belongs to</td>
+<td>UUID</td>
+<td>x</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>creator_user_id</td>
 <td>User ID of the hyperlink&rsquo;s creator</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>last_editor_user_id</td>
 <td>User ID of the hyperlink&rsquo;s last editor</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>description</td>
 <td>Hyperlink description that appears on floorplan</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>pos_x</td>
 <td>Horizontal pixels (from left of floorplan) of hyperlink&rsquo;s center</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>pos_y</td>
 <td>Vertical pixels (from top of floorplan) of hyperlink&rsquo;s center</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>floorplan_id</td>
 <td>ID of linked floorplan</td>
+<td>UUID</td>
+<td></td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>attachment_id</td>
 <td>ID of linked attachment</td>
+<td>UUID</td>
+<td></td>
+<td>x</td>
+<td></td>
 </tr>
 </tbody></table>
 
@@ -4857,35 +5445,67 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <tr>
 <th>Field</th>
 <th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+<th>Editable?</th>
+<th>Default</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>project_id</td>
 <td>Project ID multi_hyperlink belongs to</td>
+<td>UUID</td>
+<td>x</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>sheet_id</td>
 <td>Sheet ID multi_hyperlink belongs to</td>
+<td>UUID</td>
+<td>x</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>creator_user_id</td>
 <td>User ID of the multi_hyperlink&rsquo;s creator</td>
+<td>Integer</td>
+<td>x</td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>last_editor_user_id</td>
 <td>User ID of the multi_hyperlink&rsquo;s last editor</td>
+<td>Integer</td>
+<td>x</td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>pos_x</td>
 <td>Horizontal pixels (from left of floorplan) of multi_hyperlink&rsquo;s center</td>
+<td>Integer</td>
+<td>x</td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>pos_y</td>
 <td>Vertical pixels (from top of floorplan) of multi_hyperlink&rsquo;s center</td>
+<td>Integer</td>
+<td>x</td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
-<td><em>attachment_ids (read only)</em></td>
-<td>IDs of attachment the multi_hyperlink links to</td>
+<td>attachment_ids</td>
+<td>IDs of attachment the multi_hyperlink links t</td>
+<td>Array, integers</td>
+<td>x</td>
+<td></td>
+<td>[ ]</td>
 </tr>
 </tbody></table>
 <h2 id='get-multihyperlinks'>Get MultiHyperlinks</h2><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/multi_hyperlinks</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -5239,31 +5859,59 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <tr>
 <th>Field</th>
 <th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+<th>Editable?</th>
+<th>Default</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>project_id</td>
 <td>Project ID automatic hyperlink belongs to</td>
+<td>UUID</td>
+<td>x</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>sheet_id</td>
-<td>Sheet ID automatic hyperlink belongs to</td>
+<td>Sheet ID automatic hyperlink belongs to to</td>
+<td>UUID</td>
+<td>x</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>pos_x</td>
-<td>Horizontal pixels (from left of floorplan) of automatic hyperlink&rsquo;s center</td>
+<td>Horizontal pixels (from left of floorplan) of automatic hyperlink&rsquo;s center to</td>
+<td>Integer</td>
+<td>x</td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>pos_y</td>
-<td>Vertical pixels (from top of floorplan) of automatic hyperlink&rsquo;s center</td>
+<td>Vertical pixels (from top of floorplan) of automatic hyperlink&rsquo;s center to</td>
+<td>Integer</td>
+<td>x</td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>radius</td>
-<td>Radius in pixels of automatic hyperlink</td>
+<td>Radius in pixels of automatic hyperlink to</td>
+<td>Integer</td>
+<td>x</td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>floorplan_id</td>
-<td>ID of linked floorplan</td>
+<td>ID of linked floorplan to</td>
+<td>UUID</td>
+<td></td>
+<td>x</td>
+<td></td>
 </tr>
 </tbody></table>
 <h2 id='get-automatic-hyperlinks'>Get Automatic Hyperlinks</h2><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/automatic_hyperlinks</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -5374,31 +6022,59 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <tr>
 <th>Field</th>
 <th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+<th>Editable?</th>
+<th>Default</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>project_id</td>
 <td>Project ID markup belongs to</td>
+<td>UUID</td>
+<td>x</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>sheet_id</td>
 <td>Sheet ID markup belongs to</td>
+<td>UUID</td>
+<td>x</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>name</td>
 <td>Name of the markup</td>
+<td>String</td>
+<td>x</td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>creator_user_id</td>
 <td>User ID of the markup&rsquo;s creator</td>
+<td>Integer</td>
+<td>x</td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>last_editor_user_id</td>
 <td>User ID of the markup&rsquo;s last editor</td>
+<td>Integer</td>
+<td>x</td>
+<td></td>
+<td><em>generated</em></td>
 </tr>
 <tr>
 <td>data</td>
 <td><a href="#markup-data">GeoJSON of markup</a></td>
+<td>JSON</td>
+<td>x</td>
+<td>x</td>
+<td></td>
 </tr>
 </tbody></table>
 <h2 id='get-markups'>Get Markups</h2><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/markups</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -5724,19 +6400,35 @@ Task ID,Task Title,Priority,Due Date,Plan Name,Plan URL Link,Category,Assignee,C
 <tr>
 <th>Field</th>
 <th>Description</th>
+<th>Type</th>
+<th>Required?</th>
+<th>Editable?</th>
+<th>Default</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>type</td>
 <td>Always &ldquo;Feature&rdquo;</td>
+<td>String</td>
+<td>x</td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>properties</td>
 <td>Contains markup specific data (style, description, etc.)</td>
+<td>JSON</td>
+<td>x</td>
+<td>x</td>
+<td></td>
 </tr>
 <tr>
 <td>geometry</td>
 <td>Describes markup shape</td>
+<td>JSON</td>
+<td>x</td>
+<td>x</td>
+<td></td>
 </tr>
 </tbody></table>
 
