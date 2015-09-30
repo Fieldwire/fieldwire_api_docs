@@ -66,6 +66,27 @@ html, body {
   );
 }
 
+.navbar-brand {
+  display: block;
+  color: #FFBC39;
+  font-weight: bold;
+  padding: 0px;
+  height: 48px;
+  margin-right: 15px;
+  text-decoration: none;
+
+  span {
+    line-height: 48px;
+  }
+
+  img {
+    width: 36px;
+    height: 36px;
+    float: left;
+    margin: 6px 5px 0px 10px;
+  }
+}
+
 .tocify-wrapper {
   @include transition(left ease-in-out 0.3s);
   overflow-y: auto;
