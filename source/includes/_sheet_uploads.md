@@ -2,7 +2,7 @@
 
 ## Sheet Upload Fields
 
-Field | Description | Type | Required? | Editable? | Default
+Field | Description | Type | Non-null? | Editable? | Default
 --------- | --------- | --------- | --------- | --------- | ---------
 project_id | Project ID sheet_uploads belongs to | UUID | x | |
 name | Name of the sheet | String | x | x |

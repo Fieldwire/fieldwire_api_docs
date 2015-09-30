@@ -2,7 +2,7 @@
 
 ## Markup Fields
 
-Field | Description | Type | Required? | Editable? | Default
+Field | Description | Type | Non-null? | Editable? | Default
 --------- | --------- | --------- | --------- | --------- | ---------
 project_id | Project ID markup belongs to | UUID | x | |
 sheet_id | Sheet ID markup belongs to | UUID | x | |

@@ -2,7 +2,7 @@
 
 ## Sheet Fields
 
-Field | Description | Type | Required? | Editable? | Default
+Field | Description | Type | Non-null? | Editable? | Default
 --------- | --------- | --------- | --------- | --------- | ---------
 project_id | Project ID sheet belongs to | UUID | x | |
 floorplan_id | Floorplan ID sheet belongs to| UUID | x | |

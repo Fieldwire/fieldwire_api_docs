@@ -2,7 +2,7 @@
 
 ## User Fields
 
-Field | Description | Type | Required? | Editable? | Default
+Field | Description | Type | Non-null? | Editable? | Default
 --------- | --------- | --------- | --------- | --------- | ---------
 first_name | First name of the user | String | x | x |
 last_name | Last name of the user | String | x | x |

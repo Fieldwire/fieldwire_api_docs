@@ -2,7 +2,7 @@
 
 ## TemplateCheckItem Fields
 
-Field | Description | Type | Required? | Editable? | Default
+Field | Description | Type | Non-null? | Editable? | Default
 --------- | --------- | --------- | --------- | --------- | ---------
 project_id | Project ID the template_check_item belongs to | UUID | x | |
 name | Name of template_check_item | String | x | x |

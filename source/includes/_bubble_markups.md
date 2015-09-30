@@ -2,7 +2,7 @@
 
 ## BubbleMarkup Fields
 
-Field | Description | Type | Required? | Editable? | Default
+Field | Description | Type | Non-null? | Editable? | Default
 --------- | --------- | --------- | --------- | --------- | ---------
 bubble_id | The ID of the bubble the markup belongs to | UUID | x | |
 data | [GeoJSON of markup](#markup-data) | JSON | x | x |

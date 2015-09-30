@@ -2,7 +2,7 @@
 
 ## Floorplan Fields
 
-Field | Description | Type | Required? | Editable? | Default
+Field | Description | Type | Non-null? | Editable? | Default
 --------- | --------- | --------- | --------- | --------- | ---------
 name | Name of the floorplan | String | x | x |
 description | Description of the floorplan | String | | x |

@@ -2,7 +2,7 @@
 
 ## TaskCheckItem Fields
 
-Field | Description | Type | Required? | Editable? | Default
+Field | Description | Type | Non-null? | Editable? | Default
 --------- | --------- | --------- | --------- | --------- | ---------
 project_id | Project ID the task_check_item belongs to| UUID | x | |
 task_id | Task ID the task_check_item belongs to| UUID | x | |

@@ -2,7 +2,7 @@
 
 ## Attachment Fields
 
-Field | Description | Type | Required? | Editable? | Default
+Field | Description | Type | Non-null? | Editable? | Default
 --------- | --------- | --------- | --------- | --------- | ---------
 project_id | Project ID attachment belongs to | UUID | x | |
 name | Name of the attachment | String | x | x |
@@ -11,6 +11,7 @@ thumb_url | Url of the attachment thumb (optional) | String | | x |
 file_url | Url of the attachment | String | x | x |
 file_size | Size of the attachment | Integer | | x |
 kind | Kind of attachment ("file", "photo") | String | x | x | file
+is_dynamic | Indicates if resource at file_url can change | Boolean | x | x | False
 floorplan_ids | Floorplan IDs that hyperlink to this attachment | Array, integers | | |
 multi_hyperlink_ids | MultiHyperlink IDs that link to this attachment | Array, integers | |
 

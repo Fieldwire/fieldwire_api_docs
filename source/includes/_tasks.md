@@ -2,7 +2,7 @@
 
 ## Task Fields
 
-Field | Description | Type | Required? | Editable? | Default
+Field | Description | Type | Non-null? | Editable? | Default
 --------- | --------- | --------- | --------- | --------- | ---------
 project_id | Project ID task belongs to| UUID | x | |
 team_id | Team ID task belongs to| UUID | | x |

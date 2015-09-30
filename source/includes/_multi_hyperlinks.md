@@ -2,7 +2,7 @@
 
 ## MultiHyperlink Fields
 
-Field | Description | Type | Required? | Editable? | Default
+Field | Description | Type | Non-null? | Editable? | Default
 --------- | --------- | --------- | --------- | --------- | ---------
 project_id | Project ID multi_hyperlink belongs to | UUID | x | |
 sheet_id | Sheet ID multi_hyperlink belongs to | UUID | x | |

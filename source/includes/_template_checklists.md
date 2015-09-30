@@ -2,7 +2,7 @@
 
 ## TemplateChecklist Fields
 
-Field | Description | Type | Required? | Editable? | Default
+Field | Description | Type | Non-null? | Editable? | Default
 --------- | --------- | --------- | --------- | --------- | ---------
 project_id | Project ID the template_checklist belongs to | UUID | x | |
 name | Name of template_checklist | String | x | x |

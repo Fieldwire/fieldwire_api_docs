@@ -2,7 +2,7 @@
 
 ## Project Fields
 
-Field | Description | Type | Required? | Editable? | Default
+Field | Description | Type | Non-null? | Editable? | Default
 --------- | --------- | --------- | --------- | --------- | ---------
 name | Name of the project | String | x | x |
 address | Address of the project | String | | x |

@@ -2,7 +2,7 @@
 
 ## Bubble Fields
 
-Field | Description | Type | Required? | Editable? | Default
+Field | Description | Type | Non-null? | Editable? | Default
 --------- | --------- | --------- | --------- | --------- | ---------
 task_id | Task ID the bubble belongs to | UUID | x | |
 content | Text content of bubble | String | | x |

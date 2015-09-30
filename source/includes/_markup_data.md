@@ -1,6 +1,6 @@
 # Markup data
 
-Field | Description | Type | Required? | Editable? | Default
+Field | Description | Type | Non-null? | Editable? | Default
 --------- | --------- | --------- | --------- | --------- | ---------
 type | Always "Feature" | String | x | x |
 properties | Contains markup specific data (style, description, etc.) | JSON | x | x |

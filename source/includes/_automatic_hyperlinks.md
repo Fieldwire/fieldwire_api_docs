@@ -2,7 +2,7 @@
 
 ## Automatic Hyperlinks Fields
 
-Field | Description | Type | Required? | Editable? | Default
+Field | Description | Type | Non-null? | Editable? | Default
 --------- | --------- | --------- | --------- | --------- | ---------
 project_id | Project ID automatic hyperlink belongs to | UUID | x | |
 sheet_id | Sheet ID automatic hyperlink belongs to to | UUID | x | |

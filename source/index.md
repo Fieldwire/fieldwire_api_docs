@@ -156,7 +156,7 @@ Steps:
 
 These fields are shared across entities
 
-Field | Description | Type | Required? | Editable? | Default
+Field | Description | Type | Non-null? | Editable? | Default
 --------- | --------- | --------- | --------- | --------- | ---------
 id | The id of the entity | UUID | x | | _generated_
 created_at | The time when the server created the entity | DateTime | x | | _generated_

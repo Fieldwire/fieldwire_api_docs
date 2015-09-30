@@ -2,7 +2,7 @@
 
 ## Team Fields
 
-Field | Description | Type | Required? | Editable? | Default
+Field | Description | Type | Non-null? | Editable? | Default
 --------- | --------- | --------- | --------- | --------- | ---------
 project_id | Project ID task belongs to | UUID | x | |
 name | Name of the team | String | x | x |
