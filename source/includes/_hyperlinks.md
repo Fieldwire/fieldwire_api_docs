@@ -138,7 +138,7 @@ Hyperlink ID | The ID of the hyperlink to retrieve
 ## Post Hyperlink
 
 ```http
-POST /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/sheet/a5056209-4430-4407-a300-5dfcc4114993/hyperlinks HTTP/1.1
+POST /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/sheets/a5056209-4430-4407-a300-5dfcc4114993/hyperlinks HTTP/1.1
 Authorization: Token api=[api token]>,project=[project token]
 Content-type: application/json
 
