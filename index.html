@@ -110,20 +110,16 @@ You must replace [api token] and [project token] with your api and project token
 </tr>
 </thead><tbody>
 <tr>
-<td>X-Total-Pages</td>
-<td>Number of total pages that exist for this resource</td>
-</tr>
-<tr>
-<td>X-Current-Page</td>
-<td>Number of current page (add 1 to this to retrieve the next page of entities)</td>
-</tr>
-<tr>
 <td>X-Count</td>
 <td>Number of entities in response</td>
 </tr>
 <tr>
 <td>X-Last-Synced-At</td>
 <td>Timestamp indicating exactly how up to date the client is after processing/storing these entities (see <a href="#syncing-data">Syncing Data</a>)</td>
+</tr>
+<tr>
+<td>X-Has-More</td>
+<td>Boolean indicating if additional entities exist</td>
 </tr>
 </tbody></table>
 <h1 id='syncing-data'>Syncing Data</h1><pre class="highlight http"><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/activity</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
