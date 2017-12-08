@@ -88,10 +88,9 @@ Fieldwire-With-Deleted | Boolean that determines if deleted entities are returne
 
 Header | Description
 --------- | -----------
-X-Total-Pages | Number of total pages that exist for this resource
-X-Current-Page | Number of current page (add 1 to this to retrieve the next page of entities)
 X-Count | Number of entities in response
 X-Last-Synced-At | Timestamp indicating exactly how up to date the client is after processing/storing these entities (see [Syncing Data](#syncing-data))
+X-Has-More | Boolean indicating if additional entities exist
 
 # Syncing Data
 
