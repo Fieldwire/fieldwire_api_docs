@@ -57,10 +57,10 @@ helpers do
 end
 
 # quick hack to enable support for HTTP PATCH
-class Rouge::Lexers::HTTP
-  class << self
-    def methods
-      @methods ||= %w(GET POST PUT PATCH DELETE HEAD OPTIONS TRACE)
-    end
-  end
-end
+# class Rouge::Lexers::HTTP
+#   class << self
+#     def methods
+#       @methods ||= %w(GET POST PUT PATCH DELETE HEAD OPTIONS TRACE)
+#     end
+#   end
+# end
