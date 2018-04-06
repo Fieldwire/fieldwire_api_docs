@@ -4,6 +4,7 @@
 
 Field | Description | Type | Non-null? | Editable? | Default
 --------- | --------- | --------- | --------- | --------- | ---------
+project_id | Project ID floorplan belongs to | UUID | x | |
 name | Name of the floorplan | String | x | x |
 description | Description of the floorplan | String | | x |
 is_auto_versioning | Indicates if the floorplan has automatic versioning | Boolean | x | | false
