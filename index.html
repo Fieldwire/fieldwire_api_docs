@@ -683,6 +683,46 @@
               </ul>
           </li>
           <li>
+            <a href="#entitytags" class="toc-h1 toc-link" data-title="entitytags">EntityTags</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#entitytag-fields" class="toc-h2 toc-link" data-title="entitytag-fields">EntityTag Fields</a>
+                  </li>
+                  <li>
+                    <a href="#get-entitytags" class="toc-h2 toc-link" data-title="get-entitytags">Get EntityTags</a>
+                  </li>
+                  <li>
+                    <a href="#get-entitytag" class="toc-h2 toc-link" data-title="get-entitytag">Get EntityTag</a>
+                  </li>
+                  <li>
+                    <a href="#post-entitytag" class="toc-h2 toc-link" data-title="post-entitytag">Post EntityTag</a>
+                  </li>
+                  <li>
+                    <a href="#delete-entitytag" class="toc-h2 toc-link" data-title="delete-entitytag">Delete EntityTag</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#entitytaggings" class="toc-h1 toc-link" data-title="entitytaggings">EntityTaggings</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#entitytagging-fields" class="toc-h2 toc-link" data-title="entitytagging-fields">EntityTagging Fields</a>
+                  </li>
+                  <li>
+                    <a href="#get-entitytaggings" class="toc-h2 toc-link" data-title="get-entitytaggings">Get EntityTaggings</a>
+                  </li>
+                  <li>
+                    <a href="#get-entitytagging" class="toc-h2 toc-link" data-title="get-entitytagging">Get EntityTagging</a>
+                  </li>
+                  <li>
+                    <a href="#post-entitytagging" class="toc-h2 toc-link" data-title="post-entitytagging">Post EntityTagging</a>
+                  </li>
+                  <li>
+                    <a href="#delete-entitytagging" class="toc-h2 toc-link" data-title="delete-entitytagging">Delete EntityTagging</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="errors">Errors</a>
           </li>
       </div>
@@ -778,18 +818,41 @@ You must replace [api token] and [project token] with your api and project token
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 
 <span class="p">{</span><span class="w">
-    </span><span class="s2">"users"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-15T19:42:24.359Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"teams"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-15T00:42:36.722Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"floorplans"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-15T01:28:17.107Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"tasks"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"bubbles"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"users"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-06T22:43:52.023Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"teams"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-06T19:06:11.662Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"floorplans"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-03T20:09:52.829Z"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"hyperlinks"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"multi_hyperlinks"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"markups"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"task_check_items"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"template_checklists"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-22T22:27:47.878Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"template_checklists"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-07T23:25:05.438Z"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"automatic_hyperlinks"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"bubble_markups"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="s2">"sheets"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-03T20:09:52.729Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attachments_multi_hyperlinks"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tasks"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-06T22:12:39.768Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"bubbles"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-06T22:12:39.736Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"bubble_markups"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-06T21:38:06.615Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"task_check_items"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-06T21:52:30.570Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"folders"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-22T22:27:40.180Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sheet_uploads"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-03T20:07:58.156Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"entity_tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-04T17:59:28.203Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"entity_taggings"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-06T00:31:49.581Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"task_relations"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-06T21:00:11.932Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"locations"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-15T22:35:30.876Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"report_templates"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-02T12:01:10.395Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data_types"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data_type_values"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"form_templates"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"form_template_sections"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"form_template_section_records"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"form_template_section_record_inputs"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"form_template_form_statuses"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"forms"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"form_sections"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"form_section_records"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"form_section_record_values"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"form_section_record_inputs"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"form_section_record_input_values"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
@@ -1075,18 +1138,41 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 
 <span class="p">{</span><span class="w">
-    </span><span class="s2">"users"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-15T19:42:24.359Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"teams"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-15T00:42:36.722Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"floorplans"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-15T01:28:17.107Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"tasks"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"bubbles"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"users"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-06T22:43:52.023Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"teams"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-06T19:06:11.662Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"floorplans"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-03T20:09:52.829Z"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"hyperlinks"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"multi_hyperlinks"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"markups"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"task_check_items"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"template_checklists"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-22T22:27:47.878Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"template_checklists"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-07T23:25:05.438Z"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"automatic_hyperlinks"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"bubble_markups"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="s2">"sheets"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-03T20:09:52.729Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attachments_multi_hyperlinks"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tasks"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-06T22:12:39.768Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"bubbles"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-06T22:12:39.736Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"bubble_markups"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-06T21:38:06.615Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"task_check_items"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-06T21:52:30.570Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"folders"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-22T22:27:40.180Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sheet_uploads"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-03T20:07:58.156Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"entity_tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-04T17:59:28.203Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"entity_taggings"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-06T00:31:49.581Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"task_relations"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-06T21:00:11.932Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"locations"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-15T22:35:30.876Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"report_templates"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-02T12:01:10.395Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data_types"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data_type_values"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"form_templates"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"form_template_sections"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"form_template_section_records"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"form_template_section_record_inputs"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"form_template_form_statuses"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"forms"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"form_sections"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"form_section_records"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"form_section_record_values"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"form_section_record_inputs"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"form_section_record_input_values"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific project.</p>
@@ -2426,6 +2512,14 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <th>Default</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>project_id</td>
+<td>Project ID floorplan belongs to</td>
+<td>UUID</td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
 <tr>
 <td>name</td>
 <td>Name of the floorplan</td>
@@ -7139,6 +7233,552 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <li>Arrow width = width * 10</li>
 <li>Arrow height =  Arrow width * Math.sqrt(3) / 2.0</li>
 </ul>
+<h1 id='entitytags'>EntityTags</h1><h2 id='entitytag-fields'>EntityTag Fields</h2>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Type</th>
+<th>Non-null?</th>
+<th>Editable?</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project_id</td>
+<td>Project ID entity_tag belongs to</td>
+<td>UUID</td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td>Name of the entity_tag</td>
+<td>String</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+</tr>
+<tr>
+<td>creator_user_id</td>
+<td>User ID of the entity_tag&#39;s creator</td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>last_editor_user_id</td>
+<td>User ID of the entity_tag&#39;s last editor</td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+<aside class="warning">
+    Entity Tag names are unique per project
+</aside>
+<h2 id='get-entitytags'>Get EntityTags</h2><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/entity_tags</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+</code></pre>
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"70ce3ccf-548a-49ff-9630-2978195d6d98"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aceb1617-2dcf-4b01-a6b1-d8ae02bc3027"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"creator_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_editor_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.760Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.762Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.760Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.760Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"punch"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ba19cc8b-bee2-47f8-8895-afccd9b6aa5a"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aceb1617-2dcf-4b01-a6b1-d8ae02bc3027"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"creator_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_editor_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:58.060Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:58.061Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:58.059Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:58.059Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"change_order"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all entity_tags.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET /projects/&lt;Project ID&gt;/entity_tags</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the project to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='get-entitytag'>Get EntityTag</h2><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/entity_tags/70ce3ccf-548a-49ff-9630-2978195d6d98</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+</code></pre>
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"70ce3ccf-548a-49ff-9630-2978195d6d98"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aceb1617-2dcf-4b01-a6b1-d8ae02bc3027"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"creator_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_editor_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.760Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.762Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.760Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.760Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"punch"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a specific entity_tag.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET /projects/&lt;Project ID&gt;/entity_tags/&lt;EntityTag ID&gt;</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the entity_tag&#39;s project</td>
+</tr>
+<tr>
+<td>EntityTag ID</td>
+<td>The ID of the entity_tag to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='post-entitytag'>Post EntityTag</h2><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/entity_tags</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"punch"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"70ce3ccf-548a-49ff-9630-2978195d6d98"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aceb1617-2dcf-4b01-a6b1-d8ae02bc3027"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"creator_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_editor_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.760Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.762Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.760Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.760Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"punch"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>or if name exists:</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">409</span> <span class="ne">CONFLICT</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"70ce3ccf-548a-49ff-9630-2978195d6d98"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aceb1617-2dcf-4b01-a6b1-d8ae02bc3027"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"creator_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_editor_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.760Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.762Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.760Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.760Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"punch"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint creates a new entity_tag.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST /projects/&lt;Project ID&gt;/entity_tags</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the entity_tag&#39;s project</td>
+</tr>
+</tbody></table>
+
+<!-- ## Update EntityTag
+
+```http
+PATCH /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/entity_tags/70ce3ccf-548a-49ff-9630-2978195d6d98 HTTP/1.1
+Authorization: Token api=[api token]>,project=[project token]
+Content-type: application/json
+
+{ "name": "updated" }
+```
+
+> The above command returns:
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+    "id": "70ce3ccf-548a-49ff-9630-2978195d6d98",
+    "project_id": "aceb1617-2dcf-4b01-a6b1-d8ae02bc3027",
+    "creator_user_id": 2,
+    "last_editor_user_id": 2,
+    "created_at": "2018-04-03T22:57:57.760Z",
+    "updated_at": "2018-04-03T22:57:57.762Z",
+    "device_created_at": "2018-04-03T22:57:57.760Z",
+    "device_updated_at": "2018-04-03T22:57:57.760Z",
+    "resolved_conflict": false,
+    "deleted_at": null,
+    "name": "updated"
+}
+```
+
+This endpoint updates a specific entity_tag.
+
+### HTTP Request
+
+`PATCH /projects/<Project ID>/entity_tags/<EntityTag ID>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+Project ID | The ID of the entity_tag's project
+EntityTag ID | The ID of the entity_tag to retrieve -->
+<h2 id='delete-entitytag'>Delete EntityTag</h2><pre class="highlight http tab-http"><code><span class="nf">DELETE</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/entity_tags/75d68ca1-0fc1-456a-bd9d-8b23875ac540</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+</code></pre>
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">204</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+</code></pre>
+<p>This endpoint deletes a entity_tag.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>DELETE /projects/&lt;Project ID&gt;/entity_tags/&lt;EntityTag ID&gt;</code></p>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the entity_tag&#39;s project</td>
+</tr>
+<tr>
+<td>EntityTag ID</td>
+<td>The ID of the entity_tag to retrieve</td>
+</tr>
+</tbody></table>
+<h1 id='entitytaggings'>EntityTaggings</h1><h2 id='entitytagging-fields'>EntityTagging Fields</h2>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Type</th>
+<th>Non-null?</th>
+<th>Editable?</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project_id</td>
+<td>Project ID entity_tagging belongs to</td>
+<td>UUID</td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>entity_tag_id</td>
+<td>EntityTag ID entity_tagging belongs to</td>
+<td>UUID</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+</tr>
+<tr>
+<td>entity_id</td>
+<td>Entity ID entity_tagging belongs to</td>
+<td>UUID</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+</tr>
+<tr>
+<td>entity_type</td>
+<td>One of &#39;Attachment&#39;, &#39;Floorplan&#39;, &#39;Task&#39;, &#39;Bubble&#39;</td>
+<td>UUID</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+</tr>
+<tr>
+<td>creator_user_id</td>
+<td>User ID of the entity_tagging&#39;s creator</td>
+<td>Integer</td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>last_editor_user_id</td>
+<td>User ID of the entity_tagging&#39;s last editor</td>
+<td>Integer</td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+<aside class="warning">
+    Entity Tagging (entity_tag_id, entity_id) combinations are unique per project
+</aside>
+<h2 id='get-entitytaggings'>Get EntityTaggings</h2><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/entity_taggings</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+</code></pre>
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"050b6db6-1d01-46cb-a573-16355a40f189"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aceb1617-2dcf-4b01-a6b1-d8ae02bc3027"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"creator_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_editor_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.868Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.870Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.868Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.868Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"entity_tag_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"70ce3ccf-548a-49ff-9630-2978195d6d98"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b627cf06-7e5f-43ef-a7d7-03c2e4507f10"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"entity_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bubble"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"afc706e3-e9e8-4c34-953f-7eb3cecd9af6"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aceb1617-2dcf-4b01-a6b1-d8ae02bc3027"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"creator_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_editor_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:58.103Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:58.106Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:58.102Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:58.102Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"entity_tag_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ba19cc8b-bee2-47f8-8895-afccd9b6aa5a"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5f968667-24ae-44bb-bef9-de026d6f06ff"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"entity_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bubble"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all entity_taggings.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET /projects/&lt;Project ID&gt;/entity_taggings</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the project to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='get-entitytagging'>Get EntityTagging</h2><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/entity_taggings/050b6db6-1d01-46cb-a573-16355a40f189</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+</code></pre>
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"050b6db6-1d01-46cb-a573-16355a40f189"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aceb1617-2dcf-4b01-a6b1-d8ae02bc3027"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"creator_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_editor_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.868Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.870Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.868Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.868Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"entity_tag_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"70ce3ccf-548a-49ff-9630-2978195d6d98"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b627cf06-7e5f-43ef-a7d7-03c2e4507f10"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"entity_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bubble"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a specific entity_tagging.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET /projects/&lt;Project ID&gt;/entity_taggings/&lt;EntityTagging ID&gt;</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the entity_tagging&#39;s project</td>
+</tr>
+<tr>
+<td>EntityTagging ID</td>
+<td>The ID of the entity_tagging to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='post-entitytagging'>Post EntityTagging</h2><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/entity_taggings</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"entity_tag_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"70ce3ccf-548a-49ff-9630-2978195d6d98"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b627cf06-7e5f-43ef-a7d7-03c2e4507f10"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"entity_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bubble"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"050b6db6-1d01-46cb-a573-16355a40f189"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aceb1617-2dcf-4b01-a6b1-d8ae02bc3027"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"creator_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_editor_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.868Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.870Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.868Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.868Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"entity_tag_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"70ce3ccf-548a-49ff-9630-2978195d6d98"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b627cf06-7e5f-43ef-a7d7-03c2e4507f10"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"entity_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bubble"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>or if (entity_tag_id,entity_id) exists:</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">409</span> <span class="ne">CONFLICT</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"050b6db6-1d01-46cb-a573-16355a40f189"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aceb1617-2dcf-4b01-a6b1-d8ae02bc3027"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"creator_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_editor_user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.868Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.870Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.868Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"device_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-03T22:57:57.868Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resolved_conflict"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"entity_tag_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"70ce3ccf-548a-49ff-9630-2978195d6d98"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b627cf06-7e5f-43ef-a7d7-03c2e4507f10"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"entity_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bubble"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint creates a new entity_tagging.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST /projects/&lt;Project ID&gt;/entity_taggings</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the entity_tagging&#39;s project</td>
+</tr>
+</tbody></table>
+<h2 id='delete-entitytagging'>Delete EntityTagging</h2><pre class="highlight http tab-http"><code><span class="nf">DELETE</span> <span class="nn">/projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/entity_taggings/050b6db6-1d01-46cb-a573-16355a40f189</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;,project=[project token]</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+</code></pre>
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">204</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+</code></pre>
+<p>This endpoint deletes a entity_tagging.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>DELETE /projects/&lt;Project ID&gt;/entity_taggings/&lt;EntityTagging ID&gt;</code></p>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Project ID</td>
+<td>The ID of the entity_tagging&#39;s project</td>
+</tr>
+<tr>
+<td>EntityTagging ID</td>
+<td>The ID of the entity_tagging to retrieve</td>
+</tr>
+</tbody></table>
 <h1 id='errors'>Errors</h1><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="s2">"param is missing or the value is empty: field"</span><span class="w">
