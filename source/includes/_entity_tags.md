@@ -6,8 +6,8 @@ Field | Description | Type | Non-null? | Editable? | Default
 --------- | --------- | --------- | --------- | --------- | ---------
 project_id | Project ID entity_tag belongs to | UUID | x | |
 name | Name of the entity_tag | String | x | x |
-creator_user_id | User ID of the entity_tag's creator | x | |
-last_editor_user_id | User ID of the entity_tag's last editor | x | |
+creator_user_id | User ID of the entity_tag's creator | Integer | x | | _generated_
+last_editor_user_id | User ID of the entity_tag's last editor | Integer | x | | _generated_
 
 <aside class="warning">
     Entity Tag names are unique per project

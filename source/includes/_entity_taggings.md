@@ -7,9 +7,9 @@ Field | Description | Type | Non-null? | Editable? | Default
 project_id | Project ID entity_tagging belongs to | UUID | x | |
 entity_tag_id | EntityTag ID entity_tagging belongs to | UUID | x | x |
 entity_id | Entity ID entity_tagging belongs to | UUID | x | x |
-entity_type | One of 'Attachment', 'Floorplan', 'Task', 'Bubble' | UUID | x | x |
-creator_user_id | User ID of the entity_tagging's creator | Integer | x | |
-last_editor_user_id | User ID of the entity_tagging's last editor | Integer | x | |
+entity_type | One of 'Attachment', 'Floorplan', 'Task', 'Bubble' | String | x | x |
+creator_user_id | User ID of the entity_tagging's creator | Integer | x | | _generated_
+last_editor_user_id | User ID of the entity_tagging's last editor | Integer | x | | _generated_
 
 <aside class="warning">
     Entity Tagging (entity_tag_id, entity_id) combinations are unique per project
