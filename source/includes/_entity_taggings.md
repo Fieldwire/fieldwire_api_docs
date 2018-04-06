@@ -156,6 +156,29 @@ Content-Type: application/json
 }
 ```
 
+> or if (entity_tag_id,entity_id) exists:
+
+```http
+HTTP/1.1 409 CONFLICT
+Content-Type: application/json
+
+{
+    "id": "050b6db6-1d01-46cb-a573-16355a40f189",
+    "project_id": "aceb1617-2dcf-4b01-a6b1-d8ae02bc3027",
+    "creator_user_id": 2,
+    "last_editor_user_id": 2,
+    "created_at": "2018-04-03T22:57:57.868Z",
+    "updated_at": "2018-04-03T22:57:57.870Z",
+    "device_created_at": "2018-04-03T22:57:57.868Z",
+    "device_updated_at": "2018-04-03T22:57:57.868Z",
+    "resolved_conflict": false,
+    "deleted_at": null,
+    "entity_tag_id": "70ce3ccf-548a-49ff-9630-2978195d6d98",
+    "entity_id": "b627cf06-7e5f-43ef-a7d7-03c2e4507f10",
+    "entity_type": "Bubble"
+}
+```
+
 This endpoint creates a new entity_tagging.
 
 ### HTTP Request

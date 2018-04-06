@@ -144,6 +144,27 @@ Content-Type: application/json
 }
 ```
 
+> or if name exists:
+
+```http
+HTTP/1.1 409 CONFLICT
+Content-Type: application/json
+
+{
+    "id": "70ce3ccf-548a-49ff-9630-2978195d6d98",
+    "project_id": "aceb1617-2dcf-4b01-a6b1-d8ae02bc3027",
+    "creator_user_id": 2,
+    "last_editor_user_id": 2,
+    "created_at": "2018-04-03T22:57:57.760Z",
+    "updated_at": "2018-04-03T22:57:57.762Z",
+    "device_created_at": "2018-04-03T22:57:57.760Z",
+    "device_updated_at": "2018-04-03T22:57:57.760Z",
+    "resolved_conflict": false,
+    "deleted_at": null,
+    "name": "punch"
+}
+```
+
 This endpoint creates a new entity_tag.
 
 ### HTTP Request
@@ -156,7 +177,7 @@ Parameter | Description
 --------- | -----------
 Project ID | The ID of the entity_tag's project
 
-## Update EntityTag
+<!-- ## Update EntityTag
 
 ```http
 PATCH /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/entity_tags/70ce3ccf-548a-49ff-9630-2978195d6d98 HTTP/1.1
@@ -198,7 +219,7 @@ This endpoint updates a specific entity_tag.
 Parameter | Description
 --------- | -----------
 Project ID | The ID of the entity_tag's project
-EntityTag ID | The ID of the entity_tag to retrieve
+EntityTag ID | The ID of the entity_tag to retrieve -->
 
 ## Delete EntityTag
 
