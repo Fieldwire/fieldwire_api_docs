@@ -410,6 +410,23 @@
               </ul>
           </li>
           <li>
+            <a href="#post-s3-token" class="toc-h1 toc-link" data-title="post-s3-token">Post S3 token</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#post-s3-tokens-purpose" class="toc-h2 toc-link" data-title="post-s3-tokens-purpose">Post S3 tokens purpose</a>
+                  </li>
+                  <li>
+                    <a href="#post-s3-token-field" class="toc-h2 toc-link" data-title="post-s3-token-field">Post S3 token field</a>
+                  </li>
+                  <li>
+                    <a href="#create-post-s3-token" class="toc-h2 toc-link" data-title="create-post-s3-token">Create Post S3 Token</a>
+                  </li>
+                  <li>
+                    <a href="#post-file-to-aws-s3-using-token" class="toc-h2 toc-link" data-title="post-file-to-aws-s3-using-token">Post file to AWS S3 using token</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#tasks" class="toc-h1 toc-link" data-title="tasks">Tasks</a>
               <ul class="toc-list-h2">
                   <li>
@@ -3341,6 +3358,128 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <td>The ID of the sheet to retrieve</td>
 </tr>
 </tbody></table>
+<h1 id='post-s3-token'>Post S3 token</h1><h2 id='post-s3-tokens-purpose'>Post S3 tokens purpose</h2>
+<p>The storage used by Fieldwire, Amazon S3, allow user to directly post files to it, 
+without having to go through Fieldwire server.</p>
+
+<p>https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-UsingHTTPPOST.html</p>
+
+<p>The post S3 token contains all the information you need to use this functionnality
+and has a 1 day expiry.
+After receiving one, you simply have to create a POST request that contains all the
+fields of the post S3 token, and add a &quot;file&quot; field with your file content and 
+send it directly to aws (to the post_address contained in the token)</p>
+
+<p>The only action you can do on Fieldwire api with post S3 token is to request one.</p>
+
+<p>It is highly recommended to look at the two demo client applications :</p>
+
+<ul>
+<li>Ruby: <a href="https://github.com/Fieldwire/fieldwire_ruby_sample">https://github.com/Fieldwire/fieldwire_ruby_sample</a></li>
+<li>Java: <a href="https://github.com/Fieldwire/fieldwire_java_sample">https://github.com/Fieldwire/fieldwire_java_sample</a></li>
+</ul>
+
+<p>Which both contains an example of post S3 token usage.</p>
+<h2 id='post-s3-token-field'>Post S3 token field</h2>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Type</th>
+<th>Non-null?</th>
+<th>Editable?</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>post_address</td>
+<td>The url where to send the request</td>
+<td>String</td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>post_parameters</td>
+<td>The input to include in the POST request</td>
+<td>JSON</td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p>The post_parameters included are :</p>
+
+<ul>
+<li>key</li>
+<li>policy</li>
+<li>x-amz-signature</li>
+<li>x-amz-date</li>
+<li>x-amz-credential</li>
+<li>acl</li>
+<li>x-amz-algorithm</li>
+</ul>
+
+<p>All of them are string-type and must be sent as they were received to AWS post service.
+The post_address is the url of the AWS post service itself.</p>
+<h2 id='create-post-s3-token'>Create Post S3 Token</h2><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/aws_post_tokens</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">Token api=[api token]&gt;</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">application/json</span>
+</code></pre>
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+    </span><span class="s2">"post_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://example.s3.amazonaws.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"post_parameters"</span><span class="p">:</span><span class="w"> 
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example/bbef5b6b9e00e19eaa94d81323280238_${filename}"</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"policy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJleHBpcmF0aW9uIjoiMjAxOC0wNy0wNlQxMTowMjozNVoiLCJjb25kaXRpb25zIjpbeyJidWNrZXQiOiJuaWNvbGFzLWZ3LWRldmVsb3BtZW50In0sWyJzdGFydHMtd2l0aCIsIiRrZXkiLCI2Yjg2YjI3M2ZmMzRmY2UxOWQ2YjgwNGVmZjVhM2Y1Ny9iYmVmNWI2YjllMDBlMTllYWE5NGQ4MTMyMzI4MDIzOCJdLFsiY29udGVudC1sZW5ndGgtcmFuZ2UiLDAsMTA0ODU3NjAwMF0seyJ4LWFtei1kYXRlIjotY3JlZGVudGlhbCI6IkFLSUFJWEhURVpPWVRRUlUzToiMjAxODA3MDVUMTEwMjM1WiJ9LHsieC1hbXEJBLzIwMTgwNzA1L3VzLWVhc3QtMS9zMy9hd3M0X3JlcXVlc3QifSx7ImFjbCI6InB1YmxpYy1yZWFkIn0seyJ4LWFtei1hbGdvcml0aG0iOiJBV1M0LUhNQUMtU0hBMjU2In1dfQ=="</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"x-amz-signature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63d932252334c0c888561bb2c86412d1f2faf3c15842dd8af6ff022ec95201c2"</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"x-amz-date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20180705T110235Z"</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"x-amz-credential"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXAMPLE/20180705/us-east-1/s3/aws4_request"</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"acl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"public-read"</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"x-amz-algorithm"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AWS4-HMAC-SHA256"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
+<p><code>POST /aws_post_tokens</code></p>
+<h2 id='post-file-to-aws-s3-using-token'>Post file to AWS S3 using token</h2><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">http://example.s3.amazonaws.com</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">multipart/form-data</span>
+
+{
+    "key": "example/bbef5b6b9e00e19eaa94d81323280238_${filename}", 
+    "policy": "eyJleHBpcmF0aW9uIjoiMjAxOC0wNy0wNlQxMTowMjozNVoiLCJjb25kaXRpb25zIjpbeyJidWNrZXQiOiJuaWNvbGFzLWZ3LWRldmVsb3BtZW50In0sWyJzdGFydHMtd2l0aCIsIiRrZXkiLCI2Yjg2YjI3M2ZmMzRmY2UxOWQ2YjgwNGVmZjVhM2Y1Ny9iYmVmNWI2YjllMDBlMTllYWE5NGQ4MTMyMzI4MDIzOCJdLFsiY29udGVudC1sZW5ndGgtcmFuZ2UiLDAsMTA0ODU3NjAwMF0seyJ4LWFtei1kYXRlIjotY3JlZGVudGlhbCI6IkFLSUFJWEhURVpPWVRRUlUzToiMjAxODA3MDVUMTEwMjM1WiJ9LHsieC1hbXEJBLzIwMTgwNzA1L3VzLWVhc3QtMS9zMy9hd3M0X3JlcXVlc3QifSx7ImFjbCI6InB1YmxpYy1yZWFkIn0seyJ4LWFtei1hbGdvcml0aG0iOiJBV1M0LUhNQUMtU0hBMjU2In1dfQ==",
+    "x-amz-signature": "63d932252334c0c888561bb2c86412d1f2faf3c15842dd8af6ff022ec95201c2", 
+    "x-amz-date": "20180705T110235Z", 
+    "x-amz-credential": "EXAMPLE/20180705/us-east-1/s3/aws4_request", 
+    "acl": "public-read", 
+    "x-amz-algorithm": "AWS4-HMAC-SHA256",
+    "file": "example file content"
+}
+</code></pre>
+<blockquote>
+<p>The above command returns:</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+</code></pre><h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST http://example.s3.amazonaws.com</code></p>
+
+<aside class="warning">
+    This request is not part of the Fieldwire API as it is a request to AWS S3.
+    It is given as an example of usage of the post S3 token. 
+</aside>
+
+<p>You might receive the following error codes :</p>
+
+<ul>
+<li>400 : bad request, your token has expired or your file is oversized (&gt; 1 GB)</li>
+<li>403 : forbidden, you modified one of the attributes transmitted by the post token</li>
+</ul>
 <h1 id='tasks'>Tasks</h1><h2 id='task-fields'>Task Fields</h2>
 <table><thead>
 <tr>
