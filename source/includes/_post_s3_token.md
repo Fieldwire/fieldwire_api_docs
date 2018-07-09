@@ -26,15 +26,27 @@ Which both contains an example of post S3 token usage.
 
 Field | Description | Type | Non-null? | Editable? | Default
 --------- | --------- | --------- | --------- | --------- | ---------
-post_address |  | UUID | x | |
-post_parameters | Name of the sheet | JSON | x | |
+post_address | The url where to send the request | String | x | |
+post_parameters | The input to include in the POST request | JSON | x | |
 
+The post_parameters included are :
 
-## Get Sheet Uploads
+- key
+- policy
+- x-amz-signature
+- x-amz-date
+- x-amz-credential
+- acl
+- x-amz-algorithm
+
+All of them are string-type and must be sent as they were received to AWS post service.
+The post_address is the url of the AWS post service itself.
+
+## Create Post S3 Token
 
 ```http
-GET /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/sheet_uploads HTTP/1.1
-Authorization: Token api=[api token]>,project=[project token]
+POST /aws_post_tokens HTTP/1.1
+Authorization: Token api=[api token]>
 Content-type: application/json
 ```
 
@@ -44,174 +56,59 @@ Content-type: application/json
 HTTP/1.1 200 OK
 Content-Type: application/json
 
-[
+{
+    "post_address": "http://example.s3.amazonaws.com",
+    "post_parameters": 
     {
-        "created_at": "2014-08-26T00:18:17.000Z",
-        "updated_at": "2014-08-26T00:18:22.000Z",
-        "id": "51af34a9-b8fc-477d-907d-0b9064120b88",
-        "name": "Single.pdf",
-        "file_url": "https://example.com/Single.pdf",
-        "file_size": "2244590",
-        "user_id": 1,
-        "is_processed": true,
-        "pages": 1
-    },
-    {
-        "created_at": "2014-08-26T00:20:00.000Z",
-        "updated_at": "2014-08-26T00:20:10.000Z",
-        "id": "701f69be-02bb-4786-ab48-be0d993bf2a5",
-        "name": "Multipage.pdf",
-        "file_url": "https://example.com/.pdf",
-        "file_size": "5584913",
-        "user_id": 1,
-        "is_processed": true,
-        "pages": 3
+        "key": "example/bbef5b6b9e00e19eaa94d81323280238_${filename}", 
+        "policy": "eyJleHBpcmF0aW9uIjoiMjAxOC0wNy0wNlQxMTowMjozNVoiLCJjb25kaXRpb25zIjpbeyJidWNrZXQiOiJuaWNvbGFzLWZ3LWRldmVsb3BtZW50In0sWyJzdGFydHMtd2l0aCIsIiRrZXkiLCI2Yjg2YjI3M2ZmMzRmY2UxOWQ2YjgwNGVmZjVhM2Y1Ny9iYmVmNWI2YjllMDBlMTllYWE5NGQ4MTMyMzI4MDIzOCJdLFsiY29udGVudC1sZW5ndGgtcmFuZ2UiLDAsMTA0ODU3NjAwMF0seyJ4LWFtei1kYXRlIjotY3JlZGVudGlhbCI6IkFLSUFJWEhURVpPWVRRUlUzToiMjAxODA3MDVUMTEwMjM1WiJ9LHsieC1hbXEJBLzIwMTgwNzA1L3VzLWVhc3QtMS9zMy9hd3M0X3JlcXVlc3QifSx7ImFjbCI6InB1YmxpYy1yZWFkIn0seyJ4LWFtei1hbGdvcml0aG0iOiJBV1M0LUhNQUMtU0hBMjU2In1dfQ==",
+        "x-amz-signature": "63d932252334c0c888561bb2c86412d1f2faf3c15842dd8af6ff022ec95201c2", 
+        "x-amz-date": "20180705T110235Z", 
+        "x-amz-credential": "EXAMPLE/20180705/us-east-1/s3/aws4_request", 
+        "acl": "public-read", 
+        "x-amz-algorithm": "AWS4-HMAC-SHA256"
     }
-]
+}
 ```
-
-This endpoint retrieves all sheet_uploads.
 
 ### HTTP Request
 
-`GET /projects/<Project ID>/sheet_uploads`
+`POST /aws_post_tokens`
 
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-Project ID | The ID of the project to retrieve
-
-## Get Sheet Upload
+## Post file to AWS S3 using token
 
 ```http
-GET /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/sheet_uploads/51af34a9-b8fc-477d-907d-0b9064120b88 HTTP/1.1
-Authorization: Token api=[api token]>,project=[project token]
-Content-type: application/json
+POST http://example.s3.amazonaws.com HTTP/1.1
+Content-type: multipart/form-data
+
+{
+    "key": "example/bbef5b6b9e00e19eaa94d81323280238_${filename}", 
+    "policy": "eyJleHBpcmF0aW9uIjoiMjAxOC0wNy0wNlQxMTowMjozNVoiLCJjb25kaXRpb25zIjpbeyJidWNrZXQiOiJuaWNvbGFzLWZ3LWRldmVsb3BtZW50In0sWyJzdGFydHMtd2l0aCIsIiRrZXkiLCI2Yjg2YjI3M2ZmMzRmY2UxOWQ2YjgwNGVmZjVhM2Y1Ny9iYmVmNWI2YjllMDBlMTllYWE5NGQ4MTMyMzI4MDIzOCJdLFsiY29udGVudC1sZW5ndGgtcmFuZ2UiLDAsMTA0ODU3NjAwMF0seyJ4LWFtei1kYXRlIjotY3JlZGVudGlhbCI6IkFLSUFJWEhURVpPWVRRUlUzToiMjAxODA3MDVUMTEwMjM1WiJ9LHsieC1hbXEJBLzIwMTgwNzA1L3VzLWVhc3QtMS9zMy9hd3M0X3JlcXVlc3QifSx7ImFjbCI6InB1YmxpYy1yZWFkIn0seyJ4LWFtei1hbGdvcml0aG0iOiJBV1M0LUhNQUMtU0hBMjU2In1dfQ==",
+    "x-amz-signature": "63d932252334c0c888561bb2c86412d1f2faf3c15842dd8af6ff022ec95201c2", 
+    "x-amz-date": "20180705T110235Z", 
+    "x-amz-credential": "EXAMPLE/20180705/us-east-1/s3/aws4_request", 
+    "acl": "public-read", 
+    "x-amz-algorithm": "AWS4-HMAC-SHA256",
+    "file": "example file content"
+}
 ```
 
 > The above command returns:
 
 ```http
 HTTP/1.1 200 OK
-Content-Type: application/json
-
-{
-    "created_at": "2014-08-26T00:18:17.000Z",
-    "updated_at": "2014-08-26T00:18:22.000Z",
-    "id": "51af34a9-b8fc-477d-907d-0b9064120b88",
-    "name": "Single.pdf",
-    "file_url": "https://example.com/Single.pdf",
-    "file_size": "2244590",
-    "user_id": 1,
-    "is_processed": true,
-    "pages": 1
-}
 ```
-
-This endpoint retrieves a specific sheet_upload.
 
 ### HTTP Request
 
-`GET /projects/<Project ID>/sheet_uploads/<Sheet Upload ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-Project ID | The ID of the sheet_upload's project
-Sheet Upload ID | The ID of the sheet_upload to retrieve
-
-## Post Sheet Upload
-
-```http
-POST /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/sheet_uploads HTTP/1.1
-Authorization: Token api=[api token]>,project=[project token]
-Content-type: application/json
-
-{
-    "name": "Single.pdf",
-    "file_url": "https://example.com/Single.pdf",
-    "file_size": "2244590",
-    "user_id": 1
-}
-```
-
-> The above command returns:
-
-```http
-HTTP/1.1 201 Created
-Content-Type: application/json
-
-{
-    "created_at": "2014-08-26T00:18:17.000Z",
-    "updated_at": "2014-08-26T00:18:22.000Z",
-    "id": "51af34a9-b8fc-477d-907d-0b9064120b88",
-    "name": "Single.pdf",
-    "file_url": "https://example.com/Single.pdf",
-    "file_size": "2244590",
-    "user_id": 1,
-    "is_processed": true,
-    "pages": 1
-}
-```
-
-This endpoint creates a new sheet_upload.
-
-### HTTP Request
-
-`POST /projects/<Project ID>/sheet_uploads`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-Project ID | The ID of the sheet_upload's project
-
-## Update Sheet Upload
-
-```http
-PATCH /projects/aceb1617-2dcf-4b01-a6b1-d8ae02bc3027/sheet_uploads/51af34a9-b8fc-477d-907d-0b9064120b88 HTTP/1.1
-Authorization: Token api=[api token]>,project=[project token]
-Content-type: application/json
-
-{ "is_processed": "true" }
-```
-
-> The above command returns:
-
-```http
-HTTP/1.1 200 OK
-Content-Type: application/json
-
-{
-    "created_at": "2014-08-26T00:18:17.000Z",
-    "updated_at": "2014-08-26T00:18:22.000Z",
-    "id": "51af34a9-b8fc-477d-907d-0b9064120b88",
-    "name": "Single.pdf",
-    "file_url": "https://example.com/Single.pdf",
-    "file_size": "2244590",
-    "user_id": 1,
-    "is_processed": true,
-    "pages": 1
-}
-```
-
-This endpoint updates a specific sheet upload.
-
-### HTTP Request
-
-`PATCH /projects/<Project ID>/sheet_uploads/<Sheet Upload ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-Project ID | The ID of the sheet upload's project
-Sheet Upload ID | The ID of the sheet upload to retrieve
-
-## Managing Sheet Uploads
+`POST http://example.s3.amazonaws.com`
 
 <aside class="warning">
-    Once created, sheet uploads cannot be modified or deleted. To remove floorplans/sheets created from the sheet upload, delete them through their respective endpoints.
+    This request is not part of the Fieldwire API as it is a request to AWS S3.
+    It is given as an example of usage of the post S3 token. 
 </aside>
+
+You might receive the following error codes :
+
+- 400 : bad request, your token has expired or your file is oversized (> 1 GB)
+- 403 : forbidden, you modified one of the attributes transmitted by the post token
