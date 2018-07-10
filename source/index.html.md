@@ -17,6 +17,7 @@ includes:
   - sheet_uploads
   - floorplans
   - sheets
+  - post_s3_token
   - tasks
   - task_check_items
   - template_checklists
