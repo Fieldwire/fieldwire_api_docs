@@ -1038,12 +1038,12 @@ When displaying entities, sort using device_created_at/device_updated_at as this
 <td>man-hours</td>
 </tr>
 <tr>
-<td>time_zone</td>
-<td>Timezone of project</td>
-<td>DateTime</td>
+<td>tz_name</td>
+<td><a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List">TZ database name</a></td>
+<td>String</td>
 <td>x</td>
 <td>x</td>
-<td>Pacific Time (US &amp; Canada)</td>
+<td>America/Los_Angeles</td>
 </tr>
 <tr>
 <td>prompt_effort_on_complete</td>
@@ -1249,8 +1249,14 @@ When displaying entities, sort using device_created_at/device_updated_at as this
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"source"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;Project ID to clone&gt;"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"copy_users"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"copy_teams"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="s2">"copy_folders"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"copy_form_templates"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"copy_locations"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"copy_report_templates"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"copy_settings"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"copy_teams"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"copy_template_checklists"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"copy_users"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='update-project'>Update Project</h2><pre class="highlight http tab-http"><code><span class="nf">PATCH</span> <span class="nn">/projects/b5c08097-74f1-4a8f-a9a8-52e16295f6a4</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
