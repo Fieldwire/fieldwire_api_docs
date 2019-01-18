@@ -11,7 +11,7 @@ access_token | Token to be used in successive API calls for this project | Strin
 is_email_notifications_enabled | If enabled, project members will receive an email notification whenever their tasks are updated | Boolean | x | x | true
 currency | Currency of project (ISO) | String | x | x | USD
 man_power_units | Manpower units of project ("man-hours", "man-days", "man-months") | String | x | x | man-hours
-time_zone | Timezone of project | DateTime | x | x | Pacific Time (US & Canada)
+tz_name | [TZ database name](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List) | String | x | x | America/Los_Angeles
 prompt_effort_on_complete | Prompt users to enter manpower and cost when completing tasks | Boolean | x | x | false
 logo_url | Url of project's logo | String | | x |
 
@@ -223,8 +223,14 @@ Cloning projects: when creating a project you can automatically re-invite member
     },
     "source" : {
         "id": "<Project ID to clone>",
-        "copy_users": true,
-        "copy_teams": true
+        "copy_folders": true,
+        "copy_form_templates": true,
+        "copy_locations": true,
+        "copy_report_templates": true,
+        "copy_settings": true,
+        "copy_teams": true,
+        "copy_template_checklists": true,
+        "copy_users": true
     }
 }
 ```
